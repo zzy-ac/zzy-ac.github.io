@@ -189,10 +189,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-10-14 18:09:40 / Modified: 19:00:57" itemprop="dateCreated datePublished" datetime="2020-10-14T18:09:40+08:00">2020-10-14</time>
+              <time title="Created: 2020-10-14 18:09:40" itemprop="dateCreated datePublished" datetime="2020-10-14T18:09:40+08:00">2020-10-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-04 21:22:47" itemprop="dateModified" datetime="2020-11-04T21:22:47+08:00">2020-11-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -231,23 +237,14 @@
           <h1 id="用服务器一起听歌！"><a href="#用服务器一起听歌！" class="headerlink" title="用服务器一起听歌！"></a>用服务器一起听歌！</h1><p>近来用了下QQ的一起听歌功能，感觉挺有意思，但是只能听QQ歌单里有的歌，十分受限。所以决定自己用服务器搭一个差不多的听歌方案。</p>
 <p>一起听歌最重要的就是同步，所有人都同时听同一首曲子的同一个地方，这一点和直播很像，所以决定用比较常见的流媒体方式搭建，说白了就是开了一个音频直播。</p>
 <p>我用的环境是CentOS7，当然这个教程对别的大部分发行版也适用。需要的软件有ffmpeg和make。</p>
-<p>ffmpeg的安装不多说了，Debian系一般可以直接apt安装，其它发行版编译安装既可。</p>
-<p>然后搭建流媒体服务器，用的是SRS，先下载源码包，编译安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;ossrs&#x2F;srs&#x2F;archive&#x2F;v3.0-r0.tar.gz</span><br><span class="line">tar -zxvf srs-3.0-r0.tar.gz</span><br><span class="line">cd srs-3.0-r0&#x2F;trunk&#x2F;</span><br><span class="line">.&#x2F;configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>然后开启服务：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ln -sf &#x2F;usr&#x2F;local&#x2F;srs&#x2F;etc&#x2F;init.d&#x2F;srs &#x2F;etc&#x2F;init.d&#x2F;srs</span><br><span class="line">cp -f &#x2F;usr&#x2F;local&#x2F;srs&#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;srs.service &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;srs.service</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl start srs</span><br></pre></td></tr></table></figure>
-<p>如果想开机启动的话：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable srs</span><br></pre></td></tr></table></figure>
-
-<p>然后我把要放的音乐都放到了/data下<br>下面要做的就是开始推流了，用ffmpeg推流：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -re -i &#x2F;data&#x2F;mymusic.mp3 -f flv -y rtmp:&#x2F;&#x2F;49.234.70.34&#x2F;live&#x2F;livestream</span><br></pre></td></tr></table></figure>
-<p>这时候用vlc或者别的流媒体播放器就可以听音乐了，但是放完一首就会停止，可用性不高，于是我写了一个自动循环的脚本：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">while true</span><br><span class="line">do</span><br><span class="line">	for file in $( ls &#x2F;data )</span><br><span class="line">	do</span><br><span class="line">		output&#x3D;&#96;ffmpeg -re -i &#x2F;data&#x2F;$file -f flv -y rtmp:&#x2F;&#x2F;49.234.70.34&#x2F;live&#x2F;livestream&#96;</span><br><span class="line">	done</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<p>这个脚本会自动播放/data目录下的文件，文件名最好全英文，不然可能出问题。要用的话只要改一下我的ip就行了</p>
-<p>然后你就可以用这个流媒体服务器和朋友们一起听任何你想听的歌了！！！</p>
-<p>我的一起听歌服务器是rtmp://49.234.70.34/live/livestream，如果卡就是人太多了，自觉退出吧～～～（笑哭）</p>
-<p><em>by 从晴朗的朝色泛起之际开始</em></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/10/14/%E7%94%A8Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E4%B8%80%E8%B5%B7%E5%90%AC%E6%AD%8C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -289,10 +286,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-10-12 00:58:20 / Modified: 01:21:44" itemprop="dateCreated datePublished" datetime="2020-10-12T00:58:20+08:00">2020-10-12</time>
+              <time title="Created: 2020-10-12 00:58:20" itemprop="dateCreated datePublished" datetime="2020-10-12T00:58:20+08:00">2020-10-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-04 21:21:48" itemprop="dateModified" datetime="2020-11-04T21:21:48+08:00">2020-11-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -329,9 +332,15 @@
 
       
           <p>#写于2020-10-12</p>
-<p>并非喜剧就能让人感到开心<br>常常一笑了之的背后<br>留下的是与欢乐不相称的孤独与寂莫<br>看在眼中的都是别人的欢乐<br>自己却没有获得的资格<br>只能感叹自己的不幸<br>没有欢乐<br>没有现实中触及得到的悲伤<br>只有自己一人不断地提醒自己<br>都是自己导致的后果<br>总是期望来自他人的奇迹<br>想要做出改变却从未开始<br>只有自己的情感逐渐麻木<br>到头来还是老样子</p>
-<p><em>by 从晴朗的朝色泛起之际开始</em></p>
-
+<p>并非喜剧就能让人感到开心<br>常常一笑了之的背后<br>留下的是与欢乐不相称的孤独与寂莫<br>看在眼中的都是别人的欢乐</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/10/12/%E6%88%91%E4%BB%AC%E6%B4%BB%E5%9C%A8%E4%BD%95%E5%A4%84/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -643,7 +652,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-03 15:42:34" itemprop="dateModified" datetime="2020-10-03T15:42:34+08:00">2020-10-03</time>
+                <time title="Modified: 2020-11-04 21:22:02" itemprop="dateModified" datetime="2020-11-04T21:22:02+08:00">2020-11-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -682,9 +691,14 @@
       
           <h1 id="PPET看板娘！"><a href="#PPET看板娘！" class="headerlink" title="PPET看板娘！"></a>PPET看板娘！</h1><p>右下角的看板娘是不是十分地养眼？你完全可以把她布署到你的桌面上喔！</p>
 <p>访问GITHUB地址：<a target="_blank" rel="noopener" href="https://github.com/zenghongtu/PPet/releases">https://github.com/zenghongtu/PPet/releases</a></p>
-<p>提供了Windows-exe，MacOS-dmg，Debian-deb格式，ArchLinux亲测debtap转包可行</p>
-<p>还支持导入模型（太赞了）</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/10/02/PPET%E7%9C%8B%E6%9D%BF%E5%A8%98%EF%BC%81/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -734,7 +748,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-03 15:42:10" itemprop="dateModified" datetime="2020-10-03T15:42:10+08:00">2020-10-03</time>
+                <time title="Modified: 2020-11-04 21:22:24" itemprop="dateModified" datetime="2020-11-04T21:22:24+08:00">2020-11-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -772,11 +786,14 @@
 
       
           <h1 id="让你的LINUX电脑或者服务器一键LNMP！"><a href="#让你的LINUX电脑或者服务器一键LNMP！" class="headerlink" title="让你的LINUX电脑或者服务器一键LNMP！"></a>让你的LINUX电脑或者服务器一键LNMP！</h1><p>LINUX服务器配置的时候如果使用包管理很多时候会出现无法解析PHP脚本等疑难杂症。。。<del>大概是我水平问题</del><br>所以！！！这里有一个方便的一键配置脚本！！！</p>
-<p>这个脚本是有更新的，请随时关注<a target="_blank" rel="noopener" href="https://lnmp.org/">https://lnmp.org/</a></p>
-<p>对于服务器，这样使用它（此时最新为1.7）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://soft.vpser.net/lnmp/lnmp1.7.tar.gz</span><br><span class="line">tar -xzvf lnmp*</span><br></pre></td></tr></table></figure>
-<p>接着进入目录执行脚本即可，当中需要对参数进行一些基础配置，然后就可以使用你的服务器了!</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/10/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E9%94%AELNMP/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -826,7 +843,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-07 18:02:50" itemprop="dateModified" datetime="2020-10-07T18:02:50+08:00">2020-10-07</time>
+                <time title="Modified: 2020-11-04 21:22:36" itemprop="dateModified" datetime="2020-11-04T21:22:36+08:00">2020-11-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -863,92 +880,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="我玩过的ADV游戏汇总（强推CLANNAD-Steins-Gate-！！！）"><a href="#我玩过的ADV游戏汇总（强推CLANNAD-Steins-Gate-！！！）" class="headerlink" title="我玩过的ADV游戏汇总（强推CLANNAD, Steins;Gate ！！！）"></a>我玩过的ADV游戏汇总（强推CLANNAD, Steins;Gate ！！！）</h1><p>红楼梦：林黛玉与北静王<br>恋爱与选举与巧克力<br>CLANNAD<br>KANNON<br>AIR<br>秋之回忆6：三角波澜<br>苍之彼方的四重奏<br>秋之回忆2<br>秋之回忆1<br>秋之回忆4：变成回忆的你<br>秋之回忆5：中断的胶片<br>秋之回忆3：想君<br>秋之回忆7：勾指起誓的回忆<br>秋之回忆6 FD<br>秋之回忆4 FD：从今以后<br>千恋万花<br>谜语小丑<br>纯白交响曲<br>恋花绽放樱飞时<br>天神乱漫<br>天色幻想岛<br>SPPL<br>CLOVER DAY’s<br>将军大人芳华正茂<br>将军大人芳华正茂FD<br>缘之空<br>悠之空<br>向日葵教会与长长的暑假<br>樱之诗（未完）<br>突然发现我已经恋上你<br>管乐恋曲<br>Making * Lovers!<br>Making * Lovers! vol.1<br>见习恋人<br>恋爱选举<br>花咲workingSpring!<br>夏梦渚<br>卡卢玛卢卡同好会<br>花之天使的夏日恋歌<br>牵绊闪耀的恋之伊吕波<br>流星 世界演绎者<br>LAMUNATION!<br>世界与世界的中心<br>秋之回忆8<br>在这片天空下展开一对翅膀<br>Steins;Gate<br>Meltymoments<br>Happiness2</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh_TW">
-    <link itemprop="mainEntityOfPage" href="https://weiliang1503.gitee.io/blog/2020/10/01/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Weiliang1503">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="从晴朗的朝色泛起之际开始 BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/10/01/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-10-01 18:07:23" itemprop="dateCreated datePublished" datetime="2020-10-01T18:07:23+08:00">2020-10-01</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/blog/2020/10/01/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/blog/2020/10/01/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+          <h1 id="我玩过的ADV游戏汇总（强推CLANNAD-Steins-Gate-！！！）"><a href="#我玩过的ADV游戏汇总（强推CLANNAD-Steins-Gate-！！！）" class="headerlink" title="我玩过的ADV游戏汇总（强推CLANNAD, Steins;Gate ！！！）"></a>我玩过的ADV游戏汇总（强推CLANNAD, Steins;Gate ！！！）</h1><p>红楼梦：林黛玉与北静王<br>恋爱与选举与巧克力<br>CLANNAD<br>KANNON<br>AIR</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/10/01/%E7%8E%A9%E8%BF%87%E7%9A%84ADV%E6%B8%B8%E6%88%8F/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1029,7 +969,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
