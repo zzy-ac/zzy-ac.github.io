@@ -55,6 +55,19 @@
       </tags>
   </entry>
   <entry>
+    <title>图片-By_EF_Cosmos</title>
+    <url>/2020/10/08/%E5%9B%BE%E7%89%87-By-EF-Cosmos/</url>
+    <content><![CDATA[<p><img src="https://pic.downk.cc/item/5f7f345d1cd1bbb86bd52df9.png" alt="图片"></p>
+<p><em>2020/10/08</em></p>
+]]></content>
+      <categories>
+        <category>EF_Cosmos</category>
+      </categories>
+      <tags>
+        <tag>随手写</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>打包软件到AUR</title>
     <url>/2020/11/12/%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%E5%88%B0AUR/</url>
     <content><![CDATA[<h1 id="打包软件并共享到AUR"><a href="#打包软件并共享到AUR" class="headerlink" title="打包软件并共享到AUR"></a>打包软件并共享到AUR</h1><p>对于Arch Linux的用户来说，AUR软件仓库是常常为人所津津乐道的优势。其优点就在于极大的开放性。那么我们也可以打包软件上传到AUR，从白嫖进化到贡献者！</p>
@@ -96,57 +109,6 @@
     <url>/2020/10/02/%E6%9D%BF%E7%BB%98%E6%9C%AD%E8%AE%B0-By-Cosmos/</url>
     <content><![CDATA[<p><img src="https://ftp.bmp.ovh/imgs/2020/10/774dd4eca2fa1c03.png" alt="Cosmos 板绘"></p>
 <p>我心中有颗树苗<br>路过的人都会为它浇水<br>我在等一个人<br>他可以陪我在树下乘凉<br><em>2020/9/6 by EF_Cosmos</em></p>
-]]></content>
-      <categories>
-        <category>EF_Cosmos</category>
-      </categories>
-      <tags>
-        <tag>EF_Cosmos的板绘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图片-By_EF_Cosmos</title>
-    <url>/2020/10/08/%E5%9B%BE%E7%89%87-By-EF-Cosmos/</url>
-    <content><![CDATA[<p><img src="https://pic.downk.cc/item/5f7f345d1cd1bbb86bd52df9.png" alt="图片"></p>
-<p><em>2020/10/08</em></p>
-]]></content>
-      <categories>
-        <category>EF_Cosmos</category>
-      </categories>
-      <tags>
-        <tag>随手写</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>给picom开启高性能模糊透明</title>
-    <url>/2020/12/04/%E7%BB%99picom%E5%BC%80%E5%90%AF%E9%AB%98%E6%80%A7%E8%83%BD%E6%A8%A1%E7%B3%8A%E9%80%8F%E6%98%8E/</url>
-    <content><![CDATA[<h1 id="picom混成器模糊透明来了！"><a href="#picom混成器模糊透明来了！" class="headerlink" title="picom混成器模糊透明来了！"></a>picom混成器模糊透明来了！</h1><p>使用windows manager的图形界面的话，如果不想忍受单薄的画面，当然少不了一个窗口混成器。现在kwin，mutter这些集成在DE里面的wm都整合了混成器。但是像i3这种wm，就需要一个外置混成器来撑撑排面了。</p>
-<a id="more"></a>
-
-<p>现在比较流行的是picom，能够提供不亚于kwin之类的淡入淡出，透明效果，但是模糊背景一直表现不佳。从前的模糊方案只有kernel，能直接通占用10%以上的CPU。然而现在有了新的模糊方案了以后性能有了大幅的提升！</p>
-<p>archlinux先填加archlinuxcn源：</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[archlinuxcn]</span></span><br><span class="line"><span class="attr">SigLevel</span> = Optional TrustAll</span><br><span class="line"><span class="attr">Server</span> = https://mirrors.ustc.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-<p>其它发行版可以自行从github下载源码安装。</p>
-<p>在archlinux下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S picom-git</span><br></pre></td></tr></table></figure>
-<p>然后将以下内容填加到picom.conf里：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line"> <span class="attr">blur-background</span> = <span class="literal">true</span><span class="comment">;</span></span><br><span class="line"> blur:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">method</span> = <span class="string">&quot;dual_kawase&quot;</span><span class="comment">;</span></span><br><span class="line">  <span class="attr">size</span> = <span class="number">10</span><span class="comment">;</span></span><br><span class="line">  <span class="attr">strength</span> = <span class="number">3</span><span class="comment">;</span></span><br><span class="line">  <span class="attr">deviation</span> = <span class="number">5.0</span><span class="comment">;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>用picom –experimental-backends开启picom可以享受背景模糊了！</p>
-<p>*by 从晴朗的朝色泛起之际开始</p>
-]]></content>
-      <categories>
-        <category>从晴朗的朝色泛起之际开始</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>速写札记-By_EF_Cosmos</title>
-    <url>/2020/10/02/%E9%80%9F%E5%86%99%E6%9C%AD%E8%AE%B0-By-EF-Cosmos/</url>
-    <content><![CDATA[<p><img src="https://ftp.bmp.ovh/imgs/2020/10/d953f82bbfc9aebb.jpg" alt="EF_Cosmos 板绘"></p>
-<p><img src="https://ftp.bmp.ovh/imgs/2020/10/7ce64efdcc79507e.jpg" alt="EF_Cosmos 板绘"></p>
-<p>每日速写<br><em>2020/10/02 by EF_Cosmos</em></p>
 ]]></content>
       <categories>
         <category>EF_Cosmos</category>
@@ -198,6 +160,44 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>给picom开启高性能模糊透明</title>
+    <url>/2020/12/04/%E7%BB%99picom%E5%BC%80%E5%90%AF%E9%AB%98%E6%80%A7%E8%83%BD%E6%A8%A1%E7%B3%8A%E9%80%8F%E6%98%8E/</url>
+    <content><![CDATA[<h1 id="picom混成器模糊透明来了！"><a href="#picom混成器模糊透明来了！" class="headerlink" title="picom混成器模糊透明来了！"></a>picom混成器模糊透明来了！</h1><p>使用windows manager的图形界面的话，如果不想忍受单薄的画面，当然少不了一个窗口混成器。现在kwin，mutter这些集成在DE里面的wm都整合了混成器。但是像i3这种wm，就需要一个外置混成器来撑撑排面了。</p>
+<a id="more"></a>
+
+<p>现在比较流行的是picom，能够提供不亚于kwin之类的淡入淡出，透明效果，但是模糊背景一直表现不佳。从前的模糊方案只有kernel，能直接通占用10%以上的CPU。然而现在有了新的模糊方案了以后性能有了大幅的提升！</p>
+<p>archlinux先填加archlinuxcn源：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[archlinuxcn]</span></span><br><span class="line"><span class="attr">SigLevel</span> = Optional TrustAll</span><br><span class="line"><span class="attr">Server</span> = https://mirrors.ustc.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+<p>其它发行版可以自行从github下载源码安装。</p>
+<p>在archlinux下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S picom-git</span><br></pre></td></tr></table></figure>
+<p>然后将以下内容填加到picom.conf里：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"> <span class="attr">blur-background</span> = <span class="literal">true</span><span class="comment">;</span></span><br><span class="line"> blur:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">method</span> = <span class="string">&quot;dual_kawase&quot;</span><span class="comment">;</span></span><br><span class="line">  <span class="attr">size</span> = <span class="number">10</span><span class="comment">;</span></span><br><span class="line">  <span class="attr">strength</span> = <span class="number">3</span><span class="comment">;</span></span><br><span class="line">  <span class="attr">deviation</span> = <span class="number">5.0</span><span class="comment">;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>用picom –experimental-backends开启picom可以享受背景模糊了！</p>
+<p>*by 从晴朗的朝色泛起之际开始</p>
+]]></content>
+      <categories>
+        <category>从晴朗的朝色泛起之际开始</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>速写札记-By_EF_Cosmos</title>
+    <url>/2020/10/02/%E9%80%9F%E5%86%99%E6%9C%AD%E8%AE%B0-By-EF-Cosmos/</url>
+    <content><![CDATA[<p><img src="https://ftp.bmp.ovh/imgs/2020/10/d953f82bbfc9aebb.jpg" alt="EF_Cosmos 板绘"></p>
+<p><img src="https://ftp.bmp.ovh/imgs/2020/10/7ce64efdcc79507e.jpg" alt="EF_Cosmos 板绘"></p>
+<p>每日速写<br><em>2020/10/02 by EF_Cosmos</em></p>
+]]></content>
+      <categories>
+        <category>EF_Cosmos</category>
+      </categories>
+      <tags>
+        <tag>EF_Cosmos的板绘</tag>
       </tags>
   </entry>
 </search>
