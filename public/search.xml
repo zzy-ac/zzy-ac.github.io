@@ -1,203 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>PPET看板娘！</title>
-    <url>/2020/10/02/PPET%E7%9C%8B%E6%9D%BF%E5%A8%98%EF%BC%81/</url>
-    <content><![CDATA[<h1 id="PPET看板娘！"><a href="#PPET看板娘！" class="headerlink" title="PPET看板娘！"></a>PPET看板娘！</h1><p>右下角的看板娘是不是十分地养眼？你完全可以把她布署到你的桌面上喔！</p>
-<p>访问GITHUB地址：<a href="https://github.com/zenghongtu/PPet/releases">https://github.com/zenghongtu/PPet/releases</a></p>
-<a id="more"></a>
-<p>提供了Windows-exe，MacOS-dmg，Debian-deb格式，ArchLinux亲测debtap转包可行</p>
-<p>还支持导入模型（太赞了）</p>
-]]></content>
-      <categories>
-        <category>从晴朗的朝色泛起之际开始</category>
-      </categories>
-      <tags>
-        <tag>有趣</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图片-By_EF_Cosmos</title>
-    <url>/2020/10/08/%E5%9B%BE%E7%89%87-By-EF-Cosmos/</url>
-    <content><![CDATA[<p><img src="https://pic.downk.cc/item/5f7f345d1cd1bbb86bd52df9.png" alt="图片"></p>
-<p><em>2020/10/08</em></p>
-]]></content>
-      <categories>
-        <category>EF_Cosmos</category>
-      </categories>
-      <tags>
-        <tag>随手写</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在Linux系统上开直播</title>
-    <url>/2020/11/26/%E5%9C%A8Linux%E7%B3%BB%E7%BB%9F%E4%B8%8A%E5%BC%80%E7%9B%B4%E6%92%AD/</url>
-    <content><![CDATA[<h1 id="把你的屏幕分享给大家！"><a href="#把你的屏幕分享给大家！" class="headerlink" title="把你的屏幕分享给大家！"></a>把你的屏幕分享给大家！</h1><p>大家总是会有想要向别人展示东西的时候。也许是向几个同学，或者几个朋友展示自己的电脑展幕。在种时候用QQ或者Skype等等总是体验不太好，犹其在LINUX上的时候。</p>
+    <title>Hello World</title>
+    <url>/zzy_blog/2020/12/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <a id="more"></a>
 
-<p>这种时候就把自己的展幕直播出去咯。用到的有一个LINUX系统（笔者用的是ARCH，比较方便，大部分发行版进行改动后都可行），一个带有RTMP模块编译的NGINX服务端，一个内网穿透服务（笔者用的是Sakura FRPC），和OBS录播系统。</p>
-<p>先安装NGINX-RTMP，笔者直接使用AUR安装了：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -S nginx-rtmp</span><br></pre></td></tr></table></figure>
-<p>然后是obs,直接pacman安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S obs-studio</span><br></pre></td></tr></table></figure>
-<p>启动nginx服务，开启obs进行串流，地址为rtmp://127.0.0.1/live<br>接着去frpc弄一个账号，进行内网穿透，内网端口就填127.0.0.1:1935，然后把你得到的外网端口改成RTMP格式的连接发给你的小伙伴，他就可以看见你的屏幕了！（RTMP通常使用VLC播放即可，POTPLAYER也可以）</p>
-<p>开直播吧</p>
-<p>*by 从晴朗的朝色泛起之际开始</p>
-]]></content>
-      <categories>
-        <category>从晴朗的朝色泛起之际开始</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>打包软件到AUR</title>
-    <url>/2020/11/12/%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%E5%88%B0AUR/</url>
-    <content><![CDATA[<h1 id="打包软件并共享到AUR"><a href="#打包软件并共享到AUR" class="headerlink" title="打包软件并共享到AUR"></a>打包软件并共享到AUR</h1><p>对于Arch Linux的用户来说，AUR软件仓库是常常为人所津津乐道的优势。其优点就在于极大的开放性。那么我们也可以打包软件上传到AUR，从白嫖进化到贡献者！</p>
-<p>首先到AUR注册一个账户，并且填入在本机生成的ssh密钥。然后克隆一个空仓库：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> ssh://aur@aur.archlinux.org/gwm-git.git</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>像这样，然后放入pkgbuild和校验文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add PKGBUILD .SRCINFO</span><br></pre></td></tr></table></figure>
-<p>然后上传</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-<p>接着在AUR上就可以看到你的软件了，可以用yay安装了！！</p>
-]]></content>
-      <categories>
-        <category>从晴朗的朝色泛起之际开始</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2020年10月12日</title>
-    <url>/2020/10/12/%E6%88%91%E4%BB%AC%E6%B4%BB%E5%9C%A8%E4%BD%95%E5%A4%84/</url>
-    <content><![CDATA[<p>#写于2020-10-12</p>
-<p>并非喜剧就能让人感到开心<br>常常一笑了之的背后<br>留下的是与欢乐不相称的孤独与寂莫<br>看在眼中的都是别人的欢乐</p>
-<a id="more"></a>
-<p>自己却没有获得的资格<br>只能感叹自己的不幸<br>没有欢乐<br>没有现实中触及得到的悲伤<br>只有自己一人不断地提醒自己<br>都是自己导致的后果<br>总是期望来自他人的奇迹<br>想要做出改变却从未开始<br>只有自己的情感逐渐麻木<br>到头来还是老样子</p>
-<p><em>by 从晴朗的朝色泛起之际开始</em></p>
-]]></content>
-      <categories>
-        <category>从晴朗的朝色泛起之际开始</category>
-      </categories>
-      <tags>
-        <tag>随手写</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器一键LNMP</title>
-    <url>/2020/10/02/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E9%94%AELNMP/</url>
-    <content><![CDATA[<h1 id="让你的LINUX电脑或者服务器一键LNMP！"><a href="#让你的LINUX电脑或者服务器一键LNMP！" class="headerlink" title="让你的LINUX电脑或者服务器一键LNMP！"></a>让你的LINUX电脑或者服务器一键LNMP！</h1><p>LINUX服务器配置的时候如果使用包管理很多时候会出现无法解析PHP脚本等疑难杂症。。。<del>大概是我水平问题</del><br>所以！！！这里有一个方便的一键配置脚本！！！</p>
-<a id="more"></a>
-<p>这个脚本是有更新的，请随时关注<a href="https://lnmp.org/">https://lnmp.org/</a></p>
-<p>对于服务器，这样使用它（此时最新为1.7）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget http://soft.vpser.net/lnmp/lnmp1.7.tar.gz</span><br><span class="line">tar -xzvf lnmp*</span><br></pre></td></tr></table></figure>
-<p>接着进入目录执行脚本即可，当中需要对参数进行一些基础配置，然后就可以使用你的服务器了!</p>
-]]></content>
-      <categories>
-        <category>从晴朗的朝色泛起之际开始</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>板绘札记-By_EF_Cosmos</title>
-    <url>/2020/10/02/%E6%9D%BF%E7%BB%98%E6%9C%AD%E8%AE%B0-By-Cosmos/</url>
-    <content><![CDATA[<p><img src="https://ftp.bmp.ovh/imgs/2020/10/774dd4eca2fa1c03.png" alt="Cosmos 板绘"></p>
-<p>我心中有颗树苗<br>路过的人都会为它浇水<br>我在等一个人<br>他可以陪我在树下乘凉<br><em>2020/9/6 by EF_Cosmos</em></p>
-]]></content>
-      <categories>
-        <category>EF_Cosmos</category>
-      </categories>
-      <tags>
-        <tag>EF_Cosmos的板绘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>玩过的ADV游戏</title>
-    <url>/2020/10/01/%E7%8E%A9%E8%BF%87%E7%9A%84ADV%E6%B8%B8%E6%88%8F/</url>
-    <content><![CDATA[<h1 id="我玩过的ADV游戏汇总（强推CLANNAD-Steins-Gate-！！！）"><a href="#我玩过的ADV游戏汇总（强推CLANNAD-Steins-Gate-！！！）" class="headerlink" title="我玩过的ADV游戏汇总（强推CLANNAD, Steins;Gate ！！！）"></a>我玩过的ADV游戏汇总（强推CLANNAD, Steins;Gate ！！！）</h1><p>红楼梦：林黛玉与北静王<br>恋爱与选举与巧克力<br>CLANNAD<br>KANNON<br>AIR</p>
-<a id="more"></a>
-<p>秋之回忆6：三角波澜<br>苍之彼方的四重奏<br>秋之回忆2<br>秋之回忆1<br>秋之回忆4：变成回忆的你<br>秋之回忆5：中断的胶片<br>秋之回忆3：想君<br>秋之回忆7：勾指起誓的回忆<br>秋之回忆6 FD<br>秋之回忆4 FD：从今以后<br>千恋万花<br>谜语小丑<br>纯白交响曲<br>恋花绽放樱飞时<br>天神乱漫<br>天色幻想岛<br>SPPL<br>CLOVER DAY’s<br>将军大人芳华正茂<br>将军大人芳华正茂FD<br>缘之空<br>悠之空<br>向日葵教会与长长的暑假<br>樱之诗（未完）<br>突然发现我已经恋上你<br>管乐恋曲<br>Making * Lovers!<br>Making * Lovers! vol.1<br>见习恋人<br>恋爱选举<br>花咲workingSpring!<br>夏梦渚<br>卡卢玛卢卡同好会<br>花之天使的夏日恋歌<br>牵绊闪耀的恋之伊吕波<br>流星 世界演绎者<br>LAMUNATION!<br>世界与世界的中心<br>秋之回忆8<br>在这片天空下展开一对翅膀<br>Steins;Gate<br>Meltymoments<br>Happiness2<br>与她*心渐近<br>魔女的夜宴<br>星光咖啡馆与死神之蝶</p>
-]]></content>
-      <categories>
-        <category>从晴朗的朝色泛起之际开始</category>
-      </categories>
-      <tags>
-        <tag>随手写</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用Linux服务器实现一起听歌</title>
-    <url>/2020/10/14/%E7%94%A8Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E4%B8%80%E8%B5%B7%E5%90%AC%E6%AD%8C/</url>
-    <content><![CDATA[<h1 id="用服务器一起听歌！"><a href="#用服务器一起听歌！" class="headerlink" title="用服务器一起听歌！"></a>用服务器一起听歌！</h1><p>近来用了下QQ的一起听歌功能，感觉挺有意思，但是只能听QQ歌单里有的歌，十分受限。所以决定自己用服务器搭一个差不多的听歌方案。</p>
-<p>一起听歌最重要的就是同步，所有人都同时听同一首曲子的同一个地方，这一点和直播很像，所以决定用比较常见的流媒体方式搭建，说白了就是开了一个音频直播。</p>
-<p>我用的环境是CentOS7，当然这个教程对别的大部分发行版也适用。需要的软件有ffmpeg和make。</p>
-<a id="more"></a>
-<p>ffmpeg的安装不多说了，Debian系一般可以直接apt安装，其它发行版编译安装既可。</p>
-<p>然后搭建流媒体服务器，用的是SRS，先下载源码包，编译安装：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;ossrs&#x2F;srs&#x2F;archive&#x2F;v3.0-r0.tar.gz</span><br><span class="line">tar -zxvf srs-3.0-r0.tar.gz</span><br><span class="line">cd srs-3.0-r0&#x2F;trunk&#x2F;</span><br><span class="line">.&#x2F;configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>然后开启服务：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ln -sf &#x2F;usr&#x2F;local&#x2F;srs&#x2F;etc&#x2F;init.d&#x2F;srs &#x2F;etc&#x2F;init.d&#x2F;srs</span><br><span class="line">cp -f &#x2F;usr&#x2F;local&#x2F;srs&#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;srs.service &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;srs.service</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl start srs</span><br></pre></td></tr></table></figure>
-<p>如果想开机启动的话：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable srs</span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>然后我把要放的音乐都放到了/data下<br>下面要做的就是开始推流了，用ffmpeg推流：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ffmpeg -re -i &#x2F;data&#x2F;mymusic.mp3 -f flv -y rtmp:&#x2F;&#x2F;49.234.70.34&#x2F;live&#x2F;livestream</span><br></pre></td></tr></table></figure>
-<p>这时候用vlc或者别的流媒体播放器就可以听音乐了，但是放完一首就会停止，可用性不高，于是我写了一个自动循环的脚本：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">while true</span><br><span class="line">do</span><br><span class="line">	for file in $( ls &#x2F;data )</span><br><span class="line">	do</span><br><span class="line">		output&#x3D;&#96;ffmpeg -re -i &#x2F;data&#x2F;$file -f flv -y rtmp:&#x2F;&#x2F;49.234.70.34&#x2F;live&#x2F;livestream&#96;</span><br><span class="line">	done</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<p>这个脚本会自动播放/data目录下的文件，文件名最好全英文，不然可能出问题。要用的话只要改一下我的ip就行了</p>
-<p>然后你就可以用这个流媒体服务器和朋友们一起听任何你想听的歌了！！！</p>
-<p>我的一起听歌服务器是rtmp://49.234.70.34/live/livestream，如果卡就是人太多了，自觉退出吧～～～（笑哭）</p>
-<p><em>by 从晴朗的朝色泛起之际开始</em></p>
-]]></content>
-      <categories>
-        <category>从晴朗的朝色泛起之际开始</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>给picom开启高性能模糊透明</title>
-    <url>/2020/12/04/%E7%BB%99picom%E5%BC%80%E5%90%AF%E9%AB%98%E6%80%A7%E8%83%BD%E6%A8%A1%E7%B3%8A%E9%80%8F%E6%98%8E/</url>
-    <content><![CDATA[<h1 id="picom混成器模糊透明来了！"><a href="#picom混成器模糊透明来了！" class="headerlink" title="picom混成器模糊透明来了！"></a>picom混成器模糊透明来了！</h1><p>使用windows manager的图形界面的话，如果不想忍受单薄的画面，当然少不了一个窗口混成器。现在kwin，mutter这些集成在DE里面的wm都整合了混成器。但是像i3这种wm，就需要一个外置混成器来撑撑排面了。</p>
-<a id="more"></a>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>现在比较流行的是picom，能够提供不亚于kwin之类的淡入淡出，透明效果，但是模糊背景一直表现不佳。从前的模糊方案只有kernel，能直接通占用10%以上的CPU。然而现在有了新的模糊方案了以后性能有了大幅的提升！</p>
-<p>archlinux先填加archlinuxcn源：</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[archlinuxcn]</span></span><br><span class="line"><span class="attr">SigLevel</span> = Optional TrustAll</span><br><span class="line"><span class="attr">Server</span> = https://mirrors.ustc.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
-<p>其它发行版可以自行从github下载源码安装。</p>
-<p>在archlinux下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S picom-git</span><br></pre></td></tr></table></figure>
-<p>然后将以下内容填加到picom.conf里：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line"> <span class="attr">blur-background</span> = <span class="literal">true</span><span class="comment">;</span></span><br><span class="line"> blur:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">method</span> = <span class="string">&quot;dual_kawase&quot;</span><span class="comment">;</span></span><br><span class="line">  <span class="attr">size</span> = <span class="number">10</span><span class="comment">;</span></span><br><span class="line">  <span class="attr">strength</span> = <span class="number">3</span><span class="comment">;</span></span><br><span class="line">  <span class="attr">deviation</span> = <span class="number">5.0</span><span class="comment">;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>用picom –experimental-backends开启picom可以享受背景模糊了！</p>
-<p>*by 从晴朗的朝色泛起之际开始</p>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>从晴朗的朝色泛起之际开始</category>
-      </categories>
+  </entry>
+  <entry>
+    <title>zzy诗集</title>
+    <url>/zzy_blog/2020/12/06/zzy%E8%AF%97%E9%9B%86/</url>
+    <content><![CDATA[<center>
+
+<p>别枌榆前赠外祖母<br>青螺常将泪竹寻，二妃植此盼君停。<br>莫道浮崂云遮雾，原知卿本望东行。</p>
+<p>初别故里有感<br>晨起难忘昨宵凉，涛声依旧月如霜。<br>碧海连天皆忧色，离家万里心下惶。</p>
+<a id="more"></a>
+<p>八月十五临沧海望月<br>银丝漫洒星光弥，波澜涌起海风盈。<br>昂首遥思巴陵月，方知何谓故乡明。</p>
+<p>石老人夜游<br>半片壳身纹涛流，一曲弦月映乡游。<br>社稷同待今朝舞，望卿默念昨宵愁。</p>
+<p>浮山梦<br>醉卧浮山今朝醒，笑叹碧波迎风泠。<br>莘莘万里求知路，但求数偶伴同行。</p>
+<p>潇湘神·雨秋<br>昨月寒，昨月寒，晓风叹雨卧窗澜。<br>欲待万花零落处，持菊呻呓愿卿还。</p>
+<p>登麦岛<br>隔海轻望浮山远，只影孤长碧涛浅。<br>金佛落辉佑渔舟，深波万里亦寻源。</p>
+<p>忆巴陵(其一)<br>金鹗振翼破巴陵，潜龙逐鼈绕洞庭。<br>湘语乡愁相思苦，望川妄言忘故云。</p>
+<p>忆巴陵(其二)<br>昔日洞庭畔，今朝崂山漫。<br>欲问何所念，唯此巴陵岸。</p>
+<p>闲作<br>轻风携雨送春澜，攥柳寻芳候卿还。<br>蒹葭不解襄王意，绕江千尺一朝燃。</p>
+<p>如墨<br>闲折寒山凝碧远，青针瘦密云似烟。<br>一砚风霜一玺雨，如墨千层画旧年。</p>
+<p>临波兴作<br>潜波梦醒问昨宵，清枫雀语话天辽。<br>懵懂难知少年事，从此青空伴卿翱。</p>
+<p>誓恋<br>月星湾头夜风闻，畅语欢颜映玉轮。<br>轻唇密语从前事，临涛誓作护君人。</p>
+<p>闲时偶作<br>林深山起云间处，惊有天人绘鸡粟。<br>枫扫眼迷混不见，疑是梦里庸人误。</p>
+<p>初雪<br>轻雪恍入梦，若羽悠从风。<br>伊人凭栏望，盼雨伴春声。</p>
+<p>陨星<br>繁辰揽月残星坠，此情入骨三生璀。<br>昂首渐弃寒霜冷，愿祈苍颜犹相偎。</p>
+<p>海作冰<br>万顷深波遇风凝，碧涛息音候鸟贫。<br>六星并蒂双月嵌，玄冰瞬眼化烟泯。</p>
+<p>正月初一游归元寺<br>浅霜清雨淋汉水，古刹归元樱草垒。<br>除年迎春期杏草，阖家齐聚望明晖。</p>
+<p>春来<br>乱草枯枝半抹白，缀紫含香望东来。<br>彩卷如诗卿若画，相思犹渴慕君怀。</p>
+<p>思，愁<br>小别严冬廿卅日，怨卿夜夜泪难拭。<br>暂离相去数百里，愁思半点做幽词。</p>
+<p>墨莲<br>​湘水塘前映玉华，初夏荷头滴泪芽。<br>​罗衫点墨绢绸染，携手夜梦望楚霞。</p>
+<p>夏日偶书<br>湘北楼前欲归迟，金鹗没泽霞影直。<br>却道穷晷​更念君，蝉声梦里惊啸时。</p>
+<p>穿云<br>清风朗日玄渡思，星盘闲坐漫弄子。​<br>摇首轻瞟轩窗亮，扶摇婉转绕云湿。</p>
+<p>午眠<br>一点斜云绕日跌，清光渐撒户兰鲜。<br>偷得半晌琼瑶梦，伏案惊觉是人间。</p>
+<p>寒冬暖月<br>惨云枯月候鸟无，落木残灯乱枝酥。<br>年关愈近烟光远，游子梦探洞庭哭。</p>
+<p>寻趣<br>卧马沿山寻碧潭，清溪尤澈孰欲还。<br>繁荫间洒淡春光，青笋甘洌惹人贪。</p>
+<p>不鸣<br>2020.07.22-22:30<br>暮暑辗转蝉将扰，梅实引霈巴陵扫。<br>重云渐拢螗蜩肃，知有愁心待拂晓。</p>
+<p>秋夜<br>2020.10.22-18.00<br>残松叶密广寒遮，烛盏曳曳秋风扯。<br>层林圜转混不现，只影路寻身难舍。​</p>
+</center>
+]]></content>
       <tags>
-        <tag>Linux</tag>
+        <tag>诗集</tag>
       </tags>
   </entry>
   <entry>
-    <title>速写札记-By_EF_Cosmos</title>
-    <url>/2020/10/02/%E9%80%9F%E5%86%99%E6%9C%AD%E8%AE%B0-By-EF-Cosmos/</url>
-    <content><![CDATA[<p><img src="https://ftp.bmp.ovh/imgs/2020/10/d953f82bbfc9aebb.jpg" alt="EF_Cosmos 板绘"></p>
-<p><img src="https://ftp.bmp.ovh/imgs/2020/10/7ce64efdcc79507e.jpg" alt="EF_Cosmos 板绘"></p>
-<p>每日速写<br><em>2020/10/02 by EF_Cosmos</em></p>
+    <title>离</title>
+    <url>/zzy_blog/2020/11/28/%E7%A6%BB/</url>
+    <content><![CDATA[<center>
+
+<p>凛冬骤雨斜，枯木把琴压。<br>听曲弦忽断，有鲠北风杀。</p>
+</center>
 ]]></content>
-      <categories>
-        <category>EF_Cosmos</category>
-      </categories>
       <tags>
-        <tag>EF_Cosmos的板绘</tag>
+        <tag>诗集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>随作</title>
+    <url>/zzy_blog/2020/12/04/%E9%9A%8F%E4%BD%9C/</url>
+    <content><![CDATA[<center>
+
+<p>枯木梢头日渐昏，青天如璧雀无痕。<br>北风驱雁恐寒至，三月相邀会剑池。</p>
+</center>
+]]></content>
+      <tags>
+        <tag>诗集</tag>
       </tags>
   </entry>
 </search>
