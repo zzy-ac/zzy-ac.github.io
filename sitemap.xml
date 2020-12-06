@@ -102,36 +102,36 @@
 
   <url>
     <loc>https://weiliang1503.gitee.io/</loc>
-    <lastmod>2020-12-04</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://weiliang1503.gitee.io/tags/%E9%9A%8F%E6%89%8B%E5%86%99/</loc>
-    <lastmod>2020-12-04</lastmod>
+    <loc>https://weiliang1503.gitee.io/tags/%E6%9C%89%E8%B6%A3/</loc>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://weiliang1503.gitee.io/tags/Linux/</loc>
-    <lastmod>2020-12-04</lastmod>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://weiliang1503.gitee.io/tags/%E9%9A%8F%E6%89%8B%E5%86%99/</loc>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://weiliang1503.gitee.io/tags/EF-Cosmos%E7%9A%84%E6%9D%BF%E7%BB%98/</loc>
-    <lastmod>2020-12-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://weiliang1503.gitee.io/tags/%E6%9C%89%E8%B6%A3/</loc>
-    <lastmod>2020-12-04</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -139,15 +139,15 @@
 
   
   <url>
-    <loc>https://weiliang1503.gitee.io/categories/EF-Cosmos/</loc>
-    <lastmod>2020-12-04</lastmod>
+    <loc>https://weiliang1503.gitee.io/categories/%E4%BB%8E%E6%99%B4%E6%9C%97%E7%9A%84%E6%9C%9D%E8%89%B2%E6%B3%9B%E8%B5%B7%E4%B9%8B%E9%99%85%E5%BC%80%E5%A7%8B/</loc>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://weiliang1503.gitee.io/categories/%E4%BB%8E%E6%99%B4%E6%9C%97%E7%9A%84%E6%9C%9D%E8%89%B2%E6%B3%9B%E8%B5%B7%E4%B9%8B%E9%99%85%E5%BC%80%E5%A7%8B/</loc>
-    <lastmod>2020-12-04</lastmod>
+    <loc>https://weiliang1503.gitee.io/categories/EF-Cosmos/</loc>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
