@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/zzy_blog/2020/12/06/hello-world/</url>
+    <url>/2020/12/06/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <a id="more"></a>
 
@@ -22,7 +22,7 @@
   </entry>
   <entry>
     <title>zzy诗集</title>
-    <url>/zzy_blog/2020/12/06/zzy%E8%AF%97%E9%9B%86/</url>
+    <url>/2020/12/06/zzy%E8%AF%97%E9%9B%86/</url>
     <content><![CDATA[<center>
 
 <p>别枌榆前赠外祖母<br>青螺常将泪竹寻，二妃植此盼君停。<br>莫道浮崂云遮雾，原知卿本望东行。</p>
@@ -62,7 +62,7 @@
   </entry>
   <entry>
     <title>离</title>
-    <url>/zzy_blog/2020/11/28/%E7%A6%BB/</url>
+    <url>/2020/11/28/%E7%A6%BB/</url>
     <content><![CDATA[<center>
 
 <p>凛冬骤雨斜，枯木把琴压。<br>听曲弦忽断，有鲠北风杀。</p>
@@ -74,7 +74,7 @@
   </entry>
   <entry>
     <title>随作</title>
-    <url>/zzy_blog/2020/12/04/%E9%9A%8F%E4%BD%9C/</url>
+    <url>/2020/12/04/%E9%9A%8F%E4%BD%9C/</url>
     <content><![CDATA[<center>
 
 <p>枯木梢头日渐昏，青天如璧雀无痕。<br>北风驱雁恐寒至，三月相邀会剑池。</p>
