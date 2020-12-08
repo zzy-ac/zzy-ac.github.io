@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zzy-ac.github.io/about/index.html</loc>
+    <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2020-12-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zzy-ac.github.io/2020/12/06/zzy%E8%AF%97%E9%9B%86/</loc>
+    <loc>http://example.com/2020/12/06/zzy%E8%AF%97%E9%9B%86/</loc>
     
     <lastmod>2020-12-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zzy-ac.github.io/2020/11/28/%E7%A6%BB/</loc>
+    <loc>http://example.com/2020/11/28/%E7%A6%BB/</loc>
     
     <lastmod>2020-12-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zzy-ac.github.io/2020/12/04/%E9%9A%8F%E4%BD%9C/</loc>
+    <loc>http://example.com/2020/12/04/%E9%9A%8F%E4%BD%9C/</loc>
     
     <lastmod>2020-12-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zzy-ac.github.io/2020/12/06/hello-world/</loc>
+    <loc>http://example.com/2020/12/06/hello-world/</loc>
     
     <lastmod>2020-12-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zzy-ac.github.io/tags/index.html</loc>
+    <loc>http://example.com/tags/index.html</loc>
     
     <lastmod>2020-11-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zzy-ac.github.io/categories/index.html</loc>
+    <loc>http://example.com/categories/index.html</loc>
     
     <lastmod>2020-11-04</lastmod>
     
@@ -52,16 +52,16 @@
   
 
   <url>
-    <loc>https://zzy-ac.github.io/</loc>
-    <lastmod>2020-12-07</lastmod>
+    <loc>http://example.com/</loc>
+    <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://zzy-ac.github.io/tags/%E8%AF%97%E9%9B%86/</loc>
-    <lastmod>2020-12-07</lastmod>
+    <loc>http://example.com/tags/%E8%AF%97%E9%9B%86/</loc>
+    <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
