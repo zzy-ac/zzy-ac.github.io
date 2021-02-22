@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>EMUI11第三方桌面启动器教程</title>
+    <url>/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/</url>
+    <content><![CDATA[<p>准备：一个第三方起动器，小黑屋，一个电脑（用来激活小黑屋）<br>1、下载第三方启动器<br>2、打开启动器，并在华为的应用设置里设置第三方起动器允许开机自起<br>3、用adb指令激活小黑屋，并在小黑屋中将华为桌面冻结（adb命令使用方法小黑屋有提供完整教程）<br>4、重启手机即可完美使用第三方启动器</p>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SDDM汉化</title>
     <url>/2020/12/18/sddm-han-hua/</url>
     <content><![CDATA[<p>用文本编辑器打开/usr/lib/systemd/system/sddm.service<br>在[Service]下添加Environment=LANG=zh_CN.UTF-8</p>
@@ -13,12 +22,29 @@
       </tags>
   </entry>
   <entry>
-    <title>EMUI11第三方桌面启动器教程</title>
-    <url>/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/</url>
-    <content><![CDATA[<p>准备：一个第三方起动器，小黑屋，一个电脑（用来激活小黑屋）<br>1、下载第三方启动器<br>2、打开启动器，并在华为的应用设置里设置第三方起动器允许开机自起<br>3、用adb指令激活小黑屋，并在小黑屋中将华为桌面冻结（adb命令使用方法小黑屋有提供完整教程）<br>4、重启手机即可完美使用第三方启动器</p>
+    <title>华为手机EMUI11，去除xxx正在其他应用上层显示这一通知</title>
+    <url>/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/</url>
+    <content><![CDATA[<p>1、首先下载通知滤盒0.7.0这个版本（新版本收费）<br>2、下好之后先别打开，去设置→移动网络→流量管理→应用联网→找到通知滤盒把wlan和移动数据全关了<br>3、打开通知滤盒，选中xxx正在其他应用上层显示，长按，选择消除。<br>4、完成。<br>5、如有失效，请重复以上操作或按软件内提示操作</p>
 ]]></content>
       <tags>
         <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新始</title>
+    <url>/2021/02/20/xin-shi/</url>
+    <content><![CDATA[<center>
+
+<p>初雪若杨稍拂面，莫分南北恍作春。<br>仍忆洞庭湖岸柳，迎风轻扫绕心弦。</p>
+<p>薄云若纱断凡穹，翻涌腾挪现蛟龙。<br>铁翼御风随心过，始皇未敢与君同。</p>
+<p>晨来逐浪堰虹堤，柳芽若雾芦蒿挤。<br>扁舟一叶张弓望，去雁难寻人莫移。</p>
+</center>
+]]></content>
+      <categories>
+        <category>诗词创作</category>
+      </categories>
+      <tags>
+        <tag>诗集</tag>
       </tags>
   </entry>
   <entry>
@@ -78,32 +104,6 @@
       </categories>
       <tags>
         <tag>诗集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新始</title>
-    <url>/2021/02/20/xin-shi/</url>
-    <content><![CDATA[<center>
-
-<p>初雪若杨稍拂面，莫分南北恍作春。<br>仍忆洞庭湖岸柳，迎风轻扫绕心弦。</p>
-<p>薄云若纱断凡穹，翻涌腾挪现蛟龙。<br>铁翼御风随心过，始皇未敢与君同。</p>
-<p>晨来逐浪堰虹堤，柳芽若雾芦蒿挤。<br>扁舟一叶张弓望，去雁难寻人莫移。</p>
-</center>
-]]></content>
-      <categories>
-        <category>诗词创作</category>
-      </categories>
-      <tags>
-        <tag>诗集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>华为手机EMUI11，去除xxx正在其他应用上层显示这一通知</title>
-    <url>/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/</url>
-    <content><![CDATA[<p>1、首先下载通知滤盒0.7.0这个版本（新版本收费）<br>2、下好之后先别打开，去设置→移动网络→流量管理→应用联网→找到通知滤盒把wlan和移动数据全关了<br>3、打开通知滤盒，选中xxx正在其他应用上层显示，长按，选择消除。<br>4、完成。<br>5、如有失效，请重复以上操作或按软件内提示操作</p>
-]]></content>
-      <tags>
-        <tag>技术</tag>
       </tags>
   </entry>
   <entry>
