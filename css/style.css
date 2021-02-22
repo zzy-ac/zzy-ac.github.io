@@ -125,6 +125,49 @@ body.mdui-appbar-with-toolbar.mdui-appbar-with-tab-larger {
   font-style: inherit;
 }
 
+/* Iconfont */
+@font-face {
+  font-family: 'icon-font';
+  src: url('../icons/gitee-icons/iconfont.eot');
+  src: url('../icons/gitee-icons/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../icons/gitee-icons/iconfont.woff') format('woff'),
+    url('../icons/gitee-icons/iconfont.ttf') format('truetype'),
+    url('../icons/gitee-icons/iconfont.svg#iconfont') format('svg');
+}
+
+.icon-font {
+  font-family: 'icon-font' !important;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  font-style: inherit;
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../icons/telegram-icons/iconfont.eot');
+  src: url('../icons/telegram-icons/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../icons/telegram-icons/iconfont.woff') format('woff'),
+    url('../icons/telegram-icons/iconfont.ttf') format('truetype'),
+    url('../icons/telegram-icons/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  font-style: inherit;
+}
+
 /* Avatar Animation */
 img.avatar-animation {
   -webkit-transform-style: preserve-3d;
