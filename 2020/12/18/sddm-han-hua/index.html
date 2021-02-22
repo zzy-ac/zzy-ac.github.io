@@ -8,30 +8,30 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>EMUI11第三方桌面启动器教程 | zzy的博客</title>
+  <title>SDDM汉化 | zzy的博客</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
-  <link rel="alternate" href="https://zzy-ac.gitee.io" title="zzy的博客" >
-  <meta name="description" content="准备：一个第三方起动器，小黑屋，一个电脑（用来激活小黑屋）1、下载第三方启动器2、打开启动器，并在华为的应用设置里设置第三方起动器允许开机自起3、用adb指令激活小黑屋，并在小黑屋中将华为桌面冻结（adb命令使用方法小黑屋有提供完整教程）4、重启手机即可完美使用第三方启动器">
+  <link rel="alternate" href="/atom.xml" title="zzy的博客" type="application/atom+xml">
+  <meta name="description" content="用文本编辑器打开&#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;sddm.service在[Service]下添加Environment&#x3D;LANG&#x3D;zh_CN.UTF-8">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EMUI11第三方桌面启动器教程">
-<meta property="og:url" content="https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:title" content="SDDM汉化">
+<meta property="og:url" content="https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/index.html">
 <meta property="og:site_name" content="zzy的博客">
-<meta property="og:description" content="准备：一个第三方起动器，小黑屋，一个电脑（用来激活小黑屋）1、下载第三方启动器2、打开启动器，并在华为的应用设置里设置第三方起动器允许开机自起3、用adb指令激活小黑屋，并在小黑屋中将华为桌面冻结（adb命令使用方法小黑屋有提供完整教程）4、重启手机即可完美使用第三方启动器">
+<meta property="og:description" content="用文本编辑器打开&#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;sddm.service在[Service]下添加Environment&#x3D;LANG&#x3D;zh_CN.UTF-8">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-04T10:55:50.000Z">
-<meta property="article:modified_time" content="2021-02-21T14:13:51.559Z">
+<meta property="article:published_time" content="2020-12-18T09:29:07.000Z">
+<meta property="article:modified_time" content="2021-02-21T14:13:51.560Z">
 <meta property="article:author" content="zzy">
-<meta property="article:tag" content="技术">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
-  <meta name="keywords" content=",技术">
+  <meta name="keywords" content=",linux">
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="zzy的博客">
-  <meta name="msapplication-starturl" content="https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/">
+  <meta name="msapplication-starturl" content="https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="zzy的博客">
@@ -39,7 +39,7 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <link rel="canonical" href="https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/">
+    <link rel="canonical" href="https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/">
   
 
   
@@ -56,7 +56,7 @@
   
 <link rel="stylesheet" href="/custom.css">
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
   <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
   <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
@@ -67,7 +67,7 @@
     <a href="/" class="mdui-typo-headline">zzy的博客</a>
     <div class="mdui-toolbar-spacer"></div>
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
-    <a target="_blank" rel="noopener" href="https://zzy-ac.gitee.io" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
   </div>
 </header>
 <div class="mdui-dialog" id="search">
@@ -178,11 +178,11 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-17.png" style="max-height: 240px;">
+      <img src="/images/random/material-12.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">EMUI11第三方桌面启动器教程</div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2021-02-04 / <i class="iconfont">&#xe601;</i> zzy</div>
+          <div class="mdui-card-primary-title">SDDM汉化</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-18 / <i class="iconfont">&#xe601;</i> zzy</div>
         </div>
       </div>
       <div class="mdui-card-menu">
@@ -194,7 +194,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAEyklEQVR42u3awW7cSAwEUP//TyfXBZIZV5HUJLv7+mTYstR6PcCwi/31w1iMLwT48OHDZ+DDhw+fgQ/fv4TvKx7/vP79Hd7//te//maKwUxe3Se5fvbu+PDhw4cP3xXfN1/VLx756q+b10gQ8zskC5y/Oz58+PDhw3fL1xYr7R1muDllfs3q3fHhw4cPH74P8rVFxvuSIiGbXT/7EODDhw8fPnx/G9/7DfltUTILAmYLgA8fPnz48H2eb19SzMKC25C9ne1Hex348OHDhw/f4oDaf+PnP3a+Dx8+fPjw/S/52pFMKy9i8jIoX9R2nrUAPnz48OHDt+DbHCNLoJPt+v54WR4NzBrn+PDhw4cP3y1f+zXfEu/LhTyOb4/E1YuEDx8+fPjwLfjyMmITgucN8uT3TxxHyxcYHz58+PDh2/DlU5kdF0tePj9Knhcom6Ny39wZHz58+PDhW/BtIuzh4+Mtet5ov13mIqzHhw8fPnz4Fn3ePKZvi4n9y8yKpHbOyRPx4cOHDx++DV9L2QbisyihDfpnx+zOIgN8+PDhw4dvFNbvv+Bz3Jx4Vpq05Vc+Q3z48OHDh++Wr0VJmPYx/WxJZuH+Nx8UfPjw4cOHb8E3g7s6vpYEEy3BFeXLa/Dhw4cPH74FX/vg/eGwfKP+mWigbvnjw4cPHz58a77bqSRFTx4rzO6cxxx1ax8fPnz48OE75ctD9vzg1yaOvwr382Llm48RPnz48OHDt+Br29iz8mXT9s4RZy3245P1+PDhw4cPX9nn/SrHrOCYcd/OJym/8OHDhw8fvif4ig1zGe7PWtGzMmVz+KyYFT58+PDhw3fEt3n5zdG0HHd/SG72Xvjw4cOHD98TfHnhkhcBs3KkLWvya2ZzxocPHz58+K742iB7wz171r4x8GBYjw8fPnz48C342pFv+JOgoeXOQ4S8TIlmgg8fPnz48C34Zlvu55rom+gh/6/8N/jw4cOHD99zfO1hrzwQzzfkV4XUbCZR6IAPHz58+PAt+NpQe1NetIfVNtv7WSMhWgB8+PDhw4dvwZfE6znrrGhoA/fZQbo2XHj5dHz48OHDh++UL48S8qm3xdAmTG8DjrrNgA8fPnz48C348pu2G/5ZA/u2GEruvypc8OHDhw8fvtPIYBhnl/+VtwpmcX8b9K/qPnz48OHDhy8uXPaTyAnqY2GLRc0b/NHhPHz48OHDh2/Bd1W45IfA2gXIWwtXxRM+fPjw4cP3HF8eps8KiBx0xtc+a7MA+PDhw4cP3xXf7FUTiKsm96YYypviB4kLPnz48OHDF/PNDm+1BHlMPwv68wbDsH2ODx8+fPjwLfjajfdsy53fuV3IZDHyJYnmjA8fPnz48C342vHcwbJNkTGLJ2alGz58+PDhw7fha7/C81eNtt+jYuj9U/J5HrTJ8eHDhw8fvhFfW6y0fDnZphm/iSGKkAIfPnz48OE74suLlXxzni/PPly4agzUvQ58+PDhw4fvMb6WbAbdRgmzcmfWMMCHDx8+fPg+z5e0wNv77yOGNryYzQofPnz48OG74ssnNNuKtwswC+tnTMX74sOHDx8+fGu+fZC9DxHyI2VtHH/cnseHDx8+fPgWfEY78OHDhw+fgQ8fPnwGPnx/8fgJcUtu7Nnn/f4AAAAASUVORK5CYII=">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZElEQVR42u3aS3aDMBAEQO5/6eQEkG79cPyKlR9xQKWFJPfM9fPV14WHh4eHh4eHh/dhvCu+7v6rvf/8nQVjw8PDwzvC+2OpDb6TDKh98tjY8PDw8E7y7gb0/Pnur/ni/jyefGx4eHh4/5H3/P1kUvDw8PC+m5dECW1IMTM2PDw8vPO85Af/3QtmNoAPylrw8PDwYl4eGZz/fLS+h4eHhxfw6pam8vg79rRlTVd4eHh4G3j5QpyXqWYO0GPjwcPDwzvPW9U8mkS9+RTkYDw8PLyTvPzFSTlqrCS2NgLGw8PD281LluZ8sc4jhvzInm8JeHh4eCd57dI/vzG01CIaxsPDwzvCayPaBZFBeYwuSnF4eHh4R3jzy3EyBWMhRTIReHh4eG/xkrLWWOCbH+IjwFjrAB4eHt4iXlviagPWdqFvQ+Gp1gE8PDy8IV5+XM6P4ElQm0/Egp4yPDw8vA28fLFOYtl2O8mnY+oXAx4eHt4i3trtoS1utS1c9caAh4eHt5nXDitpNRibgrGJwMPDwzvDa2FFISoZSvn86A4eHh7eEV47rLFAIYe1mxAeHh7eW7yxVqe22D8DSJ6Mh4eHd5KXl7LG2rCSiWtDWzw8PLzzvPZqD7gzkfHYe/Hw8PB28674mokb8kN5Xlor9j08PDy8Dbx2M8gPwcn2MDOVdQEMDw8PbymvXaDnWw3aIGMqa8HDw8N7ldcu/Xk5rQ2Xt2wMeHh4eAd5yf12m2nDYjw8PLyTvLFlui1WrWopwMPDw3uXl0cA7TE6f2ZeSPvjPh4eHt5m3vddeHh4eHh4eHh4H3D9AgsYNQCB3EX/AAAAAElFTkSuQmCC">
               
             </li>
           </ul>
@@ -203,43 +203,45 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=EMUI11第三方桌面启动器教程&url=https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/&pic=https://zzy-ac.github.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=SDDM汉化&url=https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/&pic=https://zzy-ac.gitee.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=EMUI11第三方桌面启动器教程&url=https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/&via=zzy" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=SDDM汉化&url=https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/&via=zzy" target="_blank" class="mdui-ripple">分享到 Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+              <a href="https://plus.google.com/share?url=https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/" target="_blank" class="mdui-ripple">分享到 Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/&title=EMUI11第三方桌面启动器教程" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/&title=SDDM汉化" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=zzy的博客&title=EMUI11第三方桌面启动器教程&pics=https://zzy-ac.github.io/images/favicon.png&url=https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=zzy的博客&title=SDDM汉化&pics=https://zzy-ac.gitee.io/images/favicon.png&url=https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/" target="_blank" class="mdui-ripple">分享到 QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/&text=EMUI11第三方桌面启动器教程" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+              <a href="https://telegram.me/share/url?url=https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/&text=SDDM汉化" target="_blank" class="mdui-ripple">分享到 Telegram</a>
             </li>
           </ul>
         
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <p>准备：一个第三方起动器，小黑屋，一个电脑（用来激活小黑屋）<br>1、下载第三方启动器<br>2、打开启动器，并在华为的应用设置里设置第三方起动器允许开机自起<br>3、用adb指令激活小黑屋，并在小黑屋中将华为桌面冻结（adb命令使用方法小黑屋有提供完整教程）<br>4、重启手机即可完美使用第三方启动器</p>
+      <p>用文本编辑器打开/usr/lib/systemd/system/sddm.service<br>在[Service]下添加Environment=LANG=zh_CN.UTF-8</p>
 
       
       <blockquote>
         
-        <strong>本文链接：</strong><br><a href="https://zzy-ac.github.io/2021/02/04/EMUI11%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%99%E7%A8%8B/">https://zzy-ac.github.io/2021/02/04/EMUI11第三方桌面启动器教程/</a>
+        <strong>本文链接：</strong><br><a href="https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/">https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/</a>
       </blockquote>
     </div>
     <footer class="mdui-card-actions">
       
+        <a class="mdui-ripple article_categories-link" href="/categories/archlinux/">archlinux</a>
       
-        <a class="mdui-ripple article_tags-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a>
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/linux/" rel="tag">linux</a>
       
     </footer>
     
@@ -253,15 +255,15 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2021/02/20/%E4%BB%A5%E7%88%B6%E4%B9%8B%E5%90%8D/">
+      <a rel="prev" class="extend prev" href="/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/">
         <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        <span class="mdui-p-x-3" mdui-tooltip="{content: '以父之名'}">上一篇</span>
+        <span class="mdui-p-x-3" mdui-tooltip="{content: '华为手机EMUI11，去除xxx正在其他应用上层显示这一通知'}">上一篇</span>
       </a>
     
     <div class="spacer"></div>
     
-      <a rel="next" class="extend next" href="/2021/02/03/%E5%8D%8E%E4%B8%BA%E6%89%8B%E6%9C%BAEMUI11%EF%BC%8C%E5%8E%BB%E9%99%A4xxx%E6%AD%A3%E5%9C%A8%E5%85%B6%E4%BB%96%E5%BA%94%E7%94%A8%E4%B8%8A%E5%B1%82%E6%98%BE%E7%A4%BA%E8%BF%99%E4%B8%80%E9%80%9A%E7%9F%A5/">
-        <span class="mdui-p-x-3" mdui-tooltip="{content: '华为手机EMUI11，去除xxx正在其他应用上层显示这一通知'}">下一篇</span>
+      <a rel="next" class="extend next" href="/2020/12/13/gao-zhong-shi-zuo/">
+        <span class="mdui-p-x-3" mdui-tooltip="{content: '高中诗作'}">下一篇</span>
         <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
       </a>
     

@@ -8,30 +8,30 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>高中诗作 | zzy的博客</title>
+  <title>EMUI11第三方桌面启动器教程 | zzy的博客</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
-  <link rel="alternate" href="https://zzy-ac.gitee.io" title="zzy的博客" >
-  <meta name="description" content="坠入清明旦至雨幕堕，名楼檐滴青砖破。依楼西盼湖不见，半楫轻舟入梦边。舟子载我长安渡，但为君故岸徘徊。不图长安青云志，愿与执手白头甘。 梦秋秋月秋高枫叶黄，夜来忽梦月如江。不觉又至一年春，樱花落尽影彷徨。">
+  <link rel="alternate" href="/atom.xml" title="zzy的博客" type="application/atom+xml">
+  <meta name="description" content="准备：一个第三方起动器，小黑屋，一个电脑（用来激活小黑屋）1、下载第三方启动器2、打开启动器，并在华为的应用设置里设置第三方起动器允许开机自起3、用adb指令激活小黑屋，并在小黑屋中将华为桌面冻结（adb命令使用方法小黑屋有提供完整教程）4、重启手机即可完美使用第三方启动器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高中诗作">
-<meta property="og:url" content="https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/index.html">
+<meta property="og:title" content="EMUI11第三方桌面启动器教程">
+<meta property="og:url" content="https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/index.html">
 <meta property="og:site_name" content="zzy的博客">
-<meta property="og:description" content="坠入清明旦至雨幕堕，名楼檐滴青砖破。依楼西盼湖不见，半楫轻舟入梦边。舟子载我长安渡，但为君故岸徘徊。不图长安青云志，愿与执手白头甘。 梦秋秋月秋高枫叶黄，夜来忽梦月如江。不觉又至一年春，樱花落尽影彷徨。">
+<meta property="og:description" content="准备：一个第三方起动器，小黑屋，一个电脑（用来激活小黑屋）1、下载第三方启动器2、打开启动器，并在华为的应用设置里设置第三方起动器允许开机自起3、用adb指令激活小黑屋，并在小黑屋中将华为桌面冻结（adb命令使用方法小黑屋有提供完整教程）4、重启手机即可完美使用第三方启动器">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-13T11:37:14.000Z">
-<meta property="article:modified_time" content="2021-02-21T14:13:51.560Z">
+<meta property="article:published_time" content="2021-02-04T10:55:50.000Z">
+<meta property="article:modified_time" content="2021-02-21T14:13:51.559Z">
 <meta property="article:author" content="zzy">
-<meta property="article:tag" content="诗集">
+<meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
 
-  <meta name="keywords" content=",诗集">
+  <meta name="keywords" content=",技术">
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="zzy的博客">
-  <meta name="msapplication-starturl" content="https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/">
+  <meta name="msapplication-starturl" content="https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="zzy的博客">
@@ -39,7 +39,7 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <link rel="canonical" href="https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/">
+    <link rel="canonical" href="https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/">
   
 
   
@@ -56,7 +56,7 @@
   
 <link rel="stylesheet" href="/custom.css">
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
   <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
   <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
@@ -67,7 +67,7 @@
     <a href="/" class="mdui-typo-headline">zzy的博客</a>
     <div class="mdui-toolbar-spacer"></div>
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
-    <a target="_blank" rel="noopener" href="https://zzy-ac.gitee.io" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
   </div>
 </header>
 <div class="mdui-dialog" id="search">
@@ -178,11 +178,11 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-10.png" style="max-height: 240px;">
+      <img src="/images/random/material-17.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">高中诗作</div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-13 / <i class="iconfont">&#xe601;</i> zzy</div>
+          <div class="mdui-card-primary-title">EMUI11第三方桌面启动器教程</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2021-02-04 / <i class="iconfont">&#xe601;</i> zzy</div>
         </div>
       </div>
       <div class="mdui-card-menu">
@@ -194,7 +194,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2ElEQVR42u3aUW4qMRAEQO5/6eT3SU8L3eNFAbv8hYhZXI6Uiaf9+DlyPLCxsbGxsbGxsbE/kv2Ix7/zLx99MfPqaf//tJ2frBkbGxv7BPaLP/0Xc5KtuVp0C863/vJ7sbGxsQ9g51/5/FNJOUkKXrtxLz6FjY2Njb18eEhmXj0fGxsbG/tedrId7ca1m4KNjY2NPWvQ5AtKnvm81LVNrjf20rCxsbE/nj0Lev/29Z/l29jY2Ngfxl4fz0tafsxoG1X1OrGxsbE3ZefNo7wx9LzM5G2pZGZuwcbGxj6NPYtsVy5Nzq7sFAUSGxsbe2t2svQ8JGijhUc5kgKJjY2NfQ571jzKL83kBaw9GtXRMjY2Nvam7PzIsTJ/tnFFwyh5BxsbG3tTdhK1tq2ctozNjkD1LwYbGxt7U/bKslYOEvlBpY2HsbGxsU9mzxo665dpZm2meuXY2NjYW7Pb2PXeo8Ls0meyTdjY2Ngns2cFJp/TXqlsi1xx5xQbGxt7C/Zdoy0zecFr415sbGzsc9jFv/LxcaINBmbfXhc5bGxs7GPYs4j3rubR8yZX28zCxsbGPoHdttpnS7zrmfm1obqXho2Njf217BX8rJitXMFZ2RpsbGzs09jrZWa92ZQEAMPLl9jY2Nhbs9sANV/WLNYdtpDaAoaNjY395ez1krayZbOyVLeusLGxsTdlJ2Ugv2SZh7J5lDvDY2NjY5/DzpF5SHDvESLfvrqphI2Njb0FO6HO3k8K5Cx4yAsqNjY29gnsduRF6K4AYFiuZr00bGxs7C9kP+KxUvDeHQYnbTJsbGzsvdlt6Ds7TrTHlfUmFDY2NvZp7JVgIL+U2UbCs6YSNjY2NnbS0GkbQHXJKaOFFyUWGxsbG7t8vR4PzBpSbzmKYGNjY38Juz1I1CVkOR5uj0DY2NjY57BnQe9KBJvHw20MXBQwbGxs7C3Y5wxsbGxsbGxsbGzsjxm/Ab1oOm1/T0UAAAAASUVORK5CYII=">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADl0lEQVR42u3aS44iMRAFQO5/6ZltSyPgvUybZqSoVYsuXHbUIsnP44/rx/VAgAMHDhw4cODAgQPHF3M84uvNok/u+fn5szWTpyR7m50FBw4cOHDc4GiP+mwr+Tr5d98cZrEHHDhw4MBxm+N1AGsD3oHkqgz87Vlw4MCBA8c3c7THS4Lo5gcBDhw4cOD4vzhmaVi90ZepY/vacODAgQPH5zk2h8k3/Tr0tqH9l2ulOHDgwIFjPdDw/X9/dL4DBw4cOHD8wzFrBbUh8EYYbkuTT0+EAwcOHDiOcrTDCkkDKT/YJklLmlhRQwsHDhw4cBzlSELpbLwgaSbNGlenWlA4cODAgeMGR7KJU6F3Bp0E6dmrwoEDBw4cNzg2RbcoQSoD5CzxS15ANNCAAwcOHDjWHHm5LWkFJbj5d/PiYF52HNZKceDAgQNHydEeux1fSOg3gXm2Hxw4cODAcYNjT9Medd9q2pQODxQHceDAgQNHzDEbOGgbP/kgQrKr9h4cOHDgwPFJjjygtvfkxcE2VZutjwMHDhw47nFsyoLtdpMQmw9J5CvgwIEDB47Pc7RJXbKVWfrXrtaOPhTzHThw4MCBY8GRPzghaJna0Ni+tjc/AnDgwIEDx1GO2UBDjnKqkJfvJy964sCBAweOGxxJErVvF+Vw+ehbUoKMWlk4cODAgeMox4FANTpk3r6aYeUXDhw4cOC4x9GmRpshufyJZ5PAItDiwIEDB44RxyzE5kG0TfCS59ah9PUZceDAgQPHUY42BLYjcaeGGDatr+HvDhw4cODAsZ4N2x9gVv5rByw2ra9ivgMHDhw4cKw5Zgduj7cJn+1ri4qbOHDgwIHjKMd+mKAt6m2Sw7yhlXwLBw4cOHDc42gTqjaw1WnVomiYE+PAgQMHjnsc+xCYrDDDPRu8ixQOBw4cOHCsOV4PluV3nmos5cE7SdVWGS0OHDhw4BhxPOJrVp5radqmVB6kceDAgQPHPY72ylOppGC3D9tJQC3aTjhw4MCBY82xCVR5s6cNzAlivv4bOBw4cODAcYFjP16wGVnIhxU2IxQ4cODAgePzHLORhQ1ZO7jQlhSPzXfgwIEDB44PcuQJ2GZgYp8cHujC4cCBAweOaxwziDxFTA6/H2XAgQMHDhy3OfJCXn5PO9bQDkAk/71YK8WBAwcOHOuBhuSTvHE1S9XyFaLyIg4cOHDgOMrhwoEDBw4cOHDgwIEDx5ddfwG0tD6n2LJcjQAAAABJRU5ErkJggg==">
               
             </li>
           </ul>
@@ -203,63 +203,43 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=高中诗作&url=https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/&pic=https://zzy-ac.github.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=EMUI11第三方桌面启动器教程&url=https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/&pic=https://zzy-ac.gitee.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=高中诗作&url=https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/&via=zzy" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=EMUI11第三方桌面启动器教程&url=https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/&via=zzy" target="_blank" class="mdui-ripple">分享到 Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+              <a href="https://plus.google.com/share?url=https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/" target="_blank" class="mdui-ripple">分享到 Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/&title=高中诗作" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/&title=EMUI11第三方桌面启动器教程" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=zzy的博客&title=高中诗作&pics=https://zzy-ac.github.io/images/favicon.png&url=https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=zzy的博客&title=EMUI11第三方桌面启动器教程&pics=https://zzy-ac.gitee.io/images/favicon.png&url=https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/" target="_blank" class="mdui-ripple">分享到 QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/&text=高中诗作" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+              <a href="https://telegram.me/share/url?url=https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/&text=EMUI11第三方桌面启动器教程" target="_blank" class="mdui-ripple">分享到 Telegram</a>
             </li>
           </ul>
         
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <center>
-
-<p>坠入<br>清明旦至雨幕堕，名楼檐滴青砖破。<br>依楼西盼湖不见，半楫轻舟入梦边。<br>舟子载我长安渡，但为君故岸徘徊。<br>不图长安青云志，愿与执手白头甘。</p>
-<p>梦秋<br>秋月秋高枫叶黄，夜来忽梦月如江。<br>不觉又至一年春，樱花落尽影彷徨。</p>
-<a id="more"></a>
-
-<p>梦还<br>冬阳灼灼心意懒，清波鳞鳞浊浪暖。<br>昔年执手临风叹，今朝只影倦梦还。</p>
-<p>心雨<br>初阳新悬春正好.骤雨埋心人不晓。<br>犹当及笄立冠时，灵台半毁魂半了。</p>
-<p>洞庭雪<br>金鹗歌飞渡银门，洞庭玉满映云轮。<br>轻雪无声随风去，只影独觞念故人。</p>
-<p>正月初一游圣安寺<br>佛前青灯览古卷，欲向释迦问俗缘。<br>道是落樱何处去，菩提半子坠心泉。</p>
-<p>画茶<br>闲云野鹤饮孤茶，古篆朱泥章自华。<br>数尺青丹世无怨，但题拙笔韵桑麻。</p>
-<p>枫琴<br>月下吟章古，枫落韵犹存。<br>叹世鸣鸿曲，抚此唯伊人。</p>
-<p>高三<br>墨笔书尽天下意，绢帛写透古今情。<br>自古书生多薄命，余生尽寄简牍轻。</p>
-<p>天尊<br>青牛饮雪童笛翠，金丹入酒骤颦眉。<br>千觞孤品终不醉，百转流连盼君回。</p>
-<p>送舟<br>夜来江口送行舟，悠悠清水一双鸥。<br>竹筏渐远心难静，宴酣虽乐不如休。<br>遥想昔时秋风扫，惊觉寺里柳条抽。<br>君自随波无忧渡，莫念俗尘逍遥游。</p>
-<p>观湖有感<br>闲纵驽马洞庭畔，醉看君山湘妃漫。<br>自有一番凌云志，不震寰宇终不还。</p>
-<p>炎野<br>南荒四月艳阳灼，心焦溽暑湿锦罗。<br>忽如一瞬凌霜洗，幽然半影目难挪。</p>
-<p>随目小眺<br>灰瓦白墙苏楼月，依依不舍念君回。<br>愿与伊人同舟渡，八百水里莫思归。</p>
-</center>
+      <p>准备：一个第三方起动器，小黑屋，一个电脑（用来激活小黑屋）<br>1、下载第三方启动器<br>2、打开启动器，并在华为的应用设置里设置第三方起动器允许开机自起<br>3、用adb指令激活小黑屋，并在小黑屋中将华为桌面冻结（adb命令使用方法小黑屋有提供完整教程）<br>4、重启手机即可完美使用第三方启动器</p>
 
       
       <blockquote>
         
-        <strong>本文链接：</strong><br><a href="https://zzy-ac.github.io/2020/12/13/%E9%AB%98%E4%B8%AD%E8%AF%97%E4%BD%9C/">https://zzy-ac.github.io/2020/12/13/高中诗作/</a>
+        <strong>本文链接：</strong><br><a href="https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/">https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/</a>
       </blockquote>
     </div>
     <footer class="mdui-card-actions">
       
-        <a class="mdui-ripple article_categories-link" href="/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/">诗词创作</a>
       
-      
-        <a class="mdui-ripple article_tags-link" href="/tags/%E8%AF%97%E9%9B%86/" rel="tag">诗集</a>
+        <a class="mdui-ripple article_tags-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a>
       
     </footer>
     
@@ -273,15 +253,15 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2020/12/18/SDDM%E6%B1%89%E5%8C%96/">
+      <a rel="prev" class="extend prev" href="/2021/02/20/yi-fu-zhi-ming/">
         <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        <span class="mdui-p-x-3" mdui-tooltip="{content: 'SDDM汉化'}">上一篇</span>
+        <span class="mdui-p-x-3" mdui-tooltip="{content: '以父之名'}">上一篇</span>
       </a>
     
     <div class="spacer"></div>
     
-      <a rel="next" class="extend next" href="/2020/12/06/zzy%E8%AF%97%E9%9B%86/">
-        <span class="mdui-p-x-3" mdui-tooltip="{content: 'zzy诗集'}">下一篇</span>
+      <a rel="next" class="extend next" href="/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/">
+        <span class="mdui-p-x-3" mdui-tooltip="{content: '华为手机EMUI11，去除xxx正在其他应用上层显示这一通知'}">下一篇</span>
         <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
       </a>
     
