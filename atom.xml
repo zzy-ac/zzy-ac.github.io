@@ -78,7 +78,7 @@
     <link href="https://zzy-ac.github.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/"/>
     <id>https://zzy-ac.github.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/</id>
     <published>2021-02-04T10:55:50.000Z</published>
-    <updated>2021-02-21T14:13:51.559Z</updated>
+    <updated>2021-02-23T09:53:13.259Z</updated>
     
     <content type="html"><![CDATA[<p>准备：一个第三方起动器，小黑屋，一个电脑（用来激活小黑屋）<br>1、下载第三方启动器<br>2、打开启动器，并在华为的应用设置里设置第三方起动器允许开机自起<br>3、用adb指令激活小黑屋，并在小黑屋中将华为桌面冻结（adb命令使用方法小黑屋有提供完整教程）<br>4、重启手机即可完美使用第三方启动器</p>]]></content>
     
@@ -90,6 +90,8 @@
     
     
     
+    <category term="手机折腾" scheme="https://zzy-ac.github.io/categories/%E6%89%8B%E6%9C%BA%E6%8A%98%E8%85%BE/"/>
+    
     
     <category term="技术" scheme="https://zzy-ac.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
@@ -100,7 +102,7 @@
     <link href="https://zzy-ac.github.io/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/"/>
     <id>https://zzy-ac.github.io/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/</id>
     <published>2021-02-03T06:31:55.000Z</published>
-    <updated>2021-02-21T14:13:51.560Z</updated>
+    <updated>2021-02-23T09:53:53.072Z</updated>
     
     <content type="html"><![CDATA[<p>1、首先下载通知滤盒0.7.0这个版本（新版本收费）<br>2、下好之后先别打开，去设置→移动网络→流量管理→应用联网→找到通知滤盒把wlan和移动数据全关了<br>3、打开通知滤盒，选中xxx正在其他应用上层显示，长按，选择消除。<br>4、完成。<br>5、如有失效，请重复以上操作或按软件内提示操作</p>]]></content>
     
@@ -111,6 +113,8 @@
       
     
     
+    
+    <category term="手机折腾" scheme="https://zzy-ac.github.io/categories/%E6%89%8B%E6%9C%BA%E6%8A%98%E8%85%BE/"/>
     
     
     <category term="技术" scheme="https://zzy-ac.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
