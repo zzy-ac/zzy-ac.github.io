@@ -3,11 +3,11 @@
   <title>zzy的博客</title>
   
   <subtitle>zzy几经艰难制造的博客</subtitle>
-  <link href="https://zzy-ac.github.io/atom.xml" rel="self"/>
+  <link href="https://zzy-ac.gitee.io/atom.xml" rel="self"/>
   
-  <link href="https://zzy-ac.github.io/"/>
+  <link href="https://zzy-ac.gitee.io/"/>
   <updated>2021-02-21T14:13:51.560Z</updated>
-  <id>https://zzy-ac.github.io/</id>
+  <id>https://zzy-ac.gitee.io/</id>
   
   <author>
     <name>zzy</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>新始</title>
-    <link href="https://zzy-ac.github.io/2021/02/20/xin-shi/"/>
-    <id>https://zzy-ac.github.io/2021/02/20/xin-shi/</id>
+    <link href="https://zzy-ac.gitee.io/2021/02/20/xin-shi/"/>
+    <id>https://zzy-ac.gitee.io/2021/02/20/xin-shi/</id>
     <published>2021-02-20T11:54:01.000Z</published>
     <updated>2021-02-21T14:13:51.560Z</updated>
     
@@ -37,17 +37,17 @@
     
     
     
-    <category term="诗词创作" scheme="https://zzy-ac.github.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    <category term="诗词创作" scheme="https://zzy-ac.gitee.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
     
     
-    <category term="诗集" scheme="https://zzy-ac.github.io/tags/%E8%AF%97%E9%9B%86/"/>
+    <category term="诗集" scheme="https://zzy-ac.gitee.io/tags/%E8%AF%97%E9%9B%86/"/>
     
   </entry>
   
   <entry>
     <title>以父之名</title>
-    <link href="https://zzy-ac.github.io/2021/02/20/yi-fu-zhi-ming/"/>
-    <id>https://zzy-ac.github.io/2021/02/20/yi-fu-zhi-ming/</id>
+    <link href="https://zzy-ac.gitee.io/2021/02/20/yi-fu-zhi-ming/"/>
+    <id>https://zzy-ac.gitee.io/2021/02/20/yi-fu-zhi-ming/</id>
     <published>2021-02-20T11:50:59.000Z</published>
     <updated>2021-02-21T14:13:51.559Z</updated>
     
@@ -66,17 +66,17 @@
     
     
     
-    <category term="诗词创作" scheme="https://zzy-ac.github.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    <category term="诗词创作" scheme="https://zzy-ac.gitee.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
     
     
-    <category term="诗集" scheme="https://zzy-ac.github.io/tags/%E8%AF%97%E9%9B%86/"/>
+    <category term="诗集" scheme="https://zzy-ac.gitee.io/tags/%E8%AF%97%E9%9B%86/"/>
     
   </entry>
   
   <entry>
     <title>EMUI11第三方桌面启动器教程</title>
-    <link href="https://zzy-ac.github.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/"/>
-    <id>https://zzy-ac.github.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/</id>
+    <link href="https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/"/>
+    <id>https://zzy-ac.gitee.io/2021/02/04/emui11-di-san-fang-zhuo-mian-qi-dong-qi-jiao-cheng/</id>
     <published>2021-02-04T10:55:50.000Z</published>
     <updated>2021-02-23T09:53:13.259Z</updated>
     
@@ -90,17 +90,17 @@
     
     
     
-    <category term="手机折腾" scheme="https://zzy-ac.github.io/categories/%E6%89%8B%E6%9C%BA%E6%8A%98%E8%85%BE/"/>
+    <category term="手机折腾" scheme="https://zzy-ac.gitee.io/categories/%E6%89%8B%E6%9C%BA%E6%8A%98%E8%85%BE/"/>
     
     
-    <category term="技术" scheme="https://zzy-ac.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://zzy-ac.gitee.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>华为手机EMUI11，去除xxx正在其他应用上层显示这一通知</title>
-    <link href="https://zzy-ac.github.io/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/"/>
-    <id>https://zzy-ac.github.io/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/</id>
+    <link href="https://zzy-ac.gitee.io/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/"/>
+    <id>https://zzy-ac.gitee.io/2021/02/03/hua-wei-shou-ji-emui11-qu-chu-xxx-zheng-zai-qi-ta-ying-yong-shang-ceng-xian-shi-zhe-yi-tong-zhi/</id>
     <published>2021-02-03T06:31:55.000Z</published>
     <updated>2021-02-23T09:53:53.072Z</updated>
     
@@ -114,17 +114,17 @@
     
     
     
-    <category term="手机折腾" scheme="https://zzy-ac.github.io/categories/%E6%89%8B%E6%9C%BA%E6%8A%98%E8%85%BE/"/>
+    <category term="手机折腾" scheme="https://zzy-ac.gitee.io/categories/%E6%89%8B%E6%9C%BA%E6%8A%98%E8%85%BE/"/>
     
     
-    <category term="技术" scheme="https://zzy-ac.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://zzy-ac.gitee.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>SDDM汉化</title>
-    <link href="https://zzy-ac.github.io/2020/12/18/sddm-han-hua/"/>
-    <id>https://zzy-ac.github.io/2020/12/18/sddm-han-hua/</id>
+    <link href="https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/"/>
+    <id>https://zzy-ac.gitee.io/2020/12/18/sddm-han-hua/</id>
     <published>2020-12-18T09:29:07.000Z</published>
     <updated>2021-02-21T14:13:51.560Z</updated>
     
@@ -139,17 +139,17 @@
     
     
     
-    <category term="archlinux" scheme="https://zzy-ac.github.io/categories/archlinux/"/>
+    <category term="archlinux" scheme="https://zzy-ac.gitee.io/categories/archlinux/"/>
     
     
-    <category term="linux" scheme="https://zzy-ac.github.io/tags/linux/"/>
+    <category term="linux" scheme="https://zzy-ac.gitee.io/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>高中诗作</title>
-    <link href="https://zzy-ac.github.io/2020/12/13/gao-zhong-shi-zuo/"/>
-    <id>https://zzy-ac.github.io/2020/12/13/gao-zhong-shi-zuo/</id>
+    <link href="https://zzy-ac.gitee.io/2020/12/13/gao-zhong-shi-zuo/"/>
+    <id>https://zzy-ac.gitee.io/2020/12/13/gao-zhong-shi-zuo/</id>
     <published>2020-12-13T11:37:14.000Z</published>
     <updated>2021-02-21T14:13:51.560Z</updated>
     
@@ -162,20 +162,20 @@
 &lt;p&gt;梦秋&lt;br&gt;秋月秋高枫叶黄，夜来忽梦月如江。&lt;br&gt;不觉又至一年春，樱花落尽影彷徨。&lt;/p&gt;</summary>
     
     
-    <content src="https://zzy-ac.github.io/images/Bing_Image/001.jpg" type="image"/>
+    <content src="https://zzy-ac.gitee.io/images/Bing_Image/001.jpg" type="image"/>
     
     
-    <category term="诗词创作" scheme="https://zzy-ac.github.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    <category term="诗词创作" scheme="https://zzy-ac.gitee.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
     
     
-    <category term="诗集" scheme="https://zzy-ac.github.io/tags/%E8%AF%97%E9%9B%86/"/>
+    <category term="诗集" scheme="https://zzy-ac.gitee.io/tags/%E8%AF%97%E9%9B%86/"/>
     
   </entry>
   
   <entry>
     <title>zzy诗集</title>
-    <link href="https://zzy-ac.github.io/2020/12/06/zzy-shi-ji/"/>
-    <id>https://zzy-ac.github.io/2020/12/06/zzy-shi-ji/</id>
+    <link href="https://zzy-ac.gitee.io/2020/12/06/zzy-shi-ji/"/>
+    <id>https://zzy-ac.gitee.io/2020/12/06/zzy-shi-ji/</id>
     <published>2020-12-06T13:18:19.000Z</published>
     <updated>2021-02-21T14:13:51.560Z</updated>
     
@@ -189,17 +189,17 @@
     
     
     
-    <category term="诗词创作" scheme="https://zzy-ac.github.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    <category term="诗词创作" scheme="https://zzy-ac.gitee.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
     
     
-    <category term="诗集" scheme="https://zzy-ac.github.io/tags/%E8%AF%97%E9%9B%86/"/>
+    <category term="诗集" scheme="https://zzy-ac.gitee.io/tags/%E8%AF%97%E9%9B%86/"/>
     
   </entry>
   
   <entry>
     <title>随作</title>
-    <link href="https://zzy-ac.github.io/2020/12/04/sui-zuo/"/>
-    <id>https://zzy-ac.github.io/2020/12/04/sui-zuo/</id>
+    <link href="https://zzy-ac.gitee.io/2020/12/04/sui-zuo/"/>
+    <id>https://zzy-ac.gitee.io/2020/12/04/sui-zuo/</id>
     <published>2020-12-04T13:18:38.000Z</published>
     <updated>2021-02-21T14:13:51.560Z</updated>
     
@@ -217,17 +217,17 @@
     
     
     
-    <category term="诗词创作" scheme="https://zzy-ac.github.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    <category term="诗词创作" scheme="https://zzy-ac.gitee.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
     
     
-    <category term="诗集" scheme="https://zzy-ac.github.io/tags/%E8%AF%97%E9%9B%86/"/>
+    <category term="诗集" scheme="https://zzy-ac.gitee.io/tags/%E8%AF%97%E9%9B%86/"/>
     
   </entry>
   
   <entry>
     <title>离</title>
-    <link href="https://zzy-ac.github.io/2020/11/28/chi/"/>
-    <id>https://zzy-ac.github.io/2020/11/28/chi/</id>
+    <link href="https://zzy-ac.gitee.io/2020/11/28/chi/"/>
+    <id>https://zzy-ac.gitee.io/2020/11/28/chi/</id>
     <published>2020-11-28T13:18:29.000Z</published>
     <updated>2021-02-21T14:13:51.560Z</updated>
     
@@ -245,10 +245,10 @@
     
     
     
-    <category term="诗词创作" scheme="https://zzy-ac.github.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    <category term="诗词创作" scheme="https://zzy-ac.gitee.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
     
     
-    <category term="诗集" scheme="https://zzy-ac.github.io/tags/%E8%AF%97%E9%9B%86/"/>
+    <category term="诗集" scheme="https://zzy-ac.gitee.io/tags/%E8%AF%97%E9%9B%86/"/>
     
   </entry>
   
