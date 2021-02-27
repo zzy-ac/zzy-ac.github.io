@@ -6,7 +6,7 @@
   <link href="https://zzy-ac.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://zzy-ac.gitee.io/"/>
-  <updated>2021-02-21T14:13:51.560Z</updated>
+  <updated>2021-02-27T06:47:59.461Z</updated>
   <id>https://zzy-ac.gitee.io/</id>
   
   <author>
@@ -17,37 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>新始</title>
-    <link href="https://zzy-ac.gitee.io/2021/02/20/xin-shi/"/>
-    <id>https://zzy-ac.gitee.io/2021/02/20/xin-shi/</id>
-    <published>2021-02-20T11:54:01.000Z</published>
-    <updated>2021-02-21T14:13:51.560Z</updated>
+    <title>test</title>
+    <link href="https://zzy-ac.gitee.io/2021/02/27/test/"/>
+    <id>https://zzy-ac.gitee.io/2021/02/27/test/</id>
+    <published>2021-02-27T06:47:43.000Z</published>
+    <updated>2021-02-27T06:47:59.461Z</updated>
     
-    <content type="html"><![CDATA[<center><p>初雪若杨稍拂面，莫分南北恍作春。<br>仍忆洞庭湖岸柳，迎风轻扫绕心弦。</p><p>薄云若纱断凡穹，翻涌腾挪现蛟龙。<br>铁翼御风随心过，始皇未敢与君同。</p><p>晨来逐浪堰虹堤，柳芽若雾芦蒿挤。<br>扁舟一叶张弓望，去雁难寻人莫移。</p></center>]]></content>
+    <content type="html"><![CDATA[<p>test</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;center&gt;
-
-&lt;p&gt;初雪若杨稍拂面，莫分南北恍作春。&lt;br&gt;仍忆洞庭湖岸柳，迎风轻扫绕心弦。&lt;/p&gt;
-&lt;p&gt;薄云若纱断凡穹，翻涌腾挪现蛟龙。&lt;br&gt;铁翼御风随心过，始皇未敢与君同。&lt;/p&gt;
-&lt;p&gt;晨来逐浪堰虹堤，柳芽若雾芦蒿挤。&lt;br&gt;扁舟一叶张弓望，去雁难寻人莫移。&lt;/p</summary>
+    <summary type="html">&lt;p&gt;test&lt;/p&gt;
+</summary>
       
     
     
     
-    <category term="诗词创作" scheme="https://zzy-ac.gitee.io/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
-    
-    
-    <category term="诗集" scheme="https://zzy-ac.gitee.io/tags/%E8%AF%97%E9%9B%86/"/>
     
   </entry>
   
   <entry>
     <title>新始</title>
-    <link href="https://zzy-ac.gitee.io/2021/02/20/xin-shi-1/"/>
-    <id>https://zzy-ac.gitee.io/2021/02/20/xin-shi-1/</id>
+    <link href="https://zzy-ac.gitee.io/2021/02/20/xin-shi/"/>
+    <id>https://zzy-ac.gitee.io/2021/02/20/xin-shi/</id>
     <published>2021-02-20T11:54:01.000Z</published>
     <updated>2021-02-21T14:13:51.560Z</updated>
     
