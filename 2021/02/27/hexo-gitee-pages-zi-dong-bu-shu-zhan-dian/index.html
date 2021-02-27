@@ -8,30 +8,29 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>随作 | zzy的博客</title>
+  <title>Hexo Gitee Pages 自动部署站点 | zzy的博客</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="zzy的博客" type="application/atom+xml">
-  <meta name="description" content="枯木梢头日渐昏，青天如璧雀无痕。北风驱雁恐寒至，三月相邀会剑池。">
+  <meta name="description" content="本站使用hexo同时上传到gitee和github，但是gitee的pages服务是不能自动部署的，只能手动在网页部署，所以有大佬开发了在Github上使用的动作：gitee-pages-action&amp;#xff08;点击查看&amp;#xff09;。只要在某个仓库配置好这个动作就能在往这个仓库提交任何内容时自动让Gitee部署Gitee里面指定仓库的内容。 我们按照这个仓库的文档往Hexo站点的sourc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="随作">
-<meta property="og:url" content="https://zzy-ac.gitee.io/2020/12/04/sui-zuo/index.html">
+<meta property="og:title" content="Hexo Gitee Pages 自动部署站点">
+<meta property="og:url" content="https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/index.html">
 <meta property="og:site_name" content="zzy的博客">
-<meta property="og:description" content="枯木梢头日渐昏，青天如璧雀无痕。北风驱雁恐寒至，三月相邀会剑池。">
+<meta property="og:description" content="本站使用hexo同时上传到gitee和github，但是gitee的pages服务是不能自动部署的，只能手动在网页部署，所以有大佬开发了在Github上使用的动作：gitee-pages-action&amp;#xff08;点击查看&amp;#xff09;。只要在某个仓库配置好这个动作就能在往这个仓库提交任何内容时自动让Gitee部署Gitee里面指定仓库的内容。 我们按照这个仓库的文档往Hexo站点的sourc">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-04T13:18:38.000Z">
-<meta property="article:modified_time" content="2021-02-21T14:13:51.560Z">
+<meta property="article:published_time" content="2021-02-27T14:42:09.000Z">
+<meta property="article:modified_time" content="2021-02-27T15:59:50.019Z">
 <meta property="article:author" content="zzy">
-<meta property="article:tag" content="诗集">
 <meta name="twitter:card" content="summary">
 
-  <meta name="keywords" content=",诗集">
+  <meta name="keywords" content="">
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="zzy的博客">
-  <meta name="msapplication-starturl" content="https://zzy-ac.gitee.io/2020/12/04/sui-zuo/">
+  <meta name="msapplication-starturl" content="https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="zzy的博客">
@@ -39,7 +38,7 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <link rel="canonical" href="https://zzy-ac.gitee.io/2020/12/04/sui-zuo/">
+    <link rel="canonical" href="https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/">
   
 
   
@@ -181,11 +180,11 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-15.png" style="max-height: 240px;">
+      <img src="/images/random/material-9.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">随作</div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-04 / <i class="iconfont">&#xe601;</i> zzy</div>
+          <div class="mdui-card-primary-title">Hexo Gitee Pages 自动部署站点</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2021-02-27 / <i class="iconfont">&#xe601;</i> zzy</div>
         </div>
       </div>
       <div class="mdui-card-menu">
@@ -197,7 +196,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACcElEQVR42u3aS27DMAwFwNz/0ukBiqiPpKQawXhVJPFnvCDZJ73eX3288PDw8PDw8PDwHsZ7xcfvsz7e4MO36yt/ukv52fDw8PCu8P4otcvHXZ+VAKr3Xf8GDw8P7yYvKdn5b6rlPrlO9Mrw8PDwHsnLC/ekVeDh4eF9H69X+tf3mjwbHh4e3n1e8g//+oGqjaHaNo5nLXh4eHgxL19kuv/31fU9PDw8vIDXK+75J9UNAe/xgYeHh3ealxfiPIBIhvJ8pK6+CDw8PLzTvGpBz4fdSWhbBePh4eHd5CXRQ94kCstU8dhd3bKAh4eHd5q3HoirI3ISyEaP2GoteHh4eDd5yWJ/HkDkA3S+5JZHvXh4eHineZOtTr1Re3LlURiBh4eHd4yXD8qTIbgaRhS+xcPDwzvMy5tBLzjIz80bQDNrwcPDw9vES8LWPBqojr/VMTp6uXh4eHiHeUmJ39VIekHDkT1leHh4eOOcc130q41hV7B7cKTGw8PDux5GTLaTTl5ls+/h4eHhbeXlBTpfuMoH9Lwt5SEFHh4e3h3evD2UI4Ne0U8+wcPDw7vIq0YGhYCg2DB6jQcPDw/vPq+3jaBcuMdtYLQAhoeHh7eV1yvl1UWsyXi9YaTGw8PDG/OqRz4QV8f03viOh4eHd5/XK8cnoop8O0J5TxkeHh7eAV61rFfDhTzISF5luTHg4eHhHeNVt5BWrzPZdpBsDsPDw8N7Pm++QaoXeVxqDHh4eHhbeflCVz5k9wboI40BDw8Pb2vOuQ4Xeluyetut8PDw8P6X1yvokyihes1Ci8LDw8M7zPu+Aw8PDw8PDw8P7wHHD9ysm6dI4KgvAAAAAElFTkSuQmCC">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACy0lEQVR42u3aQXIbMQwEQP3/08kDUpZmQCq1JntPLstesukDjAFff658XtjY2NjY2NjY2NiPZL/iZ8PC/7wtX+X9byV7xsbGxj6bnWz3/SbaN+QH9H71Ys/Y2NjYF7B/WmyGfL/pWdGa7RkbGxsbO2kD8iNIytL7N2NjY2Nj72K3rctKSXtQAcPGxsZ+MHtXS3BgloaNjY39eHY+NH3O1/91vo2NjY39YHb77BoPJIOHdizxYVfY2NjYh7LzwtDGRnkL8b2RAzY2NvYN7JXQZ4Z53+SsBEkf9oONjY19DXtWHpIj+OlQ8sZm6fvY2NjYh7JX2oAZePbp7JIQNjY29g3s/KVJy1FsIm5gZu0NNjY29m3sFtMWnhXMrtEvNjY29qnslaioHcS2odJsnFCEStjY2NiHsldCpWRzyQX9ZKiwYTyAjY2NfQQ7j3JmDUmLmR1ipMDGxsY+lL3yL/7KxcqkgM2GENHlS2xsbOyD2G0ByyOn2YAhiYfadbGxsbFvY+ffSTbdBlhFSFT+MbCxsbFvYM8i+DwkygtP2w5FB4GNjY19NDsf2c422gZYeYNRXDzCxsbGPpTdNhhtfN82J3m0lBc5bGxs7LPZCWa9sOWk9mjykoaNjY19KruNkPLCMxvNrodKdd3GxsbGPoi9Ht/nA9q2dLWf1qESNjY29i9ntwOAtm2YxVWzYXNRwLCxsbEPZedhUPLprgs6GwonNjY29jXsPGxqkbOAKT+CD/vExsbGPpTdPkmhmgVAKwPd6P3Y2NjYh7JnJWHWbOw6yi/Ot7GxsbF/LbstWm2otDeoSgoYNjY29p3sZKDbBk/56LddJW9CsLGxsbF3FafvHVDyNmxsbGzsb/xMPjBoDwUbGxv7TnZSMPIl25I2GzAUl4SwsbGxj2a3wU0SyiflLUEmq0StDjY2Nvah7HsebGxsbGxsbGxs7Mc8fwEJK6YYhGEWcwAAAABJRU5ErkJggg==">
               
             </li>
           </ul>
@@ -206,48 +205,82 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=随作&url=https://zzy-ac.gitee.io/2020/12/04/sui-zuo/&pic=https://zzy-ac.gitee.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=Hexo Gitee Pages 自动部署站点&url=https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/&pic=https://zzy-ac.gitee.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=随作&url=https://zzy-ac.gitee.io/2020/12/04/sui-zuo/&via=zzy" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=Hexo Gitee Pages 自动部署站点&url=https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/&via=zzy" target="_blank" class="mdui-ripple">分享到 Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://zzy-ac.gitee.io/2020/12/04/sui-zuo/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=https://zzy-ac.gitee.io/2020/12/04/sui-zuo/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+              <a href="https://plus.google.com/share?url=https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/" target="_blank" class="mdui-ripple">分享到 Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://zzy-ac.gitee.io/2020/12/04/sui-zuo/&title=随作" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/&title=Hexo Gitee Pages 自动部署站点" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=zzy的博客&title=随作&pics=https://zzy-ac.gitee.io/images/favicon.png&url=https://zzy-ac.gitee.io/2020/12/04/sui-zuo/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=zzy的博客&title=Hexo Gitee Pages 自动部署站点&pics=https://zzy-ac.gitee.io/images/favicon.png&url=https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/" target="_blank" class="mdui-ripple">分享到 QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=https://zzy-ac.gitee.io/2020/12/04/sui-zuo/&text=随作" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+              <a href="https://telegram.me/share/url?url=https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/&text=Hexo Gitee Pages 自动部署站点" target="_blank" class="mdui-ripple">分享到 Telegram</a>
             </li>
           </ul>
         
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <center>
+      <p>本站使用hexo同时上传到gitee和github，但是gitee的pages服务是不能自动部署的，只能手动在网页部署，所以有大佬开发了在Github上使用的动作：<code>gitee-pages-action</code>&#xff08;<a target="_blank" rel="noopener" href="https://github.com/yanglbme/gitee-pages-action">点击查看</a>&#xff09;。只要在某个仓库配置好这个动作就能在往这个仓库提交任何内容时自动让Gitee部署Gitee里面指定仓库的内容。</p>
+<p>我们按照这个仓库的文档往Hexo站点的<code>source</code>目录添加<code>.github\workflows\sync.yml</code>这个文件&#xff0c;并在这个文件里面配置要使用的Gitee站点仓库和用户名。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Sync
 
-<p>枯木梢头日渐昏，青天如璧雀无痕。<br>北风驱雁恐寒至，三月相邀会剑池。</p>
-</center>
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> master
+
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">build</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build Gitee Pages
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> yanglbme/gitee<span class="token punctuation">-</span>pages<span class="token punctuation">-</span>action@master
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token comment" spellcheck="true"># 注意替换为你的 Gitee 用户名</span>
+          <span class="token key atrule">gitee-username</span><span class="token punctuation">:</span> zzy<span class="token punctuation">-</span>ac
+          <span class="token comment" spellcheck="true"># 注意在 Settings->Secrets 配置 GITEE_PASSWORD</span>
+          <span class="token key atrule">gitee-password</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.GITEE_PASSWORD <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token comment" spellcheck="true"># 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错</span>
+          <span class="token key atrule">gitee-repo</span><span class="token punctuation">:</span> zzy<span class="token punctuation">-</span>ac/zzy<span class="token punctuation">-</span>ac
+          <span class="token comment" spellcheck="true"># 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）</span>
+          <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
+          <span class="token key atrule">https</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>经过查阅<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">Hexo文档</a>发现&#xff0c;Hexo默认会忽略隐藏文件和文件夹&#xff08;包括名称以下划线和 <strong><code>.</code>开头的文件和文件夹</strong>&#xff0c;Hexo的<code>_posts</code>和<code>_data</code>等目录除外&#xff09;。因此需要在后台仓库的<code>_config.yml</code>文件添加这样的配置才能把<code>.github</code>的目录也给带进来。可能已经预留了<code>include</code>属性&#xff0c;建议先搜索这个属性&#xff0c;然后直接往这里面添加。并且由于hexo会默认编译这些文件，因此我们还要忽略它的编译，即在<code>skip_render</code>属性中忽略上述文件。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">include</span><span class="token punctuation">:</span> 
+  <span class="token punctuation">-</span> <span class="token string">".github/workflows/sync.yml"</span>
+
+<span class="token key atrule">skip_render</span><span class="token punctuation">:</span> 
+  <span class="token punctuation">-</span> <span class="token string">".github/workflows/sync.yml"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>此外还应设置往远程仓库部署时不要跳过隐藏文件，由于git bash会默认将<code>.</code>开头的文件/文件夹视为隐藏文件，所以要继续在hexo根目录的<code>_config.yml</code>文件添加配置将<code>deploy</code>这个属性中的<code>ignore_hidden</code>设置为<code>false</code>。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false </span><span class="token comment" spellcheck="true"># 添加这个属性值为false</span>
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">gitee</span><span class="token punctuation">:</span> git@gitee.com<span class="token punctuation">:</span>你的Gitee仓库.git<span class="token punctuation">,</span>要使用的分支名
+    <span class="token key atrule">github</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>你的Github仓库.git<span class="token punctuation">,</span>要使用的分支名
+    <span class="token comment" spellcheck="true"># 可以先提交Gitee然后再提交Github，也就是把这个Gitee的地址放在前面。这样保证Gitee的站点内容能在Github开始动作之前完成提交。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最后千万要注意Github的部署仓库后台的Settings里面也要按照最上面那个仓库说明中那样配置Secrets（<code>GITEE_RSA_PRIVATE_KEY</code>和(<code>GITEE_PASSWORD</code>)的两个密钥。其中：<code>GITEE_RSA_PRIVATE_KEY</code>存放<code>id_rsa</code>私钥；<code>GITEE_PASSWORD</code>存放Gitee帐号的密码），这一步不要忘记了。</p>
+<p>按照上述流程配置后，就可以通过github仓库中配置好的动作来自动部署gitee pages了。</p>
+<p>（如果遇到需要短信验证码校验。可以关注 Gitee 微信公众号，并绑定 Gitee 帐号，就可以用公众号来接收登录提示了。）<br>（其他详细操作请查看插件作者的<a target="_blank" rel="noopener" href="https://github.com/yanglbme/gitee-pages-action/blob/main/README.md">文档</a>）</p>
 
       
       <blockquote>
         
-        <strong>本文链接：</strong><br><a href="https://zzy-ac.gitee.io/2020/12/04/sui-zuo/">https://zzy-ac.gitee.io/2020/12/04/sui-zuo/</a>
+        <strong>本文链接：</strong><br><a href="https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/">https://zzy-ac.gitee.io/2021/02/27/hexo-gitee-pages-zi-dong-bu-shu-zhan-dian/</a>
       </blockquote>
     </div>
     <footer class="mdui-card-actions">
       
-        <a class="mdui-ripple article_categories-link" href="/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/">诗词创作</a>
-      
-      
-        <a class="mdui-ripple article_tags-link" href="/tags/%E8%AF%97%E9%9B%86/" rel="tag">诗集</a>
       
     </footer>
     
@@ -261,15 +294,10 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2020/12/06/zzy-shi-ji/">
-        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        <span class="mdui-p-x-3" mdui-tooltip="{content: 'zzy诗集'}">上一篇</span>
-      </a>
-    
     <div class="spacer"></div>
     
-      <a rel="next" class="extend next" href="/2020/11/28/chi/">
-        <span class="mdui-p-x-3" mdui-tooltip="{content: '离'}">下一篇</span>
+      <a rel="next" class="extend next" href="/2021/02/20/xin-shi/">
+        <span class="mdui-p-x-3" mdui-tooltip="{content: '新始'}">下一篇</span>
         <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
       </a>
     
