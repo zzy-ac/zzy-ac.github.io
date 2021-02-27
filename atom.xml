@@ -6,7 +6,7 @@
   <link href="https://zzy-ac.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://zzy-ac.gitee.io/"/>
-  <updated>2021-02-27T07:53:31.525Z</updated>
+  <updated>2021-02-21T14:13:51.560Z</updated>
   <id>https://zzy-ac.gitee.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://zzy-ac.gitee.io/2021/02/27/test/"/>
-    <id>https://zzy-ac.gitee.io/2021/02/27/test/</id>
-    <published>2021-02-27T07:53:12.000Z</published>
-    <updated>2021-02-27T07:53:31.525Z</updated>
-    
-    <content type="html"><![CDATA[<p>test 测试</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;test 测试&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>新始</title>
