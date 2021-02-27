@@ -218,5 +218,11 @@
 <p>按照上述流程配置后，就可以通过github仓库中配置好的动作来自动部署gitee pages了。</p>
 <p>（如果遇到需要短信验证码校验。可以关注 Gitee 微信公众号，并绑定 Gitee 帐号，就可以用公众号来接收登录提示了。）<br>（其他详细操作请查看插件作者的<a href="https://github.com/yanglbme/gitee-pages-action/blob/main/README.md">文档</a>）</p>
 ]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
 </search>

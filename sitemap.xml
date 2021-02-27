@@ -122,6 +122,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://zzy-ac.gitee.io/tags/hexo/</loc>
+    <lastmod>2021-02-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -140,6 +147,13 @@
   
   <url>
     <loc>https://zzy-ac.gitee.io/categories/%E6%89%8B%E6%9C%BA%E6%8A%98%E8%85%BE/</loc>
+    <lastmod>2021-02-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zzy-ac.gitee.io/categories/hexo/</loc>
     <lastmod>2021-02-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
