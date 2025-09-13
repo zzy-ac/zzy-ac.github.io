@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="就是博客啊，还要啥描述？">
+  <meta name="author" content="鸣庚">
+  <meta name="keywords" content="">
+  <meta name="description" content="前言 在日常的网站部署中，我们常常需要引用到许多图片，而如果由于各种原因，我们通常希望减少从我们自己的服务器中消耗这部分流量，因此一个合适的图床便显得尤为重要，可以帮助我们在不影响网站运行的同时减少硬盘空间和流量的消耗，达到节省资源的目的。而Ondrive无疑为人们提供了一个很棒的平台，如果你是e5用户&#x2F;教育用户或者付费的个人用户，那么普遍都拥有较大的存储空间如E5开发者账户就可以拥有25个容量达">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用Onedrive空间搭建自己的图床">
+<meta property="og:url" content="https://blog.dmnb.cf/2021/10/11/li-yong-onedrive-kong-jian-da-jian-zi-ji-de-tu-chuang/index.html">
+<meta property="og:site_name" content="鸣庚亭">
+<meta property="og:description" content="前言 在日常的网站部署中，我们常常需要引用到许多图片，而如果由于各种原因，我们通常希望减少从我们自己的服务器中消耗这部分流量，因此一个合适的图床便显得尤为重要，可以帮助我们在不影响网站运行的同时减少硬盘空间和流量的消耗，达到节省资源的目的。而Ondrive无疑为人们提供了一个很棒的平台，如果你是e5用户&#x2F;教育用户或者付费的个人用户，那么普遍都拥有较大的存储空间如E5开发者账户就可以拥有25个容量达">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c1938a096.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c1d7e432f.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c20205c95.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c247cc652.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c26fc6a01.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c29809dcf.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c2bc40c10.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c2f56ab0d.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c3635645b.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c38c6067f.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c3b2b0cc8.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c3e5eaf72.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c40a7c821.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c43318f0a.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c45eb3845.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c482016a1.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c4ae64759.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c4f15997f.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c51bb8c28.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c52a985f8.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9c5568cced.webp">
+<meta property="article:published_time" content="2021-10-11T08:57:13.000Z">
+<meta property="article:modified_time" content="2025-09-13T09:41:37.181Z">
+<meta property="article:author" content="鸣庚">
+<meta property="article:tag" content="图床建设">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.m-l.cc/2024-08-12-66b9c1938a096.webp">
+  
+    <meta name="referrer" content="no-referrer"><script defer src="https://umami.dmnb.cf/script.js" data-website-id="00b8a36a-8519-4f41-a35f-eac9b4918c29"></script>
+  
+  <title>利用Onedrive空间搭建自己的图床 - 鸣庚亭</title>
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.dmnb.cf","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="鸣庚亭" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>鸣庚亭</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                其他
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://dmnb.cf/">
+                    
+                    鸣庚短链
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://lsky.dmnb.cf">
+                    
+                    鸣庚图床
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://cloud.dmnb.cf/">
+                    
+                    鸣庚cloudreve
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://pan.dmnb.cf/">
+                    
+                    鸣庚网盘(om)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://alist.dmnb.cf/">
+                    
+                    鸣庚云盘(Alist)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://font.dmnb.cf/">
+                    
+                    鸣庚字体编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://md.dmnb.cf">
+                    
+                    鸣庚md编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://gh.dmnb.cf/">
+                    
+                    鸣庚的GitHub文件加速
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cover.dmnb.cf/') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="利用Onedrive空间搭建自己的图床">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      鸣庚
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-10-11 08:57" pubdate>
+        2021年10月11日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">利用Onedrive空间搭建自己的图床</h1>
+            
+            <div class="markdown-body">
+              <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>在日常的网站部署中，我们常常需要引用到许多图片，而如果由于各种原因，我们通常希望减少从我们自己的服务器中消耗这部分流量，因此一个合适的图床便显得尤为重要，可以帮助我们在不影响网站运行的同时减少硬盘空间和流量的消耗，达到节省资源的目的。而Ondrive无疑为人们提供了一个很棒的平台，如果你是e5用户/教育用户或者付费的个人用户，那么普遍都拥有较大的存储空间如E5开发者账户就可以拥有25个容量达到5t的帐号，那么利用这个空间不管是用于搭建自己的网盘亦或者图床都是极为便利的。</p>
+<p>实现效果：映射你Onedrive的特定文件夹内容，并允许访客在这一文件夹下上传、下载、获取图片直链或引用方式，并为了保护隐私防止其访问到你的其他页面。</p>
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><hr>
+<p>有一台个人服务器（或使用公共免费虚拟空间）<br>有读写权限的世纪互联版Onedrive或Office365附赠的Onedrive<br>有个人域名（非必须）</p>
+<h2 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图"></a>最终效果图</h2><hr>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c1938a096.webp" data-fancybox="images" data-caption="tc_picture_00"><img src="https://img.m-l.cc/2024-08-12-66b9c1938a096.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c1d7e432f.webp" data-fancybox="images" data-caption="tc_picture_02"><img src="https://img.m-l.cc/2024-08-12-66b9c1d7e432f.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c20205c95.webp" data-fancybox="images" data-caption="tc_picture_01"><img src="https://img.m-l.cc/2024-08-12-66b9c20205c95.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+
+
+<br>
+搭建好处：
+
+<ul>
+<li>映射自己Onedrive内容</li>
+<li>图片提供网络直链（图床功能）</li>
+<li>避免消耗服务器流量和空间（直接映射Onedrive）<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2></li>
+</ul>
+<hr>
+<p>无个人服务器用户申请免费虚拟空间：<a target="_blank" rel="noopener" href="https://www.000webhost.com/">https://www.000webhost.com/</a></p>
+<p>有个人服务器用户安装PHP（你也可以使用一些PHP的Serverless服务）</p>
+<p>【推荐】为了 方便操作，我这边使用宝塔面板：</p>
+<p>宝塔官网：<a target="_blank" rel="noopener" href="https://www.bt.cn/?invite_code=MV9rd3Jmbno=">https://www.bt.cn/?invite_code=MV9rd3Jmbno=</a></p>
+<p>服务器安装宝塔后，安装PHP（建议5.6～7.4版本）、Nginx（版本随意）：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c247cc652.webp" data-fancybox="images" data-caption="install"><img src="https://img.m-l.cc/2024-08-12-66b9c247cc652.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>之后，选择网站–添加网站：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c26fc6a01.webp" data-fancybox="images" data-caption="install1"><img src="https://img.m-l.cc/2024-08-12-66b9c26fc6a01.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>之后打开这个网站的目录，下载这个Oneindex项目master到本目录：</p>
+<p>  <a target="_blank" rel="noopener" href="https://github.com/Mintimate/OneindexM">众多Ondeindex项目相继倒台后基于Oneindex、OneindexN的OneindexM，作者：Mintimate</a></p>
+<h3 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h3><hr>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c29809dcf.webp" data-fancybox="images" data-caption="下载源码"><img src="https://img.m-l.cc/2024-08-12-66b9c29809dcf.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>之后设置权限，给www用户全部读写权限，进入网站：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c2bc40c10.webp" data-fancybox="images" data-caption="环境检测"><img src="https://img.m-l.cc/2024-08-12-66b9c2bc40c10.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>之后，点击下一步以后，出现界面：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c2f56ab0d.webp" data-fancybox="images" data-caption="等待参数"><img src="https://img.m-l.cc/2024-08-12-66b9c2f56ab0d.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>我们的环境准备就完成了。</p>
+<h2 id="应用ID和机密"><a href="#应用ID和机密" class="headerlink" title="应用ID和机密"></a>应用ID和机密</h2><p>可以从这张图里看到：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c3635645b.webp" data-fancybox="images" data-caption="等待参数"><img src="https://img.m-l.cc/2024-08-12-66b9c3635645b.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>我们需要三个参数：</p>
+<ul>
+<li>client_secret：应用机密，即：<strong>客户端密码。</strong></li>
+<li>client_id：应用ID，即：<strong>应用代号。</strong></li>
+<li>URL：这个URL用于创建应用时，授权验证。</li>
+</ul>
+<h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><hr>
+<p>如果你是Office365送的OneDrive，也就是Onedrive国际版本，到<a target="_blank" rel="noopener" href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Microsoft Azure App registrations</a>内创建。<br>如果你是世纪互联版本OneDrive，到<a target="_blank" rel="noopener" href="https://portal.azure.cn/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Microsoft Azure.cn App registrations</a>内创建。</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c38c6067f.webp" data-fancybox="images" data-caption="创建应用"><img src="https://img.m-l.cc/2024-08-12-66b9c38c6067f.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>之后，我们填入需要的参数：</p>
+<ul>
+<li>名称：最好为纯英文。</li>
+<li>受支持的帐户类型：如图：选择任何组织目录的账号和个人</li>
+<li>重定向 URI：这里填入作者Mintimate建立的API：     <code><a target="_blank" rel="noopener" href="https://tool.mintimate.cn/oneindexM/">https://tool.mintimate.cn/oneindexM/</a> </code></li>
+</ul>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c3b2b0cc8.webp" data-fancybox="images" data-caption="填入参数"><img src="https://img.m-l.cc/2024-08-12-66b9c3b2b0cc8.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>之后，点击注册即可。</p>
+<h3 id="获取应用ID"><a href="#获取应用ID" class="headerlink" title="获取应用ID"></a>获取应用ID</h3><hr>
+<p>应用ID很好获取，注册了后，即可获得：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c3e5eaf72.webp" data-fancybox="images" data-caption="填入参数"><img src="https://img.m-l.cc/2024-08-12-66b9c3e5eaf72.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<h3 id="设置权限"><a href="#设置权限" class="headerlink" title="设置权限"></a>设置权限</h3><hr>
+<p>在获取应用机密前，我们需要设置权限，点击：<code>API权限</code>-<code>Microsoft Graph</code>:</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c40a7c821.webp" data-fancybox="images" data-caption="设置权限"><img src="https://img.m-l.cc/2024-08-12-66b9c40a7c821.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>依此勾选：</p>
+<ul>
+<li>offline_access</li>
+<li>Files.Read</li>
+<li>Files.Read.All</li>
+</ul>
+<p>最后<strong>更新权限</strong>即可：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c43318f0a.webp" data-fancybox="images" data-caption="设置权限-完成"><img src="https://img.m-l.cc/2024-08-12-66b9c43318f0a.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>到此，设置权限结束，接下来，我们可以去获取机密了。</p>
+<h3 id="获取机密"><a href="#获取机密" class="headerlink" title="获取机密"></a>获取机密</h3><hr>
+<p>最后，我们可以获取应用机密（密钥）了，点击：<code>证书和密码</code>-<code>新建客户端密码</code>：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c45eb3845.webp" data-fancybox="images" data-caption="获取密钥"><img src="https://img.m-l.cc/2024-08-12-66b9c45eb3845.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>按提示设置即可得到：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c482016a1.webp" data-fancybox="images" data-caption="获取密钥-完成"><img src="https://img.m-l.cc/2024-08-12-66b9c482016a1.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<h2 id="初始化OneIndex"><a href="#初始化OneIndex" class="headerlink" title="初始化OneIndex"></a>初始化OneIndex</h2><hr>
+<p>上一步，我们已经得到了<strong>应用ID和机密</strong>，现在我们填入即可：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c4ae64759.webp" data-fancybox="images" data-caption="输入ID和密钥"><img src="https://img.m-l.cc/2024-08-12-66b9c4ae64759.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>之后，点击<code>下一步</code>-<code>绑定账号</code>，即可完成绑定：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c4f15997f.webp" data-fancybox="images" data-caption="绑定确认"><img src="https://img.m-l.cc/2024-08-12-66b9c4f15997f.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c51bb8c28.webp" data-fancybox="images" data-caption="绑定成功"><img src="https://img.m-l.cc/2024-08-12-66b9c51bb8c28.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>你可以选择<strong>进入后台</strong>,也可以选择直接浏览效果页面。（默认为你OneDrive的根目录）</p>
+<h2 id="搭建图床"><a href="#搭建图床" class="headerlink" title="搭建图床"></a>搭建图床</h2><p>首先，我们需要初始化网盘，进入后台后点击<strong>页面缓存</strong>，选择<strong>重建所有缓存</strong>：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c52a985f8.webp" data-fancybox="images" data-caption="tc_picture_03.png"><img src="https://img.m-l.cc/2024-08-12-66b9c52a985f8.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+
+<p>之后按顺序点击<strong>图床设置(OneImages)</strong> ，勾选<strong>作为网站首页</strong>以及<strong>允许游客上传图片</strong>：</p>
+<center><a target="_blank" rel="noopener" href="https://img.m-l.cc/2024-08-12-66b9c5568cced.webp" data-fancybox="images" data-caption="tc_picture_03.png"><img src="https://img.m-l.cc/2024-08-12-66b9c5568cced.webp" srcset="/images/loading.gif" lazyload width ="720"   /></a></center>
+至此我们就完成了一个完整的图床搭建过程，只需要绑定上我们自己的域名，就可以愉快的使用了。（非必须）
+
+<ul>
+<li>注：本文部分内容转载自 <code>Mintimate's Blog</code><a target="_blank" rel="noopener" href="https://www.mintimate.cn/2020/09/22/oneindex/">原文地址</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/">网页部署</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%BE%E5%BA%8A%E5%BB%BA%E8%AE%BE/">图床建设</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/13/dian-mo-fan-dai-fu-wu/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">点墨反代服务</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/08/huawei-wu-google-kuang-jia-qing-kuang-xia-wan-mei-shi-yong-youtube/">
+                        <span class="hidden-mobile">Huawei无Google框架情况下完美使用YouTube</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.dmnb.cf/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.dmnb.cf/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"lang":"zh-CN","emoji":["https://cdn.dmnb.cf/gh/walinejs/emojis@1.1.0/tieba"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    <p>Copyright © 2020 鸣庚</p> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <span>本网站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img style="max-height: 50px;" loading="lazy" src="https://static.031130.xyz/uploads/2024/08/12/ba8d70971c408.webp" srcset="https://static.031130.xyz/uploads/2024/08/12/62f800fc26770.gif" lazyload alt="又拍云 Logo" /></a> 提供 CDN 加速/云存储服务</span> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.dmnb.cf/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.dmnb.cf/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.dmnb.cf/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.dmnb.cf/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.dmnb.cf/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

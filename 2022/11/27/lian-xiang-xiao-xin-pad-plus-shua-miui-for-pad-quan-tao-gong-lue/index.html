@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="就是博客啊，还要啥描述？">
+  <meta name="author" content="鸣庚">
+  <meta name="keywords" content="">
+  <meta name="description" content="联想自20年起推出的小新系列平板，一度以极高的性价比和完善的品牌保障著称，各个型号均有其优势，但联想自研的ZUI系统属实令人困扰，各种奇奇怪怪的BUG令人无语至极，虽然总体来说使用体验还不错，但社会拒绝更好的体验呢？因此@老大的小跟班利用小米平板的底包制作了适配联想小新系列的MIUI_Fro_Pad包，并提供持续的维护。 本教程讲述了博主给自己联想小新Pad_Plus刷入MIUI的全过程，和使用体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="联想小新Pad_Plus刷MIUI_For_Pad全套攻略">
+<meta property="og:url" content="https://blog.dmnb.cf/2022/11/27/lian-xiang-xiao-xin-pad-plus-shua-miui-for-pad-quan-tao-gong-lue/index.html">
+<meta property="og:site_name" content="鸣庚亭">
+<meta property="og:description" content="联想自20年起推出的小新系列平板，一度以极高的性价比和完善的品牌保障著称，各个型号均有其优势，但联想自研的ZUI系统属实令人困扰，各种奇奇怪怪的BUG令人无语至极，虽然总体来说使用体验还不错，但社会拒绝更好的体验呢？因此@老大的小跟班利用小米平板的底包制作了适配联想小新系列的MIUI_Fro_Pad包，并提供持续的维护。 本教程讲述了博主给自己联想小新Pad_Plus刷入MIUI的全过程，和使用体">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b0692588f.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ae18d4c19.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ae1244ae9.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9aca2a386a.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ae0b2685c.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9afec38957.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ac72b1ee3.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9af93cd142.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9acc30f2ea.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9aeddcd8a6.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9afd665133.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b098cc2e2.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9af51f04c2.webp">
+<meta property="article:published_time" content="2022-11-27T13:32:50.000Z">
+<meta property="article:modified_time" content="2025-09-13T09:41:37.182Z">
+<meta property="article:author" content="鸣庚">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.m-l.cc/2024-08-12-66b9b0692588f.webp">
+  
+    <meta name="referrer" content="no-referrer"><script defer src="https://umami.dmnb.cf/script.js" data-website-id="00b8a36a-8519-4f41-a35f-eac9b4918c29"></script>
+  
+  <title>联想小新Pad_Plus刷MIUI_For_Pad全套攻略 - 鸣庚亭</title>
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.dmnb.cf","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="鸣庚亭" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>鸣庚亭</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                其他
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://dmnb.cf/">
+                    
+                    鸣庚短链
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://lsky.dmnb.cf">
+                    
+                    鸣庚图床
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://cloud.dmnb.cf/">
+                    
+                    鸣庚cloudreve
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://pan.dmnb.cf/">
+                    
+                    鸣庚网盘(om)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://alist.dmnb.cf/">
+                    
+                    鸣庚云盘(Alist)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://font.dmnb.cf/">
+                    
+                    鸣庚字体编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://md.dmnb.cf">
+                    
+                    鸣庚md编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://gh.dmnb.cf/">
+                    
+                    鸣庚的GitHub文件加速
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cover.dmnb.cf/') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="联想小新Pad_Plus刷MIUI_For_Pad全套攻略">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      鸣庚
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-11-27 13:32" pubdate>
+        2022年11月27日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">联想小新Pad_Plus刷MIUI_For_Pad全套攻略</h1>
+            
+            <div class="markdown-body">
+              <p>联想自20年起推出的小新系列平板，一度以极高的性价比和完善的品牌保障著称，各个型号均有其优势，但联想自研的ZUI系统属实令人困扰，各种奇奇怪怪的BUG令人无语至极，虽然总体来说使用体验还不错，但社会拒绝更好的体验呢？因此<a target="_blank" rel="noopener" href="https://wpa.qq.com/msgrd?v=3&uin=2277216453&site=qq&menu=yes">@老大的小跟班</a>利用小米平板的底包制作了适配联想小新系列的MIUI_Fro_Pad包，并提供持续的维护。</p>
+<p>本教程讲述了博主给自己联想小新Pad_Plus刷入MIUI的全过程，和使用体验。</p>
+<h1 id="一、刷机过程"><a href="#一、刷机过程" class="headerlink" title="一、刷机过程"></a>一、刷机过程</h1><h2 id="备份文件"><a href="#备份文件" class="headerlink" title="备份文件"></a>备份文件</h2><p>自己想办法把要用的应用全都提取出来，把要保存的文件都提取出来，如果之前以及root了，那甚至可以直接把应用数据等也一起备份出来，直接用，博主之前没有root所以自己单独把apk全提取出来后把要用的文件复制出来了。</p>
+<h2 id="解锁BL"><a href="#解锁BL" class="headerlink" title="解锁BL"></a>解锁BL</h2><h3 id="1-开启USB调试"><a href="#1-开启USB调试" class="headerlink" title="1.开启USB调试"></a>1.开启USB调试</h3><p>在平板设置里【关于本机】→【ZUI版本】（多点几下）→【开发者选项】→【USB调试】→【一律允许调试】</p>
+<h3 id="2-获取解锁文件"><a href="#2-获取解锁文件" class="headerlink" title="2.获取解锁文件"></a>2.获取解锁文件</h3><p><del>先在ZUI解锁官网解锁，需要输入序列码（S/N）。获取序列码有三种方法：购买小新的盒子说明、平板背面贴的小字条、fastboot模式（如有遗漏，欢迎评论区补充）。提交申请后去邮箱查看，要是【收件箱】找不到就在垃【圾广告邮箱】里找</del></p>
+<p>现在官网已经收回了自助获过程取解锁文件的权限，如今解锁平板需要自己发邮件给<a href="mailto:&#x68;&#x75;&#x63;&#x79;&#52;&#x40;&#108;&#101;&#110;&#111;&#118;&#111;&#46;&#x63;&#x6f;&#109;">&#x68;&#x75;&#x63;&#x79;&#52;&#x40;&#108;&#101;&#110;&#111;&#118;&#111;&#46;&#x63;&#x6f;&#109;</a>，写明详细需求包括解锁用途、设备序列号等，然后等待人工回复提供解锁文件。</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9b0692588f.webp" srcset="/images/loading.gif" lazyload alt="image-20221127135505818"></p>
+<p>获取解锁文件后，将解压出来的img文件重命名为sn.img后放入<code>联想解锁回锁工具</code>目录，运行<code>联想解锁.bat</code>脚本。</p>
+<h2 id="9008刷入ZUI12-6线刷包"><a href="#9008刷入ZUI12-6线刷包" class="headerlink" title="9008刷入ZUI12.6线刷包"></a>9008刷入ZUI12.6线刷包</h2><p>大部分人反应直接从ZUI13刷到MIUI会因为System分区过小失败，因此先刷回ZUI12.6。</p>
+<h3 id="1-安装QPST高通9008刷机工具（如果已经安装过软件可以不用重复安装，本次演示针对首次使用的童鞋）"><a href="#1-安装QPST高通9008刷机工具（如果已经安装过软件可以不用重复安装，本次演示针对首次使用的童鞋）" class="headerlink" title="1.安装QPST高通9008刷机工具（如果已经安装过软件可以不用重复安装，本次演示针对首次使用的童鞋）"></a>1.安装QPST高通9008刷机工具（如果已经安装过软件可以不用重复安装，本次演示针对首次使用的童鞋）</h3><p>①双击setup.exe安装升级工具，出现如图界面 点击Install（安装）；</p>
+<p>②勾选“我已阅读并接受许可条款”，点击安装；<br>③安装过程，简单说就是一路选择 I Agree，点击NEXT，直到提示安装完成（installation complete）时，点击Close关闭安装界面。</p>
+<h3 id="2-刷机-降级"><a href="#2-刷机-降级" class="headerlink" title="2.刷机/降级"></a>2.刷机/降级</h3><p>①点击“QFIL”打开升级工具；（Windows 7路径：开始菜单- 所有程序-QPST-QFIL，Windows 10路径：开始菜单→QPST→QFIL）<br>②进入“QFIL”的“Configuratiion”标签页的 “FireHoseConfiguration”，按如下红框部分进行配置，device type选择“UFS”,点击OK确认保存；</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ae18d4c19.webp" srcset="/images/loading.gif" lazyload alt="img"></p>
+<p>③重新返回QFIL主界面，选择“Meta Build”；<br>④点击“Load Content“，找到解压后的固件包，选择“contents.xml”文件，点击“打开”；</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ae1244ae9.webp" srcset="/images/loading.gif" lazyload alt="img">过程</p>
+<p>⑤平板关机，按住音量上键（只需要按住音量上键，别和别的按键凑数同时按），USB数据线插入手机，然后放开音量键，大概等待2s左右，QFIL软件自动识别到9008端口，这个时候才可以点击“Download Content”， 开始刷写固件，然后蓝色进度条开始走动。 （请注意操作方式，如果没有进入9008端口，就刷不了机）</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9aca2a386a.webp" srcset="/images/loading.gif" lazyload alt="img"></p>
+<p>(注意：如果QFIL工具提示 please select an existing port，请点击右上角select a port，勾选9008点击OK）</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ae0b2685c.webp" srcset="/images/loading.gif" lazyload alt="img"></p>
+<p>⑥升级成功后提示“Download Succeed”，此时可以看到蓝色进度条走完。<br>此时平板自行重启，待重启好了之后，平板已经降级成功！</p>
+<h2 id="刷入第三方TWRP"><a href="#刷入第三方TWRP" class="headerlink" title="刷入第三方TWRP"></a>刷入第三方TWRP</h2><p>其实官方rec也可以刷，不过用上第三方的后续备份、root之类的更方便。</p>
+<p>解压<code>联想小新PadPlus-twrp.zip</code>文件，运行<code>残芯专用TWRPRecovery刷入工具Win版V2.1.exe</code>将目录下的<code>联想小新PadPlus-twrp3.6.0-11_0-recovery-自动解密-21.12.15-残芯专用工具刷入.img</code>刷入即可。</p>
+<h2 id="刷入MIUI"><a href="#刷入MIUI" class="headerlink" title="刷入MIUI"></a>刷入MIUI</h2><p>下载MIUI的刷机包，解压后找到对应型号的bat脚本，运行它，跟着一步步走就好了，基本只需要回车。（当然你也可以读完脚本之后自己手动一步步来）</p>
+<ol>
+<li>手机关机进入第三方twrp,点重启，重启至fastbootd，，，大概这样子</li>
+</ol>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9afec38957.webp" srcset="/images/loading.gif" lazyload alt="image-20221127142332627"></p>
+<ol start="2">
+<li>点开一键刷入MIUI13.bat(一共三个bat文件，请点开对应机型的bat文件)</li>
+</ol>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ac72b1ee3.webp" srcset="/images/loading.gif" lazyload alt="image-20221127142343138"></p>
+<ol start="3">
+<li><p>按着bat上的提示按回车键，完成一个按一下。如果没反应请检查驱动</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9af93cd142.webp" srcset="/images/loading.gif" lazyload alt="image-20221127142357068"></p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9acc30f2ea.webp" srcset="/images/loading.gif" lazyload alt="image-20221127142424793"></p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9aeddcd8a6.webp" srcset="/images/loading.gif" lazyload alt="image-20221127142431348"></p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9afd665133.webp" srcset="/images/loading.gif" lazyload alt="image-20221127142437041"></p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9b098cc2e2.webp" srcset="/images/loading.gif" lazyload alt="image-20221127142443323"></p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9af51f04c2.webp" srcset="/images/loading.gif" lazyload alt="image-20221127142451106"></p>
+</li>
+<li><p>bat执行完成后手机将自动进入twrp<br>过程</p>
+</li>
+<li><p>清除，格式化data，然后点返回，然后点重启（已经是MIUI的，在后续版本维护时不需要格式化data）</p>
+</li>
+<li><p>开机进开机向导不要连接WiFi！！！有跳过就点跳过即可成功进入系统。</p>
+</li>
+</ol>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>至此MIUI就刷入完成，总体来说并不复杂，接下来讲讲使用体验。</p>
+<h1 id="二、使用体验"><a href="#二、使用体验" class="headerlink" title="二、使用体验"></a>二、使用体验</h1><h2 id="免费版"><a href="#免费版" class="headerlink" title="免费版"></a>免费版</h2><p>免费版的固件是用最后一个开发版的MIUI做的，目前几天用下来的感觉是BUG不少。</p>
+<ol>
+<li>蓝牙音量锁死最大无法调节</li>
+<li>会经常性黑屏，失灵，无法操作</li>
+<li>部分应用无法自适应深色模式</li>
+<li>默认情况下dpi设置有问题，图标排布会乱，要自己手动改成700才行</li>
+<li>没法使用杜比音效</li>
+<li>没法启用护眼模式</li>
+<li>等等</li>
+</ol>
+<p>排除上诉这些bug的因素的话，免费版的系统还是很够用的，MIUI的智慧分屏、对微信hd的适配、与小米手机间的妙享和应用流转、文件互联等等都非常方便，MIUI的动画也相对舒适。</p>
+<h2 id="付费版"><a href="#付费版" class="headerlink" title="付费版"></a>付费版</h2><p>付费版的固件是用稳定版的MIUI制作，总体来说和免费版没太大差别，只是修复了上述的bug,让MIUI系统在联想小新Pad_Plus上的体验几乎达到了与小米平板本身同等层次的水准。</p>
+<p>不过目前付费版的第四版在我的实际体验中，维护者宣称已经修复了的上述BUG-6依然存在，不过我一般也用不到，所以无所谓了。</p>
+<p>上述提到的需要用到除付费版固件之外的文件目前已经上传到网盘：</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.189.cn/web/share?code=VzUBVnUfaUnq">https://cloud.189.cn/web/share?code=VzUBVnUfaUnq</a></p>
+<p>（访问码：3uce）</p>
+<p>免费版第八版的固件直接使用作者发布的123网盘：</p>
+<p><a target="_blank" rel="noopener" href="https://www.123pan.com/s/Y2iRVv-GaYX">https://www.123pan.com/s/Y2iRVv-GaYX</a></p>
+<p>（提取码:6666）</p>
+<p>需要付费版固件的可以自己从酷安等地方联系开发者，给他们捐赠6.66进群获取。（虽然博主不太赞成这种行为，但是也尊重开发者的选择，毕竟不是所有人都可以为爱发电）</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Android/">Android</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Android/">Android</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/12/19/xiao-yang-ren-ri-ji/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">“小阳人”日记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/22/ji-ge-linux-xia-ke-yong-de-yin-le-ruan-jian-ping-jie/">
+                        <span class="hidden-mobile">几个linux下可用的音乐软件评价</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.dmnb.cf/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.dmnb.cf/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"lang":"zh-CN","emoji":["https://cdn.dmnb.cf/gh/walinejs/emojis@1.1.0/tieba"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    <p>Copyright © 2020 鸣庚</p> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <span>本网站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img style="max-height: 50px;" loading="lazy" src="https://static.031130.xyz/uploads/2024/08/12/ba8d70971c408.webp" srcset="https://static.031130.xyz/uploads/2024/08/12/62f800fc26770.gif" lazyload alt="又拍云 Logo" /></a> 提供 CDN 加速/云存储服务</span> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.dmnb.cf/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.dmnb.cf/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.dmnb.cf/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.dmnb.cf/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.dmnb.cf/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

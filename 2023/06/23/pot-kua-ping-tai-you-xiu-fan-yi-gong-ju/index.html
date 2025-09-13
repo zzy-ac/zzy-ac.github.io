@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="就是博客啊，还要啥描述？">
+  <meta name="author" content="鸣庚">
+  <meta name="keywords" content="">
+  <meta name="description" content="介绍Pot (Translator of Pylogmon) 一个跨平台的划词翻译软件 ( 快速上手| 软件下载| 进阶配置|Github)   名字来源pot(Translator of Pylogmon | 派了个萌的翻译器) 不用 top 是因为已经有知名 linux 软件占用了top这个名字 所以现在你也可以叫他翻译锅 😂                使用方法    描述 预览">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pot——跨平台优秀翻译工具">
+<meta property="og:url" content="https://blog.dmnb.cf/2023/06/23/pot-kua-ping-tai-you-xiu-fan-yi-gong-ju/index.html">
+<meta property="og:site_name" content="鸣庚亭">
+<meta property="og:description" content="介绍Pot (Translator of Pylogmon) 一个跨平台的划词翻译软件 ( 快速上手| 软件下载| 进阶配置|Github)   名字来源pot(Translator of Pylogmon | 派了个萌的翻译器) 不用 top 是因为已经有知名 linux 软件占用了top这个名字 所以现在你也可以叫他翻译锅 😂                使用方法    描述 预览">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9adbb2510f.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9af7167971.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b03d2b0b9.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b7c203534.gif">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b7d32f1d8.gif">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b7fb2c77f.gif">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b81803435.gif">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b83093ce0.gif">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b83f1ba0b.gif">
+<meta property="article:published_time" content="2023-06-23T01:32:28.912Z">
+<meta property="article:modified_time" content="2025-09-13T09:41:37.180Z">
+<meta property="article:author" content="鸣庚">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.m-l.cc/2024-08-12-66b9adbb2510f.webp">
+  
+    <meta name="referrer" content="no-referrer"><script defer src="https://umami.dmnb.cf/script.js" data-website-id="00b8a36a-8519-4f41-a35f-eac9b4918c29"></script>
+  
+  <title>Pot——跨平台优秀翻译工具 - 鸣庚亭</title>
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.dmnb.cf","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="鸣庚亭" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>鸣庚亭</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                其他
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://dmnb.cf/">
+                    
+                    鸣庚短链
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://lsky.dmnb.cf">
+                    
+                    鸣庚图床
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://cloud.dmnb.cf/">
+                    
+                    鸣庚cloudreve
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://pan.dmnb.cf/">
+                    
+                    鸣庚网盘(om)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://alist.dmnb.cf/">
+                    
+                    鸣庚云盘(Alist)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://font.dmnb.cf/">
+                    
+                    鸣庚字体编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://md.dmnb.cf">
+                    
+                    鸣庚md编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://gh.dmnb.cf/">
+                    
+                    鸣庚的GitHub文件加速
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cover.dmnb.cf/') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Pot——跨平台优秀翻译工具">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      鸣庚
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-06-23 01:32" pubdate>
+        2023年6月23日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      960 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Pot——跨平台优秀翻译工具</h1>
+            
+            <div class="markdown-body">
+              <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h1 id="Pot-Translator-of-Pylogmon"><a href="#Pot-Translator-of-Pylogmon" class="headerlink" title="Pot (Translator of Pylogmon)"></a>Pot (Translator of Pylogmon)</h1><blockquote>
+<p>一个跨平台的划词翻译软件 ( <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/tutorial/intro">快速上手</a>| <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/download">软件下载</a>| <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE">进阶配置</a>|<a target="_blank" rel="noopener" href="https://github.com/pot-app/pot-desktop">Github</a>)</p>
+</blockquote>
+<hr>
+<h2 id="名字来源"><a href="#名字来源" class="headerlink" title="名字来源"></a>名字来源</h2><h3 id="pot-Translator-of-Pylogmon-派了个萌的翻译器"><a href="#pot-Translator-of-Pylogmon-派了个萌的翻译器" class="headerlink" title="pot(Translator of Pylogmon | 派了个萌的翻译器)"></a>pot(Translator of Pylogmon | 派了个萌的翻译器)</h3><blockquote>
+<p>不用 top 是因为已经有知名 linux 软件占用了<code>top</code>这个名字 所以现在你也可以叫他翻译锅 😂</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><img src="https://img.m-l.cc/2024-08-12-66b9adbb2510f.webp" srcset="/images/loading.gif" lazyload alt="img"></th>
+<th><img src="https://img.m-l.cc/2024-08-12-66b9af7167971.webp" srcset="/images/loading.gif" lazyload alt="img"></th>
+<th><img src="https://img.m-l.cc/2024-08-12-66b9b03d2b0b9.webp" srcset="/images/loading.gif" lazyload alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>描述</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>划词翻译</td>
+<td>选中需要翻译的文本之后，按下划词翻译快捷键即可</td>
+<td><img src="https://img.m-l.cc/2024-08-12-66b9b7c203534.gif" srcset="/images/loading.gif" lazyload alt="img"></td>
+</tr>
+<tr>
+<td>输入翻译</td>
+<td>按下输入翻译快捷键，输入需要翻译的文本，<code>Enter</code> 键翻译</td>
+<td><img src="https://img.m-l.cc/2024-08-12-66b9b7d32f1d8.gif" srcset="/images/loading.gif" lazyload alt="img"></td>
+</tr>
+<tr>
+<td>插件调用</td>
+<td>选中需要翻译的文本之后，点击插件图标即可，详情见<a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/tutorial/config/plugin_config">插件调用</a></td>
+<td><img src="https://img.m-l.cc/2024-08-12-66b9b7fb2c77f.gif" srcset="/images/loading.gif" lazyload alt="img"></td>
+</tr>
+<tr>
+<td>剪切板监听模式</td>
+<td>打开翻译窗口，启动剪切板监听模式，复制想要翻译的内容即可</td>
+<td><img src="https://img.m-l.cc/2024-08-12-66b9b81803435.gif" srcset="/images/loading.gif" lazyload alt="img"></td>
+</tr>
+<tr>
+<td>截图OCR</td>
+<td>按下快捷键，框选需要识别区域即可</td>
+<td><img src="https://img.m-l.cc/2024-08-12-66b9b83093ce0.gif" srcset="/images/loading.gif" lazyload alt="img"></td>
+</tr>
+<tr>
+<td>截图翻译</td>
+<td>按下快捷键，框选需要识别区域即可</td>
+<td><img src="https://img.m-l.cc/2024-08-12-66b9b83f1ba0b.gif" srcset="/images/loading.gif" lazyload alt="img"></td>
+</tr>
+</tbody></table>
+<h2 id="支持接口"><a href="#支持接口" class="headerlink" title="支持接口"></a>支持接口</h2><h3 id="翻译-API"><a href="#翻译-API" class="headerlink" title="翻译 API"></a>翻译 API</h3><ul>
+<li>Open AI(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 0.002$/1000token)</li>
+<li>阿里翻译(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 100 万字符)</li>
+<li>百度翻译(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 100 万字符)</li>
+<li>彩云小译(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 100 万字符)</li>
+<li>腾讯翻译(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 500 万字符)</li>
+<li>火山翻译(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 200 万字符)</li>
+<li>Lingva 翻译(无需申请，可以直接使用，也可以自建服务(见<a target="_blank" rel="noopener" href="https://github.com/TheDavidDelta/lingva-translate">lingva-translate</a>))</li>
+<li>谷歌翻译(无需申请，但需要自己解决网络问题，已提供镜像站地址设置选项)</li>
+<li>必应翻译(无需申请，直接使用)</li>
+<li>必应词典(无需申请，只能查词)</li>
+<li>DeepL(无需申请，直接使用(也可以使用自己的 API Key))</li>
+</ul>
+<h3 id="OCR-API"><a href="#OCR-API" class="headerlink" title="OCR API"></a>OCR API</h3><ul>
+<li>Tesseract(无需申请，直接使用)</li>
+<li>百度 OCR(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 1000 次)</li>
+<li>腾讯 OCR(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 1000 次)</li>
+<li>火山 OCR(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 一次性免费额度 5000 次)</li>
+<li>讯飞 OCR(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a>)</li>
+<li>OCR Space(需要申请 <a href="C">api 服务</a> 每月免费额度 25000 次)</li>
+<li>Simple Latex(需要申请 <a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 一次性免费额度 1000 次)</li>
+</ul>
+<p>具体的 api 服务申请步骤，见<a target="_blank" rel="noopener" href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">申请指南</a></p>
+<blockquote>
+<p>由于使用 api 产生的费用本程序作者概不负责</p>
+</blockquote>
+<h1 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h1><p>这款翻译、ORC程序具备优良的可用性和简洁性，一个总共不到30M的RSUT程序，却拥有着优秀的图形化界面和操作逻辑，可以在大多数情况下帮助人们方便的进行各种翻译需求。好用的呢！</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/07/24/cm311-1a-ji-ding-he-shua-armbian-ri-ji/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CM311-1a机顶盒刷armbian日记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/05/07/si-yue/">
+                        <span class="hidden-mobile">思岳</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.dmnb.cf/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.dmnb.cf/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"lang":"zh-CN","emoji":["https://cdn.dmnb.cf/gh/walinejs/emojis@1.1.0/tieba"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    <p>Copyright © 2020 鸣庚</p> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <span>本网站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img style="max-height: 50px;" loading="lazy" src="https://static.031130.xyz/uploads/2024/08/12/ba8d70971c408.webp" srcset="https://static.031130.xyz/uploads/2024/08/12/62f800fc26770.gif" lazyload alt="又拍云 Logo" /></a> 提供 CDN 加速/云存储服务</span> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.dmnb.cf/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.dmnb.cf/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.dmnb.cf/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.dmnb.cf/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.dmnb.cf/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

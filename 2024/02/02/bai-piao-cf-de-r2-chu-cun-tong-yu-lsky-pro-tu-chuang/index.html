@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="就是博客啊，还要啥描述？">
+  <meta name="author" content="鸣庚">
+  <meta name="keywords" content="">
+  <meta name="description" content="之前尝试过不少图床方案：smms、github+反代、知乎图床等等，但每种方案均有其自身的问题，如smms数据不在自己手中、github+反代速度玄学、知乎做图床相对麻烦且随时可能跑路。故而最近决定认真部署一个属于自己的、速度稳定些的图床。 经过几番查询后决定采用cf r2储存桶+lsky图床程序的形式来部署。主要原因有：  r2储存桶拥有全球加速，且可以选择东亚节点，在大陆与非大陆地区均可以获">
+<meta property="og:type" content="article">
+<meta property="og:title" content="白嫖cf的r2储存桶与Lsky-Pro图床">
+<meta property="og:url" content="https://blog.dmnb.cf/2024/02/02/bai-piao-cf-de-r2-chu-cun-tong-yu-lsky-pro-tu-chuang/index.html">
+<meta property="og:site_name" content="鸣庚亭">
+<meta property="og:description" content="之前尝试过不少图床方案：smms、github+反代、知乎图床等等，但每种方案均有其自身的问题，如smms数据不在自己手中、github+反代速度玄学、知乎做图床相对麻烦且随时可能跑路。故而最近决定认真部署一个属于自己的、速度稳定些的图床。 经过几番查询后决定采用cf r2储存桶+lsky图床程序的形式来部署。主要原因有：  r2储存桶拥有全球加速，且可以选择东亚节点，在大陆与非大陆地区均可以获">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b0021f8cf.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9add1e738e.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ae7a1729b.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9af1121cb2.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ad4b8e3ab.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9acf269bde.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9acfe16aab.webp">
+<meta property="article:published_time" content="2024-02-02T11:50:35.455Z">
+<meta property="article:modified_time" content="2024-02-02T11:50:35.623Z">
+<meta property="article:author" content="鸣庚">
+<meta property="article:tag" content="网页部署">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.m-l.cc/2024-08-12-66b9b0021f8cf.webp">
+  
+    <meta name="referrer" content="no-referrer"><script defer src="https://umami.dmnb.cf/script.js" data-website-id="00b8a36a-8519-4f41-a35f-eac9b4918c29"></script>
+  
+  <title>白嫖cf的r2储存桶与Lsky-Pro图床 - 鸣庚亭</title>
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.dmnb.cf","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="鸣庚亭" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>鸣庚亭</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                其他
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://dmnb.cf/">
+                    
+                    鸣庚短链
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://lsky.dmnb.cf">
+                    
+                    鸣庚图床
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://cloud.dmnb.cf/">
+                    
+                    鸣庚cloudreve
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://pan.dmnb.cf/">
+                    
+                    鸣庚网盘(om)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://alist.dmnb.cf/">
+                    
+                    鸣庚云盘(Alist)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://font.dmnb.cf/">
+                    
+                    鸣庚字体编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://md.dmnb.cf">
+                    
+                    鸣庚md编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://gh.dmnb.cf/">
+                    
+                    鸣庚的GitHub文件加速
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cover.dmnb.cf/') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="白嫖cf的r2储存桶与Lsky-Pro图床">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      鸣庚
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2024-02-02 11:50" pubdate>
+        2024年2月2日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">白嫖cf的r2储存桶与Lsky-Pro图床</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>之前尝试过不少图床方案：smms、github+反代、知乎图床等等，但每种方案均有其自身的问题，如smms数据不在自己手中、github+反代速度玄学、知乎做图床相对麻烦且随时可能跑路。故而最近决定认真部署一个属于自己的、速度稳定些的图床。</p>
+<p>经过几番查询后决定采用cf r2储存桶+lsky图床程序的形式来部署。主要原因有：</p>
+<ol>
+<li>r2储存桶拥有全球加速，且可以选择东亚节点，在大陆与非大陆地区均可以获得不错的访问速度。</li>
+<li>lsky-pro图床支持多种储存策略（甚至包括alist的webdav都可以）哪怕有天r2用不了，也能及时更换到其它方案。</li>
+<li>这俩都可以免费白嫖。</li>
+</ol>
+</blockquote>
+<h1 id="注册R2储存桶"><a href="#注册R2储存桶" class="headerlink" title="注册R2储存桶"></a>注册R2储存桶</h1><p>CloudFlare R2 是 Cloudflare 公司推出的一款兼容 S3 API  的免费云存储服务，它允许用户在全球范围内的分布式网络上存储和检索数据。 这项服务的设计目标之一是提供低延迟、高吞吐量的存储体验，利用横跨 100  多国家中 275 个城市的内容交付网络来实现这一目标。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>CloudFlare 账号注册：<a href="https://link.juejin.cn/?target=https://www.cloudflare.com/" title="https://www.cloudflare.com/">www.cloudflare.com/</a></li>
+<li>购买域名：选择一个合适的域名，并在 CloudFlare 上进行域名解析。</li>
+<li>绑定信用卡（只用于验证)</li>
+</ol>
+<h2 id="创建储存桶"><a href="#创建储存桶" class="headerlink" title="创建储存桶"></a>创建储存桶</h2><p>在侧边菜单找到 <code>R2 服务</code>,然后点击<code>创建存储桶</code>，名称随意喜欢就好，地区选亚太地区即可</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9b0021f8cf.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9b0021f8cf.webp"></p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9add1e738e.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9add1e738e.webp"></p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>刚创建好的桶虽然可以上传图片、文件之类的，但是默认不可通过公网访问。</p>
+<p>虽然可以用cloudflare提供的二级域名访问，但是有一些频率速率方面的限制，而且.dev的域名也可能被大防火墙拦截，所以还是绑定自己域名更好一些。</p>
+<p>再桶的设置里找到自定义域选项，添加自定义域名即可</p>
+<p>打开你创建的储存桶，点击设置然后：</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ae7a1729b.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9ae7a1729b.webp"></p>
+<p>选择自定义域，并连接到你自己的域名，即可自定义图片的直链了。（其实不绑定域名的话也会提供一个R2.dev子域名给你，也能够正常使用，只不过这里的域名有些过于长了，不好记。）</p>
+<h2 id="创建-R2-的-API-token"><a href="#创建-R2-的-API-token" class="headerlink" title="创建 R2 的 API token"></a>创建 R2 的 API token</h2><p>提示：<strong>api 令牌只会显示 1 次。需记录到本地备用。</strong></p>
+<ul>
+<li>在 R2 的控制台右侧 点击 <code>管理 R2 API 令牌</code> —&gt;<code>创建API令牌</code><strong>。</strong></li>
+<li>权限选对象读和写都可</li>
+<li>指定存储桶选择你刚创建的桶</li>
+<li>TTL选永久。其他不变。</li>
+</ul>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9af1121cb2.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9af1121cb2.webp"></p>
+<h1 id="部署Lsky-pro图床"><a href="#部署Lsky-pro图床" class="headerlink" title="部署Lsky-pro图床"></a>部署Lsky-pro图床</h1><p>参考官方教程：<a target="_blank" rel="noopener" href="https://docs.lsky.pro/docs/free/v2/">https://docs.lsky.pro/docs/free/v2</a></p>
+<p>或使用docker部署的话参考docker教程：<a target="_blank" rel="noopener" href="https://github.com/HalcyonAzure/lsky-pro-docker/blob/master/README.md">https://github.com/HalcyonAzure/lsky-pro-docker/blob/master/README.md</a></p>
+<h2 id="Lsky-pro与R2对象存储对接"><a href="#Lsky-pro与R2对象存储对接" class="headerlink" title="Lsky-pro与R2对象存储对接"></a>Lsky-pro与R2对象存储对接</h2><p>直接看图吧：</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ad4b8e3ab.webp" srcset="/images/loading.gif" lazyload alt="教程图片"></p>
+<p>* 访问域名：如上图，此域名可以自己解析<strong>公开访问</strong>里的域名，也可以在<strong>域访问</strong>哪里添加绑定。</p>
+<p>* URL 额外参数：可不写</p>
+<p>* AccessKeyId：R2 访问密钥ID</p>
+<p>* SecretAccessKey：R2 机密访问密钥</p>
+<p>* 连接地址区域(region)：<code>auto</code>(自动最佳地区，<strong>推荐</strong>)，或者<code>us-east-1</code>(美区)</p>
+<p>* 储存桶名称：之前创建储存桶时设置的储存桶名称</p>
+<h2 id="我的备选储存方案"><a href="#我的备选储存方案" class="headerlink" title="我的备选储存方案"></a>我的备选储存方案</h2><p>出于多重方案多重保险的目的，我还添加了备用的储存方案，即使用alist提供的webdav来存储图片，alist是一款支持部署多重网盘解析直链的强大工具，利用alist的webdav服务，我们可以将图床存储到任何可能的网盘中，如：阿里云盘、onedrive、谷歌云盘、百度网盘甚至是可以提供无限图片存储空间的一刻相册。</p>
+<p>在这里为了给有兴趣使用我的图床的其它用户提供服务并防止小小10G的免费R2被刷爆，我这里选择使用无限空间的一刻相册来部署。</p>
+<p><a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/guide/">alist部署教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/guide/drivers/baidu.photo.html">alist挂载一刻相册教程</a></p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9acf269bde.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9acf269bde.webp"></p>
+<p>如此这般我的备选lsky存储方案也部署好了。</p>
+<p>之后只用简单配置一下用户组和默认的储存桶，就可以毫无顾忌的开放注册为网友提供服务了。</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>如果使用alist+网盘的储存方案时用到如<code>一刻相册</code>这样的国内网盘，那么为了放置被恶意上传色图、血腥图片等18禁内容，还应该打开lsky-pro的图片审核功能，识别到色图直接删除，避免风险。</p>
+<p>如果希望体验一下我的图床的话，欢迎注册使用!：<a target="_blank" rel="noopener" href="https://lsky.dmnb.cf/">lsky.dmnb.cf</a></p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9acfe16aab.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9acfe16aab.webp"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%9B%BE%E5%BA%8A%E5%BB%BA%E8%AE%BE/">图床建设</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/">网页部署</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/03/01/gu-ge-da-mo-xing-ai-gemini-bai-piao-api-gong-lue/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">谷歌大模型AI—Gemini白嫖api攻略</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/01/22/cf-worker-fan-dai-jiao-ben-fen-xiang/">
+                        <span class="hidden-mobile">cf worker反代脚本分享</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.dmnb.cf/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.dmnb.cf/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"lang":"zh-CN","emoji":["https://cdn.dmnb.cf/gh/walinejs/emojis@1.1.0/tieba"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    <p>Copyright © 2020 鸣庚</p> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <span>本网站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img style="max-height: 50px;" loading="lazy" src="https://static.031130.xyz/uploads/2024/08/12/ba8d70971c408.webp" srcset="https://static.031130.xyz/uploads/2024/08/12/62f800fc26770.gif" lazyload alt="又拍云 Logo" /></a> 提供 CDN 加速/云存储服务</span> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.dmnb.cf/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.dmnb.cf/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.dmnb.cf/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.dmnb.cf/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.dmnb.cf/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

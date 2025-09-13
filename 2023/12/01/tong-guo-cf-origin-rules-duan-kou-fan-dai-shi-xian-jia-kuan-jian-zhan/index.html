@@ -1,0 +1,658 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="就是博客啊，还要啥描述？">
+  <meta name="author" content="鸣庚">
+  <meta name="keywords" content="">
+  <meta name="description" content="起因无意间发现cloudflare的origin rules规则，可以进行端口反向代理，将对应端口上的页面代理到正常的80、443上，直接访问。于是开始琢磨起它的使用方法。 应用场景这个功能的应用场景非常广泛，据我简单思考大致有以下几点，欢迎补充：  家宽，运营商拦截了80、443端口的，可以绕过限制建站。 没有公网ipv4但有ipv6的家宽，可以实现1的同时将ipv6单栈解析转为ipv4、ipv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过cf origin rules端口反代实现家宽建站">
+<meta property="og:url" content="https://blog.dmnb.cf/2023/12/01/tong-guo-cf-origin-rules-duan-kou-fan-dai-shi-xian-jia-kuan-jian-zhan/index.html">
+<meta property="og:site_name" content="鸣庚亭">
+<meta property="og:description" content="起因无意间发现cloudflare的origin rules规则，可以进行端口反向代理，将对应端口上的页面代理到正常的80、443上，直接访问。于是开始琢磨起它的使用方法。 应用场景这个功能的应用场景非常广泛，据我简单思考大致有以下几点，欢迎补充：  家宽，运营商拦截了80、443端口的，可以绕过限制建站。 没有公网ipv4但有ipv6的家宽，可以实现1的同时将ipv6单栈解析转为ipv4、ipv">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9af0bc79c4.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9aefa4c341.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9af6cdc334.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9adecb98e6.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ad894848f.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9adb083330.webp">
+<meta property="article:published_time" content="2023-12-01T03:11:28.363Z">
+<meta property="article:modified_time" content="2025-09-13T09:41:37.183Z">
+<meta property="article:author" content="鸣庚">
+<meta property="article:tag" content="网页部署">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.m-l.cc/2024-08-12-66b9af0bc79c4.webp">
+  
+    <meta name="referrer" content="no-referrer"><script defer src="https://umami.dmnb.cf/script.js" data-website-id="00b8a36a-8519-4f41-a35f-eac9b4918c29"></script>
+  
+  <title>通过cf origin rules端口反代实现家宽建站 - 鸣庚亭</title>
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.dmnb.cf","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="鸣庚亭" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>鸣庚亭</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                其他
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://dmnb.cf/">
+                    
+                    鸣庚短链
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://lsky.dmnb.cf">
+                    
+                    鸣庚图床
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://cloud.dmnb.cf/">
+                    
+                    鸣庚cloudreve
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://pan.dmnb.cf/">
+                    
+                    鸣庚网盘(om)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://alist.dmnb.cf/">
+                    
+                    鸣庚云盘(Alist)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://font.dmnb.cf/">
+                    
+                    鸣庚字体编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://md.dmnb.cf">
+                    
+                    鸣庚md编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://gh.dmnb.cf/">
+                    
+                    鸣庚的GitHub文件加速
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cover.dmnb.cf/') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="通过cf origin rules端口反代实现家宽建站">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      鸣庚
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-12-01 03:11" pubdate>
+        2023年12月1日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">通过cf origin rules端口反代实现家宽建站</h1>
+            
+            <div class="markdown-body">
+              <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>无意间发现cloudflare的origin rules规则，可以进行端口反向代理，将对应端口上的页面代理到正常的80、443上，直接访问。于是开始琢磨起它的使用方法。</p>
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>这个功能的应用场景非常广泛，据我简单思考大致有以下几点，欢迎补充：</p>
+<ol>
+<li>家宽，运营商拦截了80、443端口的，可以绕过限制建站。</li>
+<li>没有公网ipv4但有ipv6的家宽，可以实现1的同时将ipv6单栈解析转为ipv4、ipv6双栈的。</li>
+<li>让限制了端口数量的nat小鸡建站</li>
+<li>让纯ipv6小鸡也可以建站（同2）</li>
+</ol>
+<h1 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h1><p>要实现上述功能原理非常简单，首先我有一个工具域名 <code>tool.example.com</code>ddns解析到了我的家宽。</p>
+<p>然后将需要用到的域名如 <code>aaa.example.com</code>cname到工具域名 <code>tool.example.com</code>并打开cf的cdn按钮。</p>
+<p>最后创建一条origin rules规则，将 <code>aaa.example.com</code>重写到指定端口。如此即可实现不带端口直接通过域名访问搭建在家宽的站点。</p>
+<p>不过cf的免费服务只能创建10个origin rules规则。</p>
+<h1 id="具体操作步骤"><a href="#具体操作步骤" class="headerlink" title="具体操作步骤"></a>具体操作步骤</h1><h2 id="方法一：使用nginx、OpenResty等webserver来搭建网页"><a href="#方法一：使用nginx、OpenResty等webserver来搭建网页" class="headerlink" title="方法一：使用nginx、OpenResty等webserver来搭建网页"></a>方法一：使用nginx、OpenResty等webserver来搭建网页</h2><p>优势：</p>
+<ol>
+<li>可以绕开10条规则的限制，仅仅用一条规则就可以将多个家宽搭建的站点反代出来直接访问。</li>
+<li>便于管理</li>
+</ol>
+<p>不足：</p>
+<ol>
+<li>如果不使用如宝塔、1panel之类的面板工具的话搭建比较麻烦</li>
+</ol>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>我这里直接用1panel面板建站了，各位有什么独特的需求或者可以手搓的，请自便。</p>
+<h4 id="1、安装1panel"><a href="#1、安装1panel" class="headerlink" title="1、安装1panel"></a>1、安装1panel</h4><p>参考官方文档采取合适方式安装：<a target="_blank" rel="noopener" href="https://1panel.cn/docs/installation/online_installation/">在线安装 - 1Panel 文档</a></p>
+<p>安装成功后，控制台会打印面板访问信息，可通过浏览器访问 1Panel：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span>目标服务器 IP 地址:目标端口/安全入口<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>如果使用的是云服务器，请至安全组开放目标端口。</strong></li>
+<li><strong>ssh 登录 1Panel 服务器后，执行 1pctl user-info 命令可获取安全入口（entrance）</strong></li>
+</ul>
+<p>安装成功后，可使用 <a target="_blank" rel="noopener" href="https://1panel.cn/docs/installation/cli/">1pctl</a> 命令行工具来维护 1Panel</p>
+<h4 id="2、安装所需应用"><a href="#2、安装所需应用" class="headerlink" title="2、安装所需应用"></a>2、安装所需应用</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9af0bc79c4.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9af0bc79c4.webp"></p>
+<p>如果需要自己建站的话，可以安装OpenResty、PHP、Mysql等常用工具。</p>
+<p>此外1panel还提供大量相关应用程序如Alist、Cloudreve、WordPress等可供直接下载使用。</p>
+<h4 id="3、安装OpenResty时记得设置好http站点的默认端口如设成1234，https的端口可以不管。"><a href="#3、安装OpenResty时记得设置好http站点的默认端口如设成1234，https的端口可以不管。" class="headerlink" title="3、安装OpenResty时记得设置好http站点的默认端口如设成1234，https的端口可以不管。"></a>3、安装OpenResty时记得设置好http站点的默认端口如设成1234，https的端口可以不管。</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9aefa4c341.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9aefa4c341.webp"></p>
+<h4 id="4、在ddns脚本中将-tool-example-com工具域名解析到你的家宽ip上。"><a href="#4、在ddns脚本中将-tool-example-com工具域名解析到你的家宽ip上。" class="headerlink" title="4、在ddns脚本中将 tool.example.com工具域名解析到你的家宽ip上。"></a>4、在ddns脚本中将 <code>tool.example.com</code>工具域名解析到你的家宽ip上。</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9af6cdc334.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9af6cdc334.webp"></p>
+<h4 id="5、1p创建一个网站，将域名设为-aaa-example-com"><a href="#5、1p创建一个网站，将域名设为-aaa-example-com" class="headerlink" title="5、1p创建一个网站，将域名设为 aaa.example.com"></a>5、1p创建一个网站，将域名设为 <code>aaa.example.com</code></h4><p><img src="https://img.m-l.cc/2024-08-12-66b9adecb98e6.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9adecb98e6.webp"></p>
+<h4 id="6、在cloudflare创建一个cname记录，将-aaa-example-com解析到-tool-example-com上，并开启cf-cdn。"><a href="#6、在cloudflare创建一个cname记录，将-aaa-example-com解析到-tool-example-com上，并开启cf-cdn。" class="headerlink" title="6、在cloudflare创建一个cname记录，将 aaa.example.com解析到 tool.example.com上，并开启cf cdn。"></a>6、在cloudflare创建一个cname记录，将 <code>aaa.example.com</code>解析到 <code>tool.example.com</code>上，并开启cf cdn。</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9ad894848f.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9ad894848f.webp"></p>
+<h4 id="7、创建一个Origin-rules，将域名aaa-example-com重写到1234端口"><a href="#7、创建一个Origin-rules，将域名aaa-example-com重写到1234端口" class="headerlink" title="7、创建一个Origin rules，将域名aaa.example.com重写到1234端口"></a>7、创建一个Origin rules，将域名aaa.example.com重写到1234端口</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9adb083330.webp" srcset="/images/loading.gif" lazyload alt="https://img.m-l.cc/2024-08-12-66b9adb083330.webp"></p>
+<p>完成，访问你的aaa.example.com就能打开你的网站了。</p>
+<h3 id="方法二，直接一个端口搭一个网页，然后每个端口分辨创建一条Origin-rules来转发端口"><a href="#方法二，直接一个端口搭一个网页，然后每个端口分辨创建一条Origin-rules来转发端口" class="headerlink" title="方法二，直接一个端口搭一个网页，然后每个端口分辨创建一条Origin rules来转发端口"></a>方法二，直接一个端口搭一个网页，然后每个端口分辨创建一条Origin rules来转发端口</h3><p>优势：可能省了点事？不需要使用额外的webserver啥的</p>
+<p>不足：站点不多还好，站点多了管理麻烦，而且10条规则可能不够用。</p>
+<h1 id="以上，完毕"><a href="#以上，完毕" class="headerlink" title="以上，完毕"></a>以上，完毕</h1>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/">网页部署</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/">网页部署</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/01/22/cf-worker-fan-dai-jiao-ben-fen-xiang/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">cf worker反代脚本分享</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/11/09/ding-shi-bei-fen-mysql-mariadb-shu-ju-ku-bing-shang-chuan-zhi-tgbot/">
+                        <span class="hidden-mobile">定时备份mysql/mariadb数据库并上传至tgbot</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.dmnb.cf/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.dmnb.cf/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"lang":"zh-CN","emoji":["https://cdn.dmnb.cf/gh/walinejs/emojis@1.1.0/tieba"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    <p>Copyright © 2020 鸣庚</p> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <span>本网站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img style="max-height: 50px;" loading="lazy" src="https://static.031130.xyz/uploads/2024/08/12/ba8d70971c408.webp" srcset="https://static.031130.xyz/uploads/2024/08/12/62f800fc26770.gif" lazyload alt="又拍云 Logo" /></a> 提供 CDN 加速/云存储服务</span> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.dmnb.cf/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.dmnb.cf/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.dmnb.cf/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.dmnb.cf/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.dmnb.cf/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

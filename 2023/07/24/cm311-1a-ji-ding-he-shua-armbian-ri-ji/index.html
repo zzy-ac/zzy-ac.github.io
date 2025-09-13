@@ -1,0 +1,666 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="就是博客啊，还要啥描述？">
+  <meta name="author" content="鸣庚">
+  <meta name="keywords" content="">
+  <meta name="description" content="前言：进来机顶盒刷机人群日多，其中cm311-1a以其物美价廉，一度广受玩家喜爱，故而本人也采购一台开始了曲折的刷机之路!  DAY1（失败的尝试。）自信满满——有点不对啊？——寄了寄了！ 由于第一日还未准备好写笔记，所以第一日的折腾内容忘记拍照&#x2F;截图了，只有两张拆机后的图，不过不要紧，今天的步骤明天都得再来1～N遍的(TдT) ，写到明天的笔记去吧。 自信满满刚拿到机子，回家开机，adb连接，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CM311-1a机顶盒刷armbian日记">
+<meta property="og:url" content="https://blog.dmnb.cf/2023/07/24/cm311-1a-ji-ding-he-shua-armbian-ri-ji/index.html">
+<meta property="og:site_name" content="鸣庚亭">
+<meta property="og:description" content="前言：进来机顶盒刷机人群日多，其中cm311-1a以其物美价廉，一度广受玩家喜爱，故而本人也采购一台开始了曲折的刷机之路!  DAY1（失败的尝试。）自信满满——有点不对啊？——寄了寄了！ 由于第一日还未准备好写笔记，所以第一日的折腾内容忘记拍照&#x2F;截图了，只有两张拆机后的图，不过不要紧，今天的步骤明天都得再来1～N遍的(TдT) ，写到明天的笔记去吧。 自信满满刚拿到机子，回家开机，adb连接，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9aee5b1cfa.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9af49d0c9f.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9b076efe19.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ad5181ce2.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9af370fa1b.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9af83e0735.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ad9f562ce.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ad59c0b2c.webp">
+<meta property="og:image" content="https://img.m-l.cc/2024-08-12-66b9ade256fb4.webp">
+<meta property="article:published_time" content="2023-07-24T17:13:21.981Z">
+<meta property="article:modified_time" content="2025-09-13T09:41:37.179Z">
+<meta property="article:author" content="鸣庚">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="armbian">
+<meta property="article:tag" content="机顶盒">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.m-l.cc/2024-08-12-66b9aee5b1cfa.webp">
+  
+    <meta name="referrer" content="no-referrer"><script defer src="https://umami.dmnb.cf/script.js" data-website-id="00b8a36a-8519-4f41-a35f-eac9b4918c29"></script>
+  
+  <title>CM311-1a机顶盒刷armbian日记 - 鸣庚亭</title>
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.dmnb.cf","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="鸣庚亭" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>鸣庚亭</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                其他
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://dmnb.cf/">
+                    
+                    鸣庚短链
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://lsky.dmnb.cf">
+                    
+                    鸣庚图床
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://cloud.dmnb.cf/">
+                    
+                    鸣庚cloudreve
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://pan.dmnb.cf/">
+                    
+                    鸣庚网盘(om)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://alist.dmnb.cf/">
+                    
+                    鸣庚云盘(Alist)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://font.dmnb.cf/">
+                    
+                    鸣庚字体编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://md.dmnb.cf">
+                    
+                    鸣庚md编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://gh.dmnb.cf/">
+                    
+                    鸣庚的GitHub文件加速
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cover.dmnb.cf/') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="CM311-1a机顶盒刷armbian日记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      鸣庚
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-07-24 17:13" pubdate>
+        2023年7月24日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CM311-1a机顶盒刷armbian日记</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>前言：进来机顶盒刷机人群日多，其中cm311-1a以其物美价廉，一度广受玩家喜爱，故而本人也采购一台开始了曲折的刷机之路!</p>
+</blockquote>
+<h2 id="DAY1（失败的尝试。）"><a href="#DAY1（失败的尝试。）" class="headerlink" title="DAY1（失败的尝试。）"></a>DAY1（失败的尝试。）</h2><p>自信满满——有点不对啊？——寄了寄了！</p>
+<p>由于第一日还未准备好写笔记，所以第一日的折腾内容忘记拍照/截图了，只有两张拆机后的图，不过不要紧，今天的步骤明天都得再来1～N遍的(TдT) ，写到明天的笔记去吧。</p>
+<h3 id="自信满满"><a href="#自信满满" class="headerlink" title="自信满满"></a>自信满满</h3><p>刚拿到机子，回家开机，adb连接，芜湖都没问题十分丝滑！</p>
+<p>做系统盘，挎挎完成，哎呦好像挺简单？</p>
+<p>装启动U盘系统！挎挎，毫无压力的进入armbian。</p>
+<p>哎呦到这里似乎都还蛮简单的？</p>
+<h3 id="有点不对啊？"><a href="#有点不对啊？" class="headerlink" title="有点不对啊？"></a>有点不对啊？</h3><p>继续按照教程重启！</p>
+<p>哎？怎么关机命令无效？怎么回事？要不我直接关电源算了？试试吧</p>
+<p>啊寄！</p>
+<p>灯亮了，但是路由器识别不到设备了，找不到设备ip了。貌似砖了？</p>
+<h3 id="寄了寄了！"><a href="#寄了寄了！" class="headerlink" title="寄了寄了！"></a>寄了寄了！</h3><p>至此day1的折腾宣告结束，直接变砖了QAQ。只能去京东斥7元巨资买了usb公对公的数据线准备明天的救砖吧。</p>
+<p>然后就是研究怎么拆机，一开始以为是只有卡扣的设计，所以尝试硬掰QaQ结果好几个卡扣断裂了的说。</p>
+<p>后来查明是后盖还有俩螺丝要拧，星夜去附近小商店2元斥巨资购入一个小螺丝刀，嘤嘤嘤，至此，额外的消费已经达到9元了(╯TдT)╯</p>
+<p>成功拆解机顶盒并找到了需要短接的焊点。第一天的瞎折腾到此结束，明天救砖回来再继续弄吧。</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9aee5b1cfa.webp" srcset="/images/loading.gif" lazyload alt="image-20230724211329657"></p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9af49d0c9f.webp" srcset="/images/loading.gif" lazyload alt="image-20230724211537108"></p>
+<h2 id="DAY-2-1-5"><a href="#DAY-2-1-5" class="headerlink" title="DAY 2 1.5"></a>DAY <del>2</del> 1.5</h2><h2 id="不用等到day2了！"><a href="#不用等到day2了！" class="headerlink" title="不用等到day2了！"></a>不用等到day2了！</h2><p>突然发现电脑有type-C口，试了一下，果然可以用type-C转usb-a的这种普通手机充电线来刷机顶盒！！！哇咔咔卡卡！！！立省7元！</p>
+<p>直接短接、刷入救砖包！</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9b076efe19.webp" srcset="/images/loading.gif" lazyload alt="捕获"></p>
+<p>等进度条走完后拔掉数据线，关闭电源不再短接，正常开机进入安卓！</p>
+<h2 id="正常的刷机流程"><a href="#正常的刷机流程" class="headerlink" title="正常的刷机流程"></a>正常的刷机流程</h2><h3 id="制作启动盘"><a href="#制作启动盘" class="headerlink" title="制作启动盘"></a>制作启动盘</h3><p>打开balena-etcher，下好armbian镜像，解压镜像，用balena-etcher将镜像写入U盘。</p>
+<h3 id="开心盒子（其实感觉琢磨琢磨，直接用adb指令也可以，不过懒得琢磨了）"><a href="#开心盒子（其实感觉琢磨琢磨，直接用adb指令也可以，不过懒得琢磨了）" class="headerlink" title="开心盒子（其实感觉琢磨琢磨，直接用adb指令也可以，不过懒得琢磨了）"></a>开心盒子（其实感觉琢磨琢磨，直接用adb指令也可以，不过懒得琢磨了）</h3><p>直接打开开心盒子输入机顶盒ip（进路由器查，或者连上hdmi在屏幕里看。<br>adb连接上机顶盒！</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ad5181ce2.webp" srcset="/images/loading.gif" lazyload alt="捕获-1"></p>
+<p>点击调试，点击从U盘/SD卡开启，并在点击后迅速将U盘插入！</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9af370fa1b.webp" srcset="/images/loading.gif" lazyload alt="捕获-3"></p>
+<p>稍等片刻后，在路由器上确定armbian的ip,并ssh进入u盘系统。</p>
+<p>首次进入需要修改root用户密码，创建普通用户，确立时区和语言等：</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9af83e0735.webp" srcset="/images/loading.gif" lazyload alt="捕获-4"></p>
+<p>然后使用armbian-install -m no开始将U盘系统写入机顶盒！</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ad9f562ce.webp" srcset="/images/loading.gif" lazyload alt="捕获-6"></p>
+<p>这里我用的cm311-1a-yst版本所以直接选择305,并使用习惯的ext4文件系统，选择1。</p>
+<p>稍等片刻后没有报错并按照提示poweroff关机即可。</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ad59c0b2c.webp" srcset="/images/loading.gif" lazyload alt="捕获-7"></p>
+<p>关机后，关闭电源，拔掉U盘，重新开机之后即可正常进入机顶盒内的armbian系统！！！</p>
+<p><img src="https://img.m-l.cc/2024-08-12-66b9ade256fb4.webp" srcset="/images/loading.gif" lazyload alt="捕获-8"></p>
+<h2 id="芜湖！！起飞啦！！！"><a href="#芜湖！！起飞啦！！！" class="headerlink" title="芜湖！！起飞啦！！！"></a>芜湖！！起飞啦！！！</h2><p>至此，一个艰苦朴素颇为曲折的armbian就终于装到我们的cm311-1a上去了！！！</p>
+<p>（一定要选对内核版本，例如7月24日发布的6.1.40版本内核的包就存在问题，无法正常安装，各种怪事，鬼知道我在意识到是内核问题之前反复救砖了多少回(╯TдT)╯！</p>
+<p>获得一台舒适的armbian主机之后应该干些什么呢？今夜过于晚了，博主先睡了，内容留到8月份再水一篇博客啦！哈哈哈哈哈哈！</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
+                    
+                      <a class="hover-with-bg" href="/tags/armbian/">armbian</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/">机顶盒</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/20/cm311-1a-ji-ding-he-ying-yong-ri-zhi/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CM311-1a机顶盒应用日志</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/23/pot-kua-ping-tai-you-xiu-fan-yi-gong-ju/">
+                        <span class="hidden-mobile">Pot——跨平台优秀翻译工具</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.dmnb.cf/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.dmnb.cf/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"lang":"zh-CN","emoji":["https://cdn.dmnb.cf/gh/walinejs/emojis@1.1.0/tieba"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    <p>Copyright © 2020 鸣庚</p> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <span>本网站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img style="max-height: 50px;" loading="lazy" src="https://static.031130.xyz/uploads/2024/08/12/ba8d70971c408.webp" srcset="https://static.031130.xyz/uploads/2024/08/12/62f800fc26770.gif" lazyload alt="又拍云 Logo" /></a> 提供 CDN 加速/云存储服务</span> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.dmnb.cf/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.dmnb.cf/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.dmnb.cf/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.dmnb.cf/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.dmnb.cf/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

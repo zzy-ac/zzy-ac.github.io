@@ -1,0 +1,629 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="就是博客啊，还要啥描述？">
+  <meta name="author" content="鸣庚">
+  <meta name="keywords" content="">
+  <meta name="description" content="一台新kobo到手后做的配置：一、激活：打开数据库，往user数据里写入userid和useremail 二、更新固件在这个网站下载对应型号的对应版本的固件包，将其中的upgrade文件夹和KoboRoot.tgz文件解压到.kobo目录。拔线更新。 三、刷插件1、NikelMenu在这个项目releases里下载最新的插件包并安装 在.add目录下创建文本文件并写入对应的脚本内容例如： 1234">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一台新kobo到手后做的配置">
+<meta property="og:url" content="https://blog.dmnb.cf/2022/01/10/yi-tai-xin-kobo-dao-shou-hou-zuo-de-pei-zhi/index.html">
+<meta property="og:site_name" content="鸣庚亭">
+<meta property="og:description" content="一台新kobo到手后做的配置：一、激活：打开数据库，往user数据里写入userid和useremail 二、更新固件在这个网站下载对应型号的对应版本的固件包，将其中的upgrade文件夹和KoboRoot.tgz文件解压到.kobo目录。拔线更新。 三、刷插件1、NikelMenu在这个项目releases里下载最新的插件包并安装 在.add目录下创建文本文件并写入对应的脚本内容例如： 1234">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-10T20:15:41.000Z">
+<meta property="article:modified_time" content="2025-09-13T09:41:37.181Z">
+<meta property="article:author" content="鸣庚">
+<meta property="article:tag" content="kobo">
+<meta name="twitter:card" content="summary_large_image">
+  
+    <meta name="referrer" content="no-referrer"><script defer src="https://umami.dmnb.cf/script.js" data-website-id="00b8a36a-8519-4f41-a35f-eac9b4918c29"></script>
+  
+  <title>一台新kobo到手后做的配置 - 鸣庚亭</title>
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.dmnb.cf","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="鸣庚亭" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>鸣庚亭</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                其他
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://dmnb.cf/">
+                    
+                    鸣庚短链
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://lsky.dmnb.cf">
+                    
+                    鸣庚图床
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://cloud.dmnb.cf/">
+                    
+                    鸣庚cloudreve
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://pan.dmnb.cf/">
+                    
+                    鸣庚网盘(om)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://alist.dmnb.cf/">
+                    
+                    鸣庚云盘(Alist)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://font.dmnb.cf/">
+                    
+                    鸣庚字体编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://md.dmnb.cf">
+                    
+                    鸣庚md编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://gh.dmnb.cf/">
+                    
+                    鸣庚的GitHub文件加速
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cover.dmnb.cf/') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="一台新kobo到手后做的配置">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      鸣庚
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-10 20:15" pubdate>
+        2022年1月10日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      14k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      43 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">一台新kobo到手后做的配置</h1>
+            
+            <div class="markdown-body">
+              <h1 id="一台新kobo到手后做的配置："><a href="#一台新kobo到手后做的配置：" class="headerlink" title="一台新kobo到手后做的配置："></a>一台新kobo到手后做的配置：</h1><h2 id="一、激活："><a href="#一、激活：" class="headerlink" title="一、激活："></a>一、激活：</h2><p>打开数据库，往user数据里写入userid和useremail</p>
+<h2 id="二、更新固件"><a href="#二、更新固件" class="headerlink" title="二、更新固件"></a>二、更新固件</h2><p>在<a target="_blank" rel="noopener" href="https://pgaskin.net/KoboStuff/kobofirmware.html">这个网站</a>下载对应型号的对应版本的固件包，将其中的upgrade文件夹和KoboRoot.tgz文件解压到.kobo目录。拔线更新。</p>
+<h2 id="三、刷插件"><a href="#三、刷插件" class="headerlink" title="三、刷插件"></a>三、刷插件</h2><h3 id="1、NikelMenu"><a href="#1、NikelMenu" class="headerlink" title="1、NikelMenu"></a>1、NikelMenu</h3><p>在<a target="_blank" rel="noopener" href="https://github.com/pgaskin/NickelMenu">这个项目</a>releases里下载最新的插件包并安装</p>
+<p>在.add目录下创建文本文件并写入对应的脚本内容例如：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs elixir">menu_item <span class="hljs-symbol">:main</span>   <span class="hljs-symbol">:Reboot</span>   <span class="hljs-symbol">:power</span>      <span class="hljs-symbol">:reboot</span><br><br>menu_item <span class="hljs-symbol">:main</span> <span class="hljs-symbol">:KOReader</span> <span class="hljs-symbol">:cmd_spawn</span> <span class="hljs-symbol">:quiet</span><span class="hljs-symbol">:/mnt/onboard/</span>.adds/koreader/koreader.sh<br>menu_item <span class="hljs-symbol">:main</span>   <span class="hljs-symbol">:Rescan_Books</span>  <span class="hljs-symbol">:nickel_misc</span>  <span class="hljs-symbol">:rescan_books</span><br>menu_item <span class="hljs-symbol">:main</span>   <span class="hljs-symbol">:Font-OLD</span> <span class="hljs-symbol">:cmd_spawn</span> <span class="hljs-symbol">:quiet</span><span class="hljs-symbol">:/mnt/onboard/</span>.adds/freefont/old.sh<br>menu_item <span class="hljs-symbol">:main</span>   <span class="hljs-symbol">:Font-NEW</span> <span class="hljs-symbol">:cmd_spawn</span> <span class="hljs-symbol">:quiet</span><span class="hljs-symbol">:/mnt/onboard/</span>.adds/freefont/new.sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="2、NanoClock"><a href="#2、NanoClock" class="headerlink" title="2、NanoClock"></a>2、NanoClock</h3><p>按照<a target="_blank" rel="noopener" href="https://www.mobileread.com/forums/showthread.php?t=340047">这个教程</a>把nanoclock装入系统并自己配置好时钟的坐标、字体、大小等信息如：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment">; -------------------------------------------------------------------</span><br><span class="hljs-comment">;   NanoClock config file.</span><br><span class="hljs-comment">;   Canonical location: .adds/nanoclock/nanoclock.ini</span><br><span class="hljs-comment">; -------------------------------------------------------------------</span><br><br><span class="hljs-section">[global]</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; To uninstall, set to true</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">uninstall</span>=<span class="hljs-literal">false</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; To temporarily stop displaying the clock, set to true</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">stop</span>=<span class="hljs-literal">false</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; To debug, set to true</span><br><span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span> Everything is sent to the syslog, to look specifically for nanoclock entries, run</span><br><span class="hljs-comment">;;       logread | grep &#x27;\(nanoclock\|nanoclock\.sh\)\[[[:digit:]]\+\]&#x27;</span><br><span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span> Alternatively, you can find a NickelMenu config that will dump it in .adds/nanoclock/nanoclock.log</span><br><span class="hljs-comment">;;       over here: https://github.com/NiLuJe/NanoClock/blob/master/config/nm_nanoclock</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">debug</span>=<span class="hljs-literal">false</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; If this is enabled, the current log will be dumped to .adds/nanoclock/nanoclock.log</span><br><span class="hljs-comment">; every time this config file is reloaded.</span><br><span class="hljs-comment">; This is a poor man&#x27;s hack to get at the logs when you truly have no other way...</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">dump_log</span>=<span class="hljs-literal">false</span><br><br><br><span class="hljs-section">[display]</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; Date format string (see &#x27;man strftime&#x27;, e.g., &lt;https://man7.org/linux/man-pages/man3/strftime.3.html&gt;)</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; In addition may also use &#123;month&#125;, &#123;day&#125;, &#123;battery&#125;.</span><br><span class="hljs-comment">;; (Look for battery and locale settings further below).</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">format</span>=%H:%M<br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; In addition to the usual &quot;as necessary&quot; refreshes,</span><br><span class="hljs-comment">; also refresh the clock automatically, every minute, on the dot.</span><br><span class="hljs-comment">; Set to false to disable.</span><br><span class="hljs-comment">;;</span><br><span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span> If the device is not connected to a power source, and Wi-Fi is currently down,</span><br><span class="hljs-comment">;;       the device will be put into standby after roughly 5s of inactivity.</span><br><span class="hljs-comment">;;       That&#x27;s essentially a suspend to RAM, but with the lights &amp; touch panel still on.</span><br><span class="hljs-comment">;;       This means that, despite this setting, your clock will &quot;freeze&quot; very soon after a page turn,</span><br><span class="hljs-comment">;;       until the next sign of user activity (e.g., a touch or button press),</span><br><span class="hljs-comment">;;       at which point the device wakes up and everything resumes.</span><br><span class="hljs-comment">;;</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">autorefresh</span>=<span class="hljs-number">1</span><br><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; Where to print the clock</span><br><span class="hljs-comment">;</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; With one of the embedded bitmap fonts:</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">column</span>=-<span class="hljs-number">14</span><br><span class="hljs-attr">row</span>=-<span class="hljs-number">1</span><br><span class="hljs-comment">;; ^<span class="hljs-doctag">NOTE:</span> Can be negative (f.g., row -1 is the last line of the screen (bottom), column -1 is the last column on the screen (right)).</span><br><span class="hljs-attr">offset_x</span>=-<span class="hljs-number">2</span><br><span class="hljs-attr">offset_y</span>=-<span class="hljs-number">8</span><br><span class="hljs-comment">;; ^<span class="hljs-doctag">NOTE:</span> These do *NOT* override row/column, they *fine-tune* them. Offsets can be negative, but will not wrap around edges.</span><br><span class="hljs-comment">;;       f.g., if you only print a %H:%M timestamp, that&#x27;s 5 characters, so, the bottom-right corner of the screen would be:</span><br><span class="hljs-comment">;;       column=-5</span><br><span class="hljs-comment">;;       row=-1</span><br><span class="hljs-comment">;;       You can then adjust that a bit, by, say, moving it 10 pixels higher:</span><br><span class="hljs-comment">;;       offset_y=-10</span><br><span class="hljs-comment">;;  <span class="hljs-doctag">NOTE:</span> While column/row won&#x27;t, offset_x/offset_y *can* push content off-screen!</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; Font:  (IBM, UNSCII, ALT, THIN, FANTASY, MCR, TALL, BLOCK,</span><br><span class="hljs-comment">;         LEGGIE, VEGGIE, KATES, FKP, CTRLD, ORP, ORPB, ORPI,</span><br><span class="hljs-comment">;         SCIENTIFICA, SCIENTIFICAB, SCIENTIFICAI, TERMINUS,</span><br><span class="hljs-comment">;         TERMINUSB, FATTY, SPLEEN, TEWI, TEWIB, TOPAZ,</span><br><span class="hljs-comment">;         MICROKNIGHT, VGA, COZETTE)</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">font</span>=IBM<br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; Font Size:</span><br><span class="hljs-comment">; <span class="hljs-doctag">NOTE:</span> This is an integer multiplier of the native cell size of the font. (0 means choose a sensible default based on DPI, ranging from 2 to 4).</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">size</span>=<span class="hljs-number">0</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; Color: (BLACK GRAY&#123;1-9A-E&#125; WHITE)</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">fg_color</span>=BLACK<br><span class="hljs-attr">bg_color</span>=WHITE<br><span class="hljs-comment">;</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; With your own vector (TrueType, OpenType) fonts:</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; For fonts inside the same folder as your NanoClock configuration:</span><br><span class="hljs-comment">;;     truetype=yourfont.ttf</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; For fonts stored elsewhere in the filesystem:</span><br><span class="hljs-comment">;;     truetype=/mnt/onboard/fonts/something.ttf</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Only set these if you use *italic*, **bold**, ***bold italic*** in your format string:</span><br><span class="hljs-comment">;;</span><br><span class="hljs-comment">;;     truetype_format=*%a* **%b** ***%d*** %H:%M</span><br><span class="hljs-comment">;;     truetype_bold=yourfont-bold.ttf</span><br><span class="hljs-comment">;;     truetype_italic=yourfont-italic.ttf</span><br><span class="hljs-comment">;;     truetype_bolditalic=yourfont-bolditalic.ttf</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Technically, this can also be used for completely different font styles,</span><br><span class="hljs-comment">;; instead of italic or bold variants of the same font.</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span> Will fall back to regular mode when font file is unavailable.</span><br><span class="hljs-comment">;;       (e.g. while the device is connected to USB)</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">#truetype_size=16.0</span><br><span class="hljs-comment">#truetype_px=0</span><br><span class="hljs-comment">;; ^<span class="hljs-doctag">NOTE:</span> size is in pt, px is in pixels. If set to non-zero, px takes precedence.</span><br><span class="hljs-comment">;;        In case you ever need to do the maths yourself, px = dpi / 72.0 * pt</span><br><span class="hljs-comment">#truetype_x=0</span><br><span class="hljs-comment">#truetype_y=0</span><br><span class="hljs-comment">;; ^<span class="hljs-doctag">NOTE:</span> Much like above, these can be negative, in which case they count backwards from the opposite edge (like column/row).</span><br><span class="hljs-comment">;;        f.g., a rough match to the column/row example above might be:</span><br><span class="hljs-comment">;;        truetype_x=-115</span><br><span class="hljs-comment">;;        truetype_y=-44</span><br><span class="hljs-comment">;;</span><br><span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span>  If you want to position your clock near the bottom or right edge,</span><br><span class="hljs-comment">;;        using negative values is the only sensible way to have it actually work in both Portrait and Landscape orientations,</span><br><span class="hljs-comment">;;        whether you&#x27;re using a vector or a bitmap font.</span><br><span class="hljs-comment">;;</span><br><span class="hljs-attr">truetype_fg</span>=BLACK<br><span class="hljs-attr">truetype_bg</span>=WHITE<br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; TrueType padding</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; TrueType padding helps prevent visual fragments to appear,</span><br><span class="hljs-comment">;; in the extremely rare instance of multiple clock updates on the same page,</span><br><span class="hljs-comment">;; but it comes at the cost of adding extra whitespace.</span><br><span class="hljs-comment">;; Set to true to enable.</span><br><span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span> If you still have this enabled, and you&#x27;re seeing weird layout issues on the first update after a truetype switch,</span><br><span class="hljs-comment">;;       try disabling it.</span><br><span class="hljs-comment">;; <span class="hljs-doctag">NOTE:</span> This setting is mostly meaningless if backgroundless or overlay are enabled, but it is still honored,</span><br><span class="hljs-comment">;;       as it might help the autorefresh magic behave seamlessly ;).</span><br><span class="hljs-comment">;</span><br><span class="hljs-attr">truetype_padding</span>=<span class="hljs-literal">true</span><br><span class="hljs-attr">truetype</span>=/mnt/<span class="hljs-literal">on</span>board/fonts/Roboto-Regular.ttf<br><span class="hljs-comment"># truetype_format=%a %b %d %H:%M</span><br><span class="hljs-attr">truetype_format</span>=&#123;battery&#125;|%H:%M<br><span class="hljs-attr">truetype_size</span>=<span class="hljs-number">16.0</span><br><span class="hljs-attr">truetype_px</span>=<span class="hljs-number">20</span><br><span class="hljs-attr">truetype_x</span>=<span class="hljs-number">650</span><br><span class="hljs-attr">truetype_y</span>=<span class="hljs-number">980</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; Misc display tweaks (regardless of the font type)</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Don&#x27;t render background pixels *at all* (i.e., no background &quot;box&quot;).</span><br><span class="hljs-comment">;; Set to true to enable.</span><br><span class="hljs-attr">backgroundless</span>=<span class="hljs-number">0</span><br><span class="hljs-comment">;; Ignores the specified foreground color, and instead use the inverse of what&#x27;s on the screen.</span><br><span class="hljs-comment">;; (f.g., if a pixel replaces a white pixel, it&#x27;ll be painted black).</span><br><span class="hljs-comment">;; Like with backgroundless, background pixels won&#x27;t be rendered. Takes precedence over backgroundless.</span><br><span class="hljs-comment">;; Set to true to enable.</span><br><span class="hljs-attr">overlay</span>=<span class="hljs-literal">false</span><br><span class="hljs-comment">;; ^<span class="hljs-doctag">NOTE:</span> If autorefresh is enabled, magic will happen to make these two behave without visual glitches ;).</span><br><span class="hljs-comment">;; ^<span class="hljs-doctag">NOTE:</span> On devices with a sunxi SoC (e.g., Mk. 8), these two modes are unavailable, because of technical limitations.</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; Battery percentage value (0-100)</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Use &#123;battery&#125; in the format string.</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Will only be used if the battery is between min max.</span><br><span class="hljs-comment">;; Default: only shown when battery level drops to 50% and under.</span><br><span class="hljs-attr">battery_min</span>=<span class="hljs-number">0</span><br><span class="hljs-attr">battery_max</span>=<span class="hljs-number">100</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Allows tweaking how the placeholder is formatted.</span><br><span class="hljs-comment">;; %d will be replaced by the actual value</span><br><span class="hljs-comment">;; %% is a literal % sign</span><br><span class="hljs-comment">;; The default is to show nothing when hidden, and an unadorned percentage otherwise.</span><br><span class="hljs-comment">; When the battery is shown (i.e., within the configured threshold)</span><br><span class="hljs-comment">;;battery_shown_pattern=%d%%</span><br><span class="hljs-comment">; When the battery is hidden (i.e., outside the configured threshold)</span><br><span class="hljs-comment">;;battery_hidden_pattern=</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; For example, if you want to display the battery between brackets as a prefix to your clock,</span><br><span class="hljs-comment">; but don&#x27;t want those brackets to mess up your formatting when the battery is *NOT* shown:</span><br><span class="hljs-comment">; format=&#123;battery&#125; %H:%M</span><br><span class="hljs-comment">; battery_shown_pattern=[%d%%]</span><br><span class="hljs-comment">; battery_hidden_pattern=</span><br><span class="hljs-comment">; (Note that in a config value, leading spaces will be ignored, but not *trailing* spaces,</span><br><span class="hljs-comment">;  so you may also use &#x27;&#123;battery&#125;%H:%M&#x27; for format and &#x27;[%d%%] &#x27; for battery_shown_pattern).</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; Localization (translate Month and Day names)</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Set day names, Monday -&gt; Sunday (7 words)</span><br><span class="hljs-comment">;; Use &#123;day&#125; in the format string to use this.</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;days=Mon Tue Wed Thu Fri Sat Sun</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Set month names, January -&gt; December (12 words)</span><br><span class="hljs-comment">;; Use &#123;month&#125; in the format string to use this.</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;months=Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span><br><span class="hljs-comment">;</span><br><br><span class="hljs-comment">;</span><br><span class="hljs-comment">; Frontlight percentage value (0-100 or -1)</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Use &#123;frontlight&#125; in the format string.</span><br><span class="hljs-comment">;; ^<span class="hljs-doctag">NOTE:</span> It might take a couple pages to sync up on older devices (&lt; Mk. 7). That&#x27;s perfectly normal.</span><br><span class="hljs-comment">;</span><br><span class="hljs-comment">;; Allows tweaking how the placeholder is formatted.</span><br><span class="hljs-comment">;; c.f., the description for &#123;battery&#125; above for more details.</span><br><span class="hljs-comment">;; The default is to show an unadorned percentage.</span><br><span class="hljs-attr">frontlight_pattern</span>=%d%%<br></code></pre></td></tr></table></figure>
+
+<h3 id="3、Koreader"><a href="#3、Koreader" class="headerlink" title="3、Koreader"></a>3、Koreader</h3><p>直接从<a target="_blank" rel="noopener" href="https://github.com/koreader/koreader">koreader项目</a>把kobo版的koreader下下来把其中的koreader文件夹解压到.add目录，见上文的nikelmenu部分添加启动koreader的按钮</p>
+<h3 id="4、KoboPatch"><a href="#4、KoboPatch" class="headerlink" title="4、KoboPatch"></a>4、KoboPatch</h3><p>从<a target="_blank" rel="noopener" href="https://www.mobileread.com/forums/showthread.php?t=297338">这个教程</a>中安装kobopatch到电脑，并编写kobopatch.yaml来选择需要的补丁功能</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment">## Works with kobopatch v0.15.0 and later.</span><br><span class="hljs-comment">## You can update kobopatch by downloading the latest release from https://github.com/pgaskin/kobopatch/releases. </span><br><span class="hljs-attr">version:</span> <span class="hljs-number">4.30</span><span class="hljs-number">.18838</span><br><span class="hljs-attr">in:</span> <span class="hljs-string">src/kobo-update-4.30.18838.zip</span><br><span class="hljs-attr">out:</span> <span class="hljs-string">out/KoboRoot.tgz</span><br><span class="hljs-attr">log:</span> <span class="hljs-string">out/log.txt</span><br><br><span class="hljs-attr">patchFormat:</span> <span class="hljs-string">kobopatch</span><br><br><span class="hljs-attr">patches:</span><br>  <span class="hljs-attr">src/nickel.yaml:</span> <span class="hljs-string">usr/local/Kobo/nickel</span><br>  <span class="hljs-attr">src/libadobe.so.yaml:</span> <span class="hljs-string">usr/local/Kobo/libadobe.so</span><br>  <span class="hljs-attr">src/libnickel.so.1.0.0.yaml:</span> <span class="hljs-string">usr/local/Kobo/libnickel.so.1.0.0</span><br>  <span class="hljs-attr">src/librmsdk.so.1.0.0.yaml:</span> <span class="hljs-string">usr/local/Kobo/librmsdk.so.1.0.0</span><br><br><span class="hljs-comment">## You can put lines in the following section to override the enabled state of patches.</span><br><span class="hljs-comment">## The indentation matters! Each override should be indented by 4 spaces. Add to the </span><br><span class="hljs-comment">## section below. This section can be copy and pasted into newer patch versions to</span><br><span class="hljs-comment">## keep your selections.</span><br><span class="hljs-comment">##</span><br><span class="hljs-comment">## Example of how it should look:</span><br><span class="hljs-comment">## overrides:</span><br><span class="hljs-comment">##   src/nickel.yaml:</span><br><span class="hljs-comment">##     Custom synopsis/details line spacing: yes</span><br><span class="hljs-comment">##     Whatever the yaml is called: no</span><br><span class="hljs-comment">##   src/libadobe.so.yaml:</span><br><span class="hljs-comment">##     You get the idea: yes</span><br><span class="hljs-attr">overrides:</span><br>  <span class="hljs-attr">src/nickel.yaml:</span><br>    <span class="hljs-attr">Reduce top/bottom page spacer:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Custom synopsis details line spacing: yes</span><br>    <span class="hljs-comment"># Custom synopsis font size: yes</span><br>    <span class="hljs-comment"># Increase home screen cover size: yes</span><br>    <span class="hljs-attr">Dictionary pop-up - increase available text area:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Increase Book Details synopsis area: yes</span><br>    <span class="hljs-attr">Increase library cover size:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Custom collection/author header title font: yes</span><br>    <span class="hljs-comment"># Reduce new header/footer height: yes</span><br>    <span class="hljs-comment"># Custom header/footer captions: yes</span><br>    <span class="hljs-comment"># Custom page navigation scrubber: yes</span><br>    <span class="hljs-attr">Customise Header back button:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Series list increase cover thumbnails: yes</span><br>    <span class="hljs-comment"># Increase headlines font: yes</span><br>    <span class="hljs-comment"># New home screen subtitle custom font: yes</span><br>    <span class="hljs-string">Remove</span> <span class="hljs-string">footer</span> <span class="hljs-string">(row3)</span> <span class="hljs-attr">and increase cover size on new home screen:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Remove footer (row3) on new home screen: yes</span><br>    <span class="hljs-comment"># Show all games: yes</span><br>    <span class="hljs-comment"># Remove forgot pin button from lock screen: yes</span><br>    <span class="hljs-attr">Increase size of kepub chapter progress chart:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-attr">Change TOC level indentation:</span> <span class="hljs-literal">yes</span><br>  <span class="hljs-attr">src/libadobe.so.yaml:</span><br>    <span class="hljs-comment"># Remove PDF map widget shown during panning: yes</span><br>  <span class="hljs-attr">src/libnickel.so.1.0.0.yaml:</span><br>    <span class="hljs-comment"># My 10 line spacing values: yes</span><br>    <span class="hljs-comment"># My 24 line spacing values: yes</span><br>    <span class="hljs-string">Custom</span> <span class="hljs-string">left</span> <span class="hljs-string">&amp;</span> <span class="hljs-attr">right margins:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Custom font sizes: yes</span><br>    <span class="hljs-comment"># ePub fixed top/bottom margins: yes</span><br>    <span class="hljs-comment"># ePub disable built-in body padding-bottom: yes</span><br>    <span class="hljs-attr">Custom kepub default margins:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Block WiFi firmware upgrade: yes</span><br>    <span class="hljs-attr">Custom Sleep/Power-off timeouts:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-attr">Set KePub hyphenation:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Force user line spacing in KePubs: yes</span><br>    <span class="hljs-comment"># Force user line spacing in ePubs (part 1 of 2): yes</span><br>    <span class="hljs-string">Un-force</span> <span class="hljs-string">font-family</span> <span class="hljs-string">override</span> <span class="hljs-string">p</span> <span class="hljs-string">tags</span> <span class="hljs-string">(std</span> <span class="hljs-string">epubs):</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Force user font-family in ePubs (Part 1 of 2): yes</span><br>    <span class="hljs-comment"># ePub constant font sharpness: yes</span><br>    <span class="hljs-comment"># KePub constant font sharpness: yes</span><br>    <span class="hljs-string">Un-Force</span> <span class="hljs-string">user</span> <span class="hljs-string">text-align</span> <span class="hljs-string">in</span> <span class="hljs-string">div,p</span> <span class="hljs-attr">tags in KePubs:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-attr">Un-Force user font-family in KePubs:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-attr">Un-force link decoration in KePubs:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Ignore .otf fonts: yes</span><br>    <span class="hljs-attr">Dictionary text font-family/font-size/line-height:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Custom navigation menu page number text: yes</span><br>    <span class="hljs-attr">KePub stylesheet additions - text justify:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># KePub stylesheet additions - optimizeSpeed: yes</span><br>    <span class="hljs-comment"># Shorten dictionary entry not found message: yes</span><br>    <span class="hljs-comment"># Change Wikipedia search language: yes</span><br>    <span class="hljs-comment"># Cyrillic Keyboard (GloHD/ClaraHD/AuraOne/H2O2): yes</span><br>    <span class="hljs-comment"># Greek Keyboard (GloHD/ClaraHD/AuraOne/H2O2): yes</span><br>    <span class="hljs-comment"># Bulgarian Phonetic Keyboard (GloHD/ClaraHD/AuraOne/H2O2/Forma/Libra): yes</span><br>    <span class="hljs-comment"># Don&#x27;t grab exclusive access to event0: yes</span><br>    <span class="hljs-comment"># Both page turn buttons go next: yes</span><br>    <span class="hljs-comment"># Both page turn sides go next: yes</span><br>    <span class="hljs-comment"># Increase page navigation history: yes</span><br>    <span class="hljs-comment"># Replace adobe page numbers toggle with invert screen: yes</span><br>    <span class="hljs-comment"># Always show confirmation dialog before upgrading: yes</span><br>    <span class="hljs-comment"># Allow USB storage even when device locked: yes</span><br>    <span class="hljs-comment"># Hide browser from beta features: yes</span><br>    <span class="hljs-comment"># Remove beta features not supported text: yes</span><br>    <span class="hljs-attr">Disable all tutorial dialogs:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Remove recommendations (row1col2) from home screen: yes</span><br>    <span class="hljs-comment"># Rename new home screen footer: yes</span><br>    <span class="hljs-comment"># Remove line from bottom tab bar: yes</span><br>    <span class="hljs-comment"># Change Browse Kobo home screen link target - Activity: yes</span><br>    <span class="hljs-comment"># Set visible SmartLink: yes</span><br>    <span class="hljs-comment"># Only show Pocket SmartLink: yes</span><br>    <span class="hljs-comment"># Only show stats SmartLink: yes</span><br>    <span class="hljs-string">Never</span> <span class="hljs-string">show</span> <span class="hljs-string">Kobo</span> <span class="hljs-string">Plus,</span> <span class="hljs-string">wishlist,</span> <span class="hljs-attr">and points SmartLinks:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Allow showing info panel on random screensaver: yes</span><br>    <span class="hljs-attr">Remove title from reading header/footer:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Larger Sleep/Power-off timeouts: yes</span><br>    <span class="hljs-comment"># Allow rotation on all devices: yes</span><br>    <span class="hljs-comment"># Don&#x27;t uppercase header/footer text: yes</span><br>    <span class="hljs-comment"># Custom header/footer page number text: yes</span><br>    <span class="hljs-comment"># Don&#x27;t uppercase header/footer text and change page number text: yes</span><br>    <span class="hljs-comment"># Swap reading header/footer: yes</span><br>    <span class="hljs-attr">Enable advanced settings for all fonts:</span> <span class="hljs-literal">yes</span><br>    <span class="hljs-comment"># Customize ComfortLight settings: yes</span><br>    <span class="hljs-comment"># FeatureSettings - BookSpecificStats: yes</span><br>    <span class="hljs-comment"># FeatureSettings - ShowFacebookShare: yes</span><br>    <span class="hljs-comment"># FeatureSettings - FullScreenBrowser: yes</span><br>    <span class="hljs-comment"># FeatureSettings - MyWords: yes</span><br>    <span class="hljs-comment"># FeatureSettings - ExportHighlights: yes</span><br>    <span class="hljs-comment"># DeveloperSettings - AutoUsbGadget: yes</span><br>    <span class="hljs-comment"># PowerSettings - UnlockEnabled: yes</span><br>    <span class="hljs-attr">Unify font sizes:</span> <span class="hljs-literal">yes</span><br>  <span class="hljs-attr">src/librmsdk.so.1.0.0.yaml:</span><br>    <span class="hljs-comment"># Disable orphans/widows avoidance: yes</span><br>    <span class="hljs-comment"># Default ePub serif font (Amasis): yes</span><br>    <span class="hljs-comment"># Default ePub sans-serif font (Gill Sans): yes</span><br>    <span class="hljs-comment"># Default ePub symbol font (Symbol): yes</span><br>    <span class="hljs-comment"># Force user line spacing in ePubs (Part 2 of 2): yes</span><br>    <span class="hljs-comment"># Force user font-family in ePubs (Part 2 of 2): yes</span><br>    <span class="hljs-comment"># Ignore ePub book Adobe XPGT stylesheet (page-template.xpgt): yes</span><br>    <span class="hljs-comment"># Ignore ePub book CSS and Adobe XPGT stylesheets: yes</span><br>    <span class="hljs-comment"># Ignore ePub TOC navpoints: yes</span><br>    <span class="hljs-comment"># Default ePub monospace font: yes</span><br><br><span class="hljs-comment">## TRANSLATIONS ##</span><br><span class="hljs-comment"># Optional, use only if lrelease is not in PATH and if translations are needed</span><br><span class="hljs-comment"># lrelease: /path/to/lrelease</span><br><br><span class="hljs-comment"># Uncomment the following to add translations (replace lc with the language code)</span><br><span class="hljs-comment"># translations:</span><br><span class="hljs-comment">#   src/whatever.ts: usr/local/Kobo/translations/trans_lc.qm</span><br><br><span class="hljs-comment">## ADDITIONAL FILES ##</span><br><span class="hljs-comment"># Uncomment the following to add additional files to the tgz (like init scripts or hyphen dicts)</span><br><span class="hljs-comment"># The files will be root-owned, and world readable, writable, and executable (0777)</span><br><span class="hljs-comment"># files:</span><br><span class="hljs-comment">#   src/whatever.txt: usr/local/Kobo/whatever.txt</span><br><span class="hljs-comment">#   src/whateverToPutInMultiplePlaces.txt:</span><br><span class="hljs-comment">#     - usr/local/Kobo/location1.txt</span><br><span class="hljs-comment">#     - usr/local/Kobo/location2.txt</span><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="5、拼音输入法"><a href="#5、拼音输入法" class="headerlink" title="5、拼音输入法"></a>5、拼音输入法</h3><p>在<code>.kobo/kobo/Kobo eReader.conf</code>文件的<code>[ApplicationPreferences]</code>下面添加一行<code>ExtraLocales=zh_CN</code>即可</p>
+<h3 id="6、禁止kobo原生系统扫描koreader等第三方插件中的七七八八的文件"><a href="#6、禁止kobo原生系统扫描koreader等第三方插件中的七七八八的文件" class="headerlink" title="6、禁止kobo原生系统扫描koreader等第三方插件中的七七八八的文件"></a>6、禁止kobo原生系统扫描koreader等第三方插件中的七七八八的文件</h3><p>依然是在<code>.kobo/kobo/Kobo eReader.conf</code>文件的末尾添加如下内容：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[FeatureSettings]</span><br><span class="hljs-attr">ExcludeSyncFolders</span>=\\.(?!kobo|adobe).*?<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="结语："><a href="#结语：" class="headerlink" title="结语："></a>结语：</h2><p>点墨的kobo设备至此就配置完成了，在之后的使用过程中只需要简单的放入kepub书籍直接观看就好了</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/kobo/">kobo</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/kobo/">kobo</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/01/10/kobo-glo-hd-shou-dong-hui-fu-chu-han-she-zhi-jian-ti-zhong-wen-jiao-cheng/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Kobo Glo HD手动恢复出厂设置(简体中文教程)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/09/kobo-qie-huan-xi-tong-zi-ti-cha-jian/">
+                        <span class="hidden-mobile">kobo切换系统字体插件</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.dmnb.cf/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.dmnb.cf/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"lang":"zh-CN","emoji":["https://cdn.dmnb.cf/gh/walinejs/emojis@1.1.0/tieba"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    <p>Copyright © 2020 鸣庚</p> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <span>本网站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img style="max-height: 50px;" loading="lazy" src="https://static.031130.xyz/uploads/2024/08/12/ba8d70971c408.webp" srcset="https://static.031130.xyz/uploads/2024/08/12/62f800fc26770.gif" lazyload alt="又拍云 Logo" /></a> 提供 CDN 加速/云存储服务</span> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.dmnb.cf/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.dmnb.cf/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.dmnb.cf/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.dmnb.cf/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.dmnb.cf/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.dmnb.cf/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.dmnb.cf/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

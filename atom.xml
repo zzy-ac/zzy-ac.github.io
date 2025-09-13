@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>鸣庚亭</title>
+  
+  <subtitle>鸣庚的博客</subtitle>
+  <link href="https://blog.dmnb.cf/atom.xml" rel="self"/>
+  
+  <link href="https://blog.dmnb.cf/"/>
+  <updated>2025-02-28T07:23:47.086Z</updated>
+  <id>https://blog.dmnb.cf/</id>
+  
+  <author>
+    <name>鸣庚</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于one-api项目，白嫖火山引擎提供的deepseek-R1模型</title>
+    <link href="https://blog.dmnb.cf/2025/02/28/ji-yu-one-api-xiang-mu-bai-piao-huo-shan-yin-qing-ti-gong-de-deepseek-r1-mo-xing/"/>
+    <id>https://blog.dmnb.cf/2025/02/28/ji-yu-one-api-xiang-mu-bai-piao-huo-shan-yin-qing-ti-gong-de-deepseek-r1-mo-xing/</id>
+    <published>2025-02-28T07:23:34.994Z</published>
+    <updated>2025-02-28T07:23:47.086Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>好久不见，时隔数月，笔者重新有空折腾这些乱七八糟的玩意儿，因此撰写本文。</p></blockquote><h1 id="去火山引擎申请一个deepseek的api"><a href="#去火山引擎申请一个deepseek的api" class="headerlink" title="去火山引擎申请一个deepseek的api"></a>去火山引擎申请一个deepseek的api</h1><p>如何注册帐号、点击页面等步骤省略，看截图自行摸索</p><p><img src="https://img.m-l.cc/2025-02-28-67c16585d9184.webp" alt="1740727666202.webp"></p><p>火山提供的api有50w免费token,够用一段时间了。</p><h1 id="搭建一个one-api"><a href="#搭建一个one-api" class="headerlink" title="搭建一个one-api"></a>搭建一个one-api</h1><p>one-api项目为LLM API 管理 &amp; 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google  Gemini、DeepSeek、字节豆包、ChatGLM、文心一言、讯飞星火、通义千问、360 智脑、腾讯混元等主流模型，统一 API  适配，可用于 key 管理与二次分发。单可执行文件，提供 Docker 镜像，一键部署，开箱即用。</p><p>通过标准的 OpenAI API 格式访问所有的大模型，开箱即用</p><p>具体教程请看<a href="https://github.com/songquanpeng/one-api">官方项目</a></p><p><img src="https://img.m-l.cc/2025-02-28-67c1677bcc34b.webp" alt="1740728179251.webp"></p><h1 id="将火山引擎的deepseek-api填入one-api"><a href="#将火山引擎的deepseek-api填入one-api" class="headerlink" title="将火山引擎的deepseek api填入one-api"></a>将火山引擎的deepseek api填入one-api</h1><p>如图：</p><p><img src="https://img.m-l.cc/2025-02-28-67c167c32cfad.webp" alt="1740728251658.webp"></p><p>模型部分，填入Deepseek-R1,密钥部分填入火山的token,其他如图。</p><h1 id="one-api中创建key"><a href="#one-api中创建key" class="headerlink" title="one-api中创建key"></a>one-api中创建key</h1><p>如图：</p><p><img src="https://img.m-l.cc/2025-02-28-67c1686020264.webp" alt="1740728409981.webp"></p><p>之后将one-api的地址，作为BASE_URL，将one-api的令牌作为OPENAI_API_KEY，填入你的NextChat环境变量，即可获得一个白嫖的Deepseek自建web客户端。</p><p><img src="https://img.m-l.cc/2025-02-28-67c1645be7cbe.webp" alt="1740727376076.webp"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;好久不见，时隔数月，笔者重新有空折腾这些乱七八糟的玩意儿，因此撰写本文。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;去火山引擎申请一个deepseek的api&quot;&gt;&lt;a href=&quot;#去火山引擎申请一个deepseek的api&quot; class</summary>
+      
+    
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/categories/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="OpenAI" scheme="https://blog.dmnb.cf/tags/OpenAI/"/>
+    
+    <category term="DeepSeek" scheme="https://blog.dmnb.cf/tags/DeepSeek/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>江阁仲秋</title>
+    <link href="https://blog.dmnb.cf/2024/10/09/jiang-ge-zhong-qiu/"/>
+    <id>https://blog.dmnb.cf/2024/10/09/jiang-ge-zhong-qiu/</id>
+    <published>2024-10-09T06:17:04.388Z</published>
+    <updated>2024-10-09T06:22:02.451Z</updated>
+    
+    <content type="html"><![CDATA[<center><p>行于江阁畔，<br>翘首盼月圆。<br>匆匆三百里，<br>犹可共婵娟。</p><p><img src="https://img.m-l.cc/2024-10-09-6706208e964df.webp" alt="1000060141.webp"></p></center>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;center&gt;
+
+&lt;p&gt;行于江阁畔，&lt;br&gt;翘首盼月圆。&lt;br&gt;匆匆三百里，&lt;br&gt;犹可共婵娟。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.m-l.cc/2024-10-09-6706208e964df.webp&quot; alt=&quot;1000060141.webp&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="诗词创作" scheme="https://blog.dmnb.cf/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    
+    
+    <category term="诗集" scheme="https://blog.dmnb.cf/tags/%E8%AF%97%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图床一键迁移脚本</title>
+    <link href="https://blog.dmnb.cf/2024/09/19/tu-chuang-yi-jian-qian-yi-jiao-ben/"/>
+    <id>https://blog.dmnb.cf/2024/09/19/tu-chuang-yi-jian-qian-yi-jiao-ben/</id>
+    <published>2024-09-19T09:00:35.510Z</published>
+    <updated>2024-09-19T09:35:52.347Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>前段时间更换了图床的位置，决定把之前博客里的所有图片统一转移到新图床。But一张一张手动上传也未免太痛苦和呆逼了，所以决定用脚本实现统一上传。正好，亲爱的<a href="https://zhul.in/">zhullyb</a>也在更换图床，遂直接搬运了他的脚本</p></blockquote><h1 id="批量迁移脚本"><a href="#批量迁移脚本" class="headerlink" title="批量迁移脚本"></a>批量迁移脚本</h1><p><a href="https://zhul.in/2024/08/20/picbed-upload-script-and-image-migration/">zhullyb的原文</a></p><p>脚本内容展示如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-comment"># 哪些后缀的文件需要检测是否存在老图床的 URL 并进行迁移？</span><br>file_extension = [<br>    <span class="hljs-string">&#x27;.md&#x27;</span>,<br>    <span class="hljs-string">&#x27;.yml&#x27;</span>,<br>    <span class="hljs-string">&#x27;.html&#x27;</span><br>]<br><br>pic_urls = []<br><br>_files = []<br><br><br><span class="hljs-comment"># 修改后的正则表达式，用于匹配 Markdown 图片链接</span><br>pattern = <span class="hljs-string">r&#x27;!\[.*?\]\((.*?)\)&#x27;</span><br><br><span class="hljs-comment"># 图片的上传部分，需要先从原 url 中下载图片，在上传到新图床中，如果需要的话可以在中途转换为 webp 格式</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">upload</span>(<span class="hljs-params">url</span>):</span><br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    此处的返回值应该是新的 url</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br><span class="hljs-comment"># 遍历目标后缀文件名的文件，如果存在老图床的 url，则将 url 加入到 pic_urls 列表中，并将这个文件的文件名（相对路径）添加到 _files 列表中</span><br><span class="hljs-keyword">for</span> root, dirs, files <span class="hljs-keyword">in</span> os.walk(<span class="hljs-string">&quot;.&quot;</span>):<br>    <span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:<br>        <span class="hljs-keyword">if</span> file.endswith(tuple(file_extension)):<br>            file_name = os.path.join(root, file)<br>            <span class="hljs-keyword">with</span> open(file_name, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>                content = f.read()<br>            urls = re.findall(pattern, content)<br>            <span class="hljs-keyword">if</span> urls:<br>                pic_urls.extend(urls)<br>                _files.append(file_name)<br><br><span class="hljs-comment"># 先转为集合，再转回列表，进行去重</span><br>pic_urls = list(set(pic_urls))<br>print(<span class="hljs-string">&quot;共找到图片：&quot;</span>, len(pic_urls))<br><br>url_dict = &#123;&#125;<br><br><span class="hljs-comment"># 将列表中的图片进行上传，每张图片最多尝试三次上传，如果三次都失败，则保留原连接</span><br><span class="hljs-keyword">for</span> i,u <span class="hljs-keyword">in</span> enumerate(pci_urls, start=<span class="hljs-number">1</span>):<br>    <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,<span class="hljs-number">4</span>):<br>        <span class="hljs-keyword">try</span>:<br>            new_u = upload(u)<br>            <span class="hljs-keyword">continue</span><br>        <span class="hljs-keyword">except</span>:<br>            <span class="hljs-keyword">if</span> t == <span class="hljs-number">3</span>:<br>                new_u = u<br>                print(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;u&#125;</span> 无法上传：<span class="hljs-subst">&#123;e&#125;</span>&quot;</span>)<br>url_dict[u] = new_u<br>    print(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;i&#125;</span> / <span class="hljs-subst">&#123;len(pic_urls)&#125;</span>&quot;</span>)<br><br><span class="hljs-comment"># 对 _files 列表中的文件一一完成替换</span><br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> _files:<br>    <span class="hljs-keyword">with</span> open(file, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        content = f.read()<br>    <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> url_dict.items():<br>        content = content.replace(k, v)<br>    <span class="hljs-keyword">with</span> open(file, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(content)<br>    print(<span class="hljs-string">&quot;完成替换：&quot;</span>, file)<br></code></pre></td></tr></table></figure><p>如上，经过脚本内容与zhullyb的原版略有差别，主要是由于之前所用的图片来源有些五花八门：直接引用的其他外链图片、以前用的github图床、vercel图床等等，过于混乱，因此在这里修改为统一识别出文件中markdown格式的图片来，并通过上传脚本下载到本地—上传到新的图床。</p><p>至此，完美实现了该脚本的功能，成功将本博客的图片切换统一的自建图床。</p><h1 id="多地备份"><a href="#多地备份" class="headerlink" title="多地备份"></a>多地备份</h1><p>同时，通过挂载多种网盘、储存桶到Alist的方式，采用<a href="https://github.com/dr34m-cn/taosync">TaoSync</a>项目进行各个图床间的自动同步，确保图片文件在多个储存桶内均能稳定运行。</p><p><img src="https://img.m-l.cc/2024-09-19-66ebefb7a376d.webp" alt="1726738327986.webp"></p><p>至此完美实现图床的使用和迁移</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;前段时间更换了图床的位置，决定把之前博客里的所有图片统一转移到新图床。But一张一张手动上传也未免太痛苦和呆逼了，所以决定用脚本实现统一上传。正好，亲爱的&lt;a href=&quot;https://zhul.in/&quot;&gt;zhullyb&lt;/a&gt;也在更换图床，遂直</summary>
+      
+    
+    
+    
+    <category term="图床建设" scheme="https://blog.dmnb.cf/categories/%E5%9B%BE%E5%BA%8A%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+    <category term="图床建设" scheme="https://blog.dmnb.cf/tags/%E5%9B%BE%E5%BA%8A%E5%BB%BA%E8%AE%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>咏蝉</title>
+    <link href="https://blog.dmnb.cf/2024/08/20/yong-chan/"/>
+    <id>https://blog.dmnb.cf/2024/08/20/yong-chan/</id>
+    <published>2024-08-20T09:19:57.076Z</published>
+    <updated>2024-08-20T09:23:47.447Z</updated>
+    
+    <content type="html"><![CDATA[<center><p>今夏畅响绕梁梢，</p><p>叶落始觉蝉鸣少。</p><p>尤怜埋没十余载，</p><p>却惜韶华莫自骄。</p><p><img src="https://img.m-l.cc/2024-08-20-66c46044cf7f9.webp" alt="1000059433.webp"></p></center>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;center&gt;
+
+&lt;p&gt;今夏畅响绕梁梢，&lt;/p&gt;
+&lt;p&gt;叶落始觉蝉鸣少。&lt;/p&gt;
+&lt;p&gt;尤怜埋没十余载，&lt;/p&gt;
+&lt;p&gt;却惜韶华莫自骄。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.m-l.cc/2024-08-20-66c46044cf7f9.webp&quot; alt</summary>
+      
+    
+    
+    
+    <category term="诗词创作" scheme="https://blog.dmnb.cf/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    
+    
+    <category term="诗集" scheme="https://blog.dmnb.cf/tags/%E8%AF%97%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内网盒子重新变回家里云——cloudflared</title>
+    <link href="https://blog.dmnb.cf/2024/08/01/nei-wang-he-zi-chong-xin-bian-hui-jia-li-yun-cloudflared/"/>
+    <id>https://blog.dmnb.cf/2024/08/01/nei-wang-he-zi-chong-xin-bian-hui-jia-li-yun-cloudflared/</id>
+    <published>2024-08-01T00:45:32.625Z</published>
+    <updated>2024-08-01T05:37:35.072Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>噩耗，因为工作原因搬家了，之前的宽带也用不了了，可能在未来挺长一段时间里没法用上家宽的公网ip了 QaQ！</p></blockquote><blockquote><p>这也就导致了原本用cloudflare origin rules反代一下就可以正常用的家里云彻底say byebye了。搞得挺被动的，于是几番琢磨下，采用cloudflared内网穿透的方式来重新恢复家里云服务。</p></blockquote><h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><p>服务器内还是之前的那些服务，通过1panel面板，搭建了几个alist程序、lsky-pro图床、几个静态网页等等。搭建了什么服务不重要，你只需要把它们安置在不同的端口上就好了。</p><p>例如：1panel在 <code>1234</code>，alist-1在 <code>12341</code>，alist-2在 <code>12342</code>，lsky-pro在 <code>12343</code>这样就好。当然还有ssh的服务也是需要被反代的，你可以就用默认的22,当然也不排除你用其他端口例如 <code>2222</code></p><h1 id="Cloudflared"><a href="#Cloudflared" class="headerlink" title="Cloudflared"></a>Cloudflared</h1><h2 id="web控制台"><a href="#web控制台" class="headerlink" title="web控制台"></a>web控制台</h2><p>服务端安排好之后，进入cloudflare，打开zero trust，选择 <code>Networks</code>-<code>tunnels</code>，创建一个新的tunnel。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9acd37e4aa.webp" alt="https://img.m-l.cc/2024-08-12-66b9acd37e4aa.webp"></p><p>选 <code>cloudflared</code></p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad60c0e7c.webp" alt="https://img.m-l.cc/2024-08-12-66b9ad60c0e7c.webp"></p><p>随便来个喜欢的名字</p><p><img src="https://img.m-l.cc/2024-08-12-66b9afa750503.webp" alt="https://img.m-l.cc/2024-08-12-66b9afa750503.webp"></p><p>选择你所用的服务端系统版本和架构，并复制对应的cloudflared安装命令。在这里我的家里云盒子是armbian的系统，所以选到得便和arm64-bit就行。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9af9fb8451.webp" alt="https://img.m-l.cc/2024-08-12-66b9af9fb8451.webp"></p><h2 id="服务端安装cloudflared"><a href="#服务端安装cloudflared" class="headerlink" title="服务端安装cloudflared"></a>服务端安装cloudflared</h2><p>让你的电脑和家里云盒子在同一个路由器下面（确保其在同一个局域网内）</p><p>ssh通过内网ip进入你的盒子</p><p>通过刚刚复制的命令安装cloudflare的并启动cloudflared服务，保持它能每次都开机自启。</p><p>回到web端，返回 <code>tunnels</code>页面查看到status变绿为 <code>HEALTHY</code>则表示已经顺利连上了。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9b093c3c02.webp" alt="https://img.m-l.cc/2024-08-12-66b9b093c3c02.webp"></p><h2 id="配置隧道代理的各个web服务的端口"><a href="#配置隧道代理的各个web服务的端口" class="headerlink" title="配置隧道代理的各个web服务的端口"></a>配置隧道代理的各个web服务的端口</h2><p>在web页面的 <code>Public hostname</code>下面创建各个Public hostnames，将你的各个http服务的站点添加进来例如：</p><p><img src="https://img.m-l.cc/2024-08-12-66b9aed7325b9.webp" alt="https://img.m-l.cc/2024-08-12-66b9aed7325b9.webp"></p><p>保存后会自动创建DNS记录，将你的域名绑定过去，这样就可以顺利的通过域名访问你的对应的服务了。</p><p>对于自建的网站，你可以用OpenResty、nginx等web服务来将它们设定到不同的端口。</p><p>这样就恢复对家里云内所有web服务的访问。</p><h2 id="代理SSH！"><a href="#代理SSH！" class="headerlink" title="代理SSH！"></a>代理SSH！</h2><p>配置域名和转发方式如下：</p><p><img src="https://img.m-l.cc/2024-08-12-66b9b05b3fc82.webp" alt="https://img.m-l.cc/2024-08-12-66b9b05b3fc82.webp"></p><p>在需要连接ssh的设备上如，你的PC电脑、你的手机termux等等，也安装好cloudflared，并在 <code>.ssh/config</code>添加好对应的配置如下：</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs routeros">Host armbian<br>    HostName ssh.example.com<br>    ProxyCommand cloudflared access ssh --hostname %h<br>   <span class="hljs-built_in"> User </span>admin<br>   <span class="hljs-built_in"> Port </span>2222<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/id_rsa_armbian<br></code></pre></td></tr></table></figure><p>这样你就能通过 <code>ssh armbian</code>命令来连接到你的ssh服务器了</p><h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>至此，家里云盒子上的各个web服务和ssh都已经恢复正常使用，除了rustdesk的服务端被迫放弃掉公网访问之外，我的其它家里云服务全部恢复正常。完结，撒花～！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;噩耗，因为工作原因搬家了，之前的宽带也用不了了，可能在未来挺长一段时间里没法用上家宽的公网ip了 QaQ！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这也就导致了原本用cloudflare origin rules反代一下</summary>
+      
+    
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/categories/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>桃花煞</title>
+    <link href="https://blog.dmnb.cf/2024/07/08/tao-hua-sha/"/>
+    <id>https://blog.dmnb.cf/2024/07/08/tao-hua-sha/</id>
+    <published>2024-07-08T22:36:24.094Z</published>
+    <updated>2024-07-08T22:42:40.984Z</updated>
+    
+    <content type="html"><![CDATA[<center><p>暮春重逢以为幸，</p><p>离人常见雨常清。</p><p>命里桃花劫数定，</p><p>尘缘了却可明心。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9acd9ae9fb.webp" alt="https://img.m-l.cc/2024-08-12-66b9acd9ae9fb.webp"></p></center>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;center&gt;
+
+&lt;p&gt;暮春重逢以为幸，&lt;/p&gt;
+&lt;p&gt;离人常见雨常清。&lt;/p&gt;
+&lt;p&gt;命里桃花劫数定，&lt;/p&gt;
+&lt;p&gt;尘缘了却可明心。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.m-l.cc/2024-08-12-66b9acd9ae9fb.webp&quot; alt</summary>
+      
+    
+    
+    
+    <category term="诗词创作" scheme="https://blog.dmnb.cf/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    
+    
+    <category term="诗集" scheme="https://blog.dmnb.cf/tags/%E8%AF%97%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>千亩湖边</title>
+    <link href="https://blog.dmnb.cf/2024/06/02/qian-mu-hu-bian/"/>
+    <id>https://blog.dmnb.cf/2024/06/02/qian-mu-hu-bian/</id>
+    <published>2024-06-02T14:14:32.601Z</published>
+    <updated>2024-06-02T14:26:36.894Z</updated>
+    
+    <content type="html"><![CDATA[<center><p>湖映千亩云色浅，</p><p>漾起微波杨柳掀。</p><p>世上春风常易涣，</p><p>韵散才讶蛙鸣喧。</p></center>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;center&gt;
+
+&lt;p&gt;湖映千亩云色浅，&lt;/p&gt;
+&lt;p&gt;漾起微波杨柳掀。&lt;/p&gt;
+&lt;p&gt;世上春风常易涣，&lt;/p&gt;
+&lt;p&gt;韵散才讶蛙鸣喧。&lt;/p&gt;
+&lt;/center&gt;
+
+</summary>
+      
+    
+    
+    
+    <category term="诗词创作" scheme="https://blog.dmnb.cf/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    
+    
+    <category term="诗集" scheme="https://blog.dmnb.cf/tags/%E8%AF%97%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Qexo使用Lsky-Pro兰空图床api</title>
+    <link href="https://blog.dmnb.cf/2024/05/03/qexo-shi-yong-lsky-pro-lan-kong-tu-chuang-api/"/>
+    <id>https://blog.dmnb.cf/2024/05/03/qexo-shi-yong-lsky-pro-lan-kong-tu-chuang-api/</id>
+    <published>2024-05-03T05:23:21.494Z</published>
+    <updated>2024-08-12T08:44:51.784Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>最近才终于整明白了在qexo使用lsky的api的方法，在此简单记录一下</p></blockquote><h1 id="获取token"><a href="#获取token" class="headerlink" title="获取token"></a>获取token</h1><p>搭建好lsky后在控制面板里可以看到接口页面，里面包含了api的各种使用方法。和最为关键的接口URL——<code>https://example.com/api/v1</code></p><p>那么用curl命令获取token，命令如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -X POST https://example.com/api/v1/tokens \<br>-H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> \<br>-d <span class="hljs-string">&#x27;&#123;</span><br><span class="hljs-string">  &quot;email&quot;: &quot;your_email@example.com&quot;,</span><br><span class="hljs-string">  &quot;password&quot;: &quot;your_password&quot;</span><br><span class="hljs-string">&#125;&#x27;</span><br></code></pre></td></tr></table></figure><p>使用后获得输出如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;<span class="hljs-string">&quot;status&quot;</span>:<span class="hljs-literal">true</span>,<span class="hljs-string">&quot;message&quot;</span>:<span class="hljs-string">&quot;success&quot;</span>,<span class="hljs-string">&quot;data&quot;</span>:&#123;<span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1|1bJbwlqBfnggmOMEZqXT5XusaIwqiZjCDs7r1Ob5&quot;</span>&#125;&#125;<br></code></pre></td></tr></table></figure><p>当前版本的lsky-pro接口采用 「HTTP 基本验证」的方式验证授权，获取到 token 后，通过设置请求 header 标头来验证请求(Bearer Token)，例如：</p><p><code>&quot;Authorization&quot;: &quot;Bearer 1|1bJbwlqBfnggmOMEZqXT5XusaIwqiZjCDs7r1Ob5&quot;</code></p><p>（填你自己获取到的token,我这只是放的官方的示例）</p><h1 id="编辑qexo图床配置"><a href="#编辑qexo图床配置" class="headerlink" title="编辑qexo图床配置"></a>编辑qexo图床配置</h1><p>如图，将lsky接口文档中的各项信息依次填入即可。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9affb8093f.webp" alt="https://img.m-l.cc/2024-08-12-66b9affb8093f.webp"></p><p>需注意，自定义请求头和自定义请求主体中的空格，复制粘贴的可能存在错误，会变成非普通空格的空白符号。这里建议手打。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9acf93b703.webp" alt="https://img.m-l.cc/2024-08-12-66b9acf93b703.webp"></p><p>在自定义请求主题处填入你想使用的储存桶的id（如果只有一个可以不用管）</p><p>自定义请求头只需要token一项就可以了，即内容为：<code>&#123;&quot;Authorization&quot;:&quot;Bearer Bearer 1|1bJbwlqBfnggmOMEZqXT5XusaIwqiZjCDs7r1Ob5&quot;&#125;</code>（填你自己获取到的token,我这只是放的官方的示例）</p><h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1><p>填写完成后提交，就完成了qexo中兰空图床的配置。可自行去图片页面进行测试。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad2f8e9dd.webp" alt="https://img.m-l.cc/2024-08-12-66b9ad2f8e9dd.webp"></p><p>如图显示上传成功出现预览图和链接，则表明配置无误，直接开始快乐的写文章插图片去吧！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;最近才终于整明白了在qexo使用lsky的api的方法，在此简单记录一下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;获取token&quot;&gt;&lt;a href=&quot;#获取token&quot; class=&quot;headerlink&quot; title=&quot;获取token</summary>
+      
+    
+    
+    
+    <category term="图床建设" scheme="https://blog.dmnb.cf/categories/%E5%9B%BE%E5%BA%8A%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>再登科</title>
+    <link href="https://blog.dmnb.cf/2024/04/29/zai-deng-ke/"/>
+    <id>https://blog.dmnb.cf/2024/04/29/zai-deng-ke/</id>
+    <published>2024-04-29T09:10:24.302Z</published>
+    <updated>2024-04-29T09:12:34.407Z</updated>
+    
+    <content type="html"><![CDATA[<center><p>乱漪涛声雨淅淅，<br>少年怒马换鲜衣。<br>丝竹渐起鹿鸣呦，<br>会有琼林赏花期。<br><img src="https://img.m-l.cc/2024-08-12-66b9af61d893e.webp" alt="photo_2024-04-29_17-18-57.webp"></p></center>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;center&gt;
+
+&lt;p&gt;乱漪涛声雨淅淅，&lt;br&gt;少年怒马换鲜衣。&lt;br&gt;丝竹渐起鹿鸣呦，&lt;br&gt;会有琼林赏花期。&lt;br&gt;&lt;img src=&quot;https://img.m-l.cc/2024-08-12-66b9af61d893e.webp&quot; alt=&quot;photo_2024-04-</summary>
+      
+    
+    
+    
+    <category term="诗词创作" scheme="https://blog.dmnb.cf/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    
+    
+    <category term="诗集" scheme="https://blog.dmnb.cf/tags/%E8%AF%97%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谷歌大模型AI—Gemini白嫖api攻略</title>
+    <link href="https://blog.dmnb.cf/2024/03/01/gu-ge-da-mo-xing-ai-gemini-bai-piao-api-gong-lue/"/>
+    <id>https://blog.dmnb.cf/2024/03/01/gu-ge-da-mo-xing-ai-gemini-bai-piao-api-gong-lue/</id>
+    <published>2024-03-01T03:29:42.557Z</published>
+    <updated>2024-03-01T03:30:03.687Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>近日一直在寻找一款稳定靠谱用着踏实的大模型ai自建方案，openai的api需要收费，用token则非常不稳定；使用azure提供的openai的api很快、稳定，但需要收费。最近突然发现谷歌新出的gemini大模型ai,其功能基本对标chatgpt,使用体验上也区别不大，但是，谷歌提供了每分钟60条的免费api套餐，很是划算！于是采取gemini的api结合广受好评的chatgpt-next-web项目提供的网页，自建专属的免费智能AI！</p></blockquote><h1 id="申请Gemini的api"><a href="#申请Gemini的api" class="headerlink" title="申请Gemini的api"></a>申请Gemini的api</h1><p><strong>打开谷歌开放平台：</strong></p><p><a href="https://ai.google.dev/pricing">https://ai.google.dev/pricing</a></p><p><img src="https://img.m-l.cc/2024-08-12-66b9b0634679b.webp" alt="谷歌开放平台"></p><p>往下拉可以看到2个版本的API。</p><p>选择左边的免费版。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9aef115743.webp" alt="选择左边的免费版"></p><p>登录@<a href="https://gmail.com/">gmail.com</a>邮箱。(需要自行寻找合适的节点进行科学上网)</p><p>之后同意下图所示的第一个协议（二三个复选框是允许推广，可选可不选）</p><p><img src="https://img.m-l.cc/2024-08-12-66b9adc21d198.webp" alt="同意协议"></p><p>在这个界面选择第二项。</p><p>获取API秘钥</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad3513373.webp" alt="获取API秘钥"></p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad9844476.webp"></p><p>这里会生成一个API的秘钥，</p><p>复制记录一下。保存好。</p><p>没有保存，就需要重新生成了。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9aef61bf3f.webp"></p><p>OK 这样我们的免费API就申请好了。</p><p>（注：本节为了省事和避免重复造轮子，引用了<a href="https://zhuanlan.zhihu.com/p/673300213">李飞笔记</a>的部分内容和图片）</p><h1 id="创建chatgpt-next-web"><a href="#创建chatgpt-next-web" class="headerlink" title="创建chatgpt-next-web"></a>创建chatgpt-next-web</h1><p>具体教程参考作者<a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web/blob/main/README_CN.md">README.md</a></p><p>在此我采用的作者提供的Vercel方案。</p><h2 id="改环境变量"><a href="#改环境变量" class="headerlink" title="改环境变量"></a>改环境变量</h2><p>在按照教程搭建好chatgpt-next-web后，进入项目设置的环境变量部分：</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad0f3c075.webp" alt="https://img.m-l.cc/2024-08-12-66b9ad0f3c075.webp"></p><p>删除多余的环境变量（如，没有openai的token你就删掉它。）</p><p>保留如下三项：</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">CUSTOM_MODELS</span>=-all,+gemini-pro <span class="hljs-comment"># 只保留gemini-pro一个ai选项，避免默认选项导致需要手动选择。</span><br><span class="hljs-attr">CODE</span>=&lt;passwd&gt; <span class="hljs-comment"># 这里填入你想设置的任何密码就好</span><br><span class="hljs-attr">GOOGLE_API_KEY</span>=&lt;apikey&gt;  <span class="hljs-comment"># 这里填入你刚刚申请到的gemini的api-key</span><br></code></pre></td></tr></table></figure><p>然后点击项目的<code>deployments</code>按钮，创建新的部署</p><p><img src="https://img.m-l.cc/2024-08-12-66b9af5d369bc.webp" alt="https://img.m-l.cc/2024-08-12-66b9af5d369bc.webp"></p><p>等待部署完毕后，你的私人大模型ai就创建成功了，开始享用你的ai吧！</p><p><img src="https://img.m-l.cc/2024-08-12-66b9acc919b84.webp" alt="https://img.m-l.cc/2024-08-12-66b9acc919b84.webp"></p><h1 id="完毕"><a href="#完毕" class="headerlink" title="完毕"></a>完毕</h1><p>打开你的vercel.app链接开始享用你的ai</p><p>如果vercel.app被墙了，请自行解析一个自定义域名用于访问你的ai网站。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ae2ad8e35.webp" alt="https://img.m-l.cc/2024-08-12-66b9ae2ad8e35.webp"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;近日一直在寻找一款稳定靠谱用着踏实的大模型ai自建方案，openai的api需要收费，用token则非常不稳定；使用azure提供的openai的api很快、稳定，但需要收费。最近突然发现谷歌新出的gemini大模型ai,其功能基本对标chatgp</summary>
+      
+    
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/categories/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="OpenAI" scheme="https://blog.dmnb.cf/categories/OpenAI/"/>
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="OpenAI" scheme="https://blog.dmnb.cf/tags/OpenAI/"/>
+    
+    <category term="GPT" scheme="https://blog.dmnb.cf/tags/GPT/"/>
+    
+    <category term="ChatGPT" scheme="https://blog.dmnb.cf/tags/ChatGPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>白嫖cf的r2储存桶与Lsky-Pro图床</title>
+    <link href="https://blog.dmnb.cf/2024/02/02/bai-piao-cf-de-r2-chu-cun-tong-yu-lsky-pro-tu-chuang/"/>
+    <id>https://blog.dmnb.cf/2024/02/02/bai-piao-cf-de-r2-chu-cun-tong-yu-lsky-pro-tu-chuang/</id>
+    <published>2024-02-02T11:50:35.455Z</published>
+    <updated>2024-02-02T11:50:35.623Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>之前尝试过不少图床方案：smms、github+反代、知乎图床等等，但每种方案均有其自身的问题，如smms数据不在自己手中、github+反代速度玄学、知乎做图床相对麻烦且随时可能跑路。故而最近决定认真部署一个属于自己的、速度稳定些的图床。</p><p>经过几番查询后决定采用cf r2储存桶+lsky图床程序的形式来部署。主要原因有：</p><ol><li>r2储存桶拥有全球加速，且可以选择东亚节点，在大陆与非大陆地区均可以获得不错的访问速度。</li><li>lsky-pro图床支持多种储存策略（甚至包括alist的webdav都可以）哪怕有天r2用不了，也能及时更换到其它方案。</li><li>这俩都可以免费白嫖。</li></ol></blockquote><h1 id="注册R2储存桶"><a href="#注册R2储存桶" class="headerlink" title="注册R2储存桶"></a>注册R2储存桶</h1><p>CloudFlare R2 是 Cloudflare 公司推出的一款兼容 S3 API  的免费云存储服务，它允许用户在全球范围内的分布式网络上存储和检索数据。 这项服务的设计目标之一是提供低延迟、高吞吐量的存储体验，利用横跨 100  多国家中 275 个城市的内容交付网络来实现这一目标。</p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>CloudFlare 账号注册：<a href="https://link.juejin.cn/?target=https://www.cloudflare.com/" title="https://www.cloudflare.com/">www.cloudflare.com/</a></li><li>购买域名：选择一个合适的域名，并在 CloudFlare 上进行域名解析。</li><li>绑定信用卡（只用于验证)</li></ol><h2 id="创建储存桶"><a href="#创建储存桶" class="headerlink" title="创建储存桶"></a>创建储存桶</h2><p>在侧边菜单找到 <code>R2 服务</code>,然后点击<code>创建存储桶</code>，名称随意喜欢就好，地区选亚太地区即可</p><p><img src="https://img.m-l.cc/2024-08-12-66b9b0021f8cf.webp" alt="https://img.m-l.cc/2024-08-12-66b9b0021f8cf.webp"></p><p><img src="https://img.m-l.cc/2024-08-12-66b9add1e738e.webp" alt="https://img.m-l.cc/2024-08-12-66b9add1e738e.webp"></p><h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>刚创建好的桶虽然可以上传图片、文件之类的，但是默认不可通过公网访问。</p><p>虽然可以用cloudflare提供的二级域名访问，但是有一些频率速率方面的限制，而且.dev的域名也可能被大防火墙拦截，所以还是绑定自己域名更好一些。</p><p>再桶的设置里找到自定义域选项，添加自定义域名即可</p><p>打开你创建的储存桶，点击设置然后：</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ae7a1729b.webp" alt="https://img.m-l.cc/2024-08-12-66b9ae7a1729b.webp"></p><p>选择自定义域，并连接到你自己的域名，即可自定义图片的直链了。（其实不绑定域名的话也会提供一个R2.dev子域名给你，也能够正常使用，只不过这里的域名有些过于长了，不好记。）</p><h2 id="创建-R2-的-API-token"><a href="#创建-R2-的-API-token" class="headerlink" title="创建 R2 的 API token"></a>创建 R2 的 API token</h2><p>提示：<strong>api 令牌只会显示 1 次。需记录到本地备用。</strong></p><ul><li>在 R2 的控制台右侧 点击 <code>管理 R2 API 令牌</code> —&gt;<code>创建API令牌</code><strong>。</strong></li><li>权限选对象读和写都可</li><li>指定存储桶选择你刚创建的桶</li><li>TTL选永久。其他不变。</li></ul><p><img src="https://img.m-l.cc/2024-08-12-66b9af1121cb2.webp" alt="https://img.m-l.cc/2024-08-12-66b9af1121cb2.webp"></p><h1 id="部署Lsky-pro图床"><a href="#部署Lsky-pro图床" class="headerlink" title="部署Lsky-pro图床"></a>部署Lsky-pro图床</h1><p>参考官方教程：<a href="https://docs.lsky.pro/docs/free/v2/">https://docs.lsky.pro/docs/free/v2</a></p><p>或使用docker部署的话参考docker教程：<a href="https://github.com/HalcyonAzure/lsky-pro-docker/blob/master/README.md">https://github.com/HalcyonAzure/lsky-pro-docker/blob/master/README.md</a></p><h2 id="Lsky-pro与R2对象存储对接"><a href="#Lsky-pro与R2对象存储对接" class="headerlink" title="Lsky-pro与R2对象存储对接"></a>Lsky-pro与R2对象存储对接</h2><p>直接看图吧：</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad4b8e3ab.webp" alt="教程图片"></p><p>* 访问域名：如上图，此域名可以自己解析<strong>公开访问</strong>里的域名，也可以在<strong>域访问</strong>哪里添加绑定。</p><p>* URL 额外参数：可不写</p><p>* AccessKeyId：R2 访问密钥ID</p><p>* SecretAccessKey：R2 机密访问密钥</p><p>* 连接地址区域(region)：<code>auto</code>(自动最佳地区，<strong>推荐</strong>)，或者<code>us-east-1</code>(美区)</p><p>* 储存桶名称：之前创建储存桶时设置的储存桶名称</p><h2 id="我的备选储存方案"><a href="#我的备选储存方案" class="headerlink" title="我的备选储存方案"></a>我的备选储存方案</h2><p>出于多重方案多重保险的目的，我还添加了备用的储存方案，即使用alist提供的webdav来存储图片，alist是一款支持部署多重网盘解析直链的强大工具，利用alist的webdav服务，我们可以将图床存储到任何可能的网盘中，如：阿里云盘、onedrive、谷歌云盘、百度网盘甚至是可以提供无限图片存储空间的一刻相册。</p><p>在这里为了给有兴趣使用我的图床的其它用户提供服务并防止小小10G的免费R2被刷爆，我这里选择使用无限空间的一刻相册来部署。</p><p><a href="https://alist.nn.ci/zh/guide/">alist部署教程</a></p><p><a href="https://alist.nn.ci/zh/guide/drivers/baidu.photo.html">alist挂载一刻相册教程</a></p><p><img src="https://img.m-l.cc/2024-08-12-66b9acf269bde.webp" alt="https://img.m-l.cc/2024-08-12-66b9acf269bde.webp"></p><p>如此这般我的备选lsky存储方案也部署好了。</p><p>之后只用简单配置一下用户组和默认的储存桶，就可以毫无顾忌的开放注册为网友提供服务了。</p><h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>如果使用alist+网盘的储存方案时用到如<code>一刻相册</code>这样的国内网盘，那么为了放置被恶意上传色图、血腥图片等18禁内容，还应该打开lsky-pro的图片审核功能，识别到色图直接删除，避免风险。</p><p>如果希望体验一下我的图床的话，欢迎注册使用!：<a href="https://lsky.dmnb.cf/">lsky.dmnb.cf</a></p><p><img src="https://img.m-l.cc/2024-08-12-66b9acfe16aab.webp" alt="https://img.m-l.cc/2024-08-12-66b9acfe16aab.webp"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;之前尝试过不少图床方案：smms、github+反代、知乎图床等等，但每种方案均有其自身的问题，如smms数据不在自己手中、github+反代速度玄学、知乎做图床相对麻烦且随时可能跑路。故而最近决定认真部署一个属于自己的、速度稳定些的图床。&lt;/p&gt;</summary>
+      
+    
+    
+    
+    <category term="图床建设" scheme="https://blog.dmnb.cf/categories/%E5%9B%BE%E5%BA%8A%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cf worker反代脚本分享</title>
+    <link href="https://blog.dmnb.cf/2024/01/22/cf-worker-fan-dai-jiao-ben-fen-xiang/"/>
+    <id>https://blog.dmnb.cf/2024/01/22/cf-worker-fan-dai-jiao-ben-fen-xiang/</id>
+    <published>2024-01-22T07:10:40.549Z</published>
+    <updated>2025-09-13T09:41:37.180Z</updated>
+    
+    <content type="html"><![CDATA[<p>反向代理好处多多，既可以帮助中转使得原本无法访问的网站可以直连访问，同时还能实现通过访问自己的自定义域名来访问目标网站从而实现自定义域名的作用。</p><p>这里写个一个简短的cf workers可用的反代脚本，在此分享一下，顺便水一篇博客。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js">addEventListener(<br>    <span class="hljs-string">&quot;fetch&quot;</span>,<span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> &#123;<br>       <span class="hljs-keyword">let</span> url=<span class="hljs-keyword">new</span> URL(event.request.url);<br>       url.hostname=<span class="hljs-string">&quot;example.com&quot;</span>;  <span class="hljs-comment">//你需要反代的域名</span><br>       <span class="hljs-keyword">let</span> request=<span class="hljs-keyword">new</span> Request(url,event.request);<br>       event. respondWith(<br>         fetch(request)<br>       )<br>    &#125;<br>  )<br></code></pre></td></tr></table></figure><p>在cf workers中部署好该workers，并将其中的<code>example.com</code>修改为你需要反代的域名即可。</p><p>利用此脚本可以实现对github、cdn.jsdelivr.net等不能直连访问的域名的访问，同时还可以用于如：glitch、koyeb等不支持/收费自定义域名PaaS平台服务，用于给部署在这些网站上的服务提供自定义的域名。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;反向代理好处多多，既可以帮助中转使得原本无法访问的网站可以直连访问，同时还能实现通过访问自己的自定义域名来访问目标网站从而实现自定义域名的作用。&lt;/p&gt;
+&lt;p&gt;这里写个一个简短的cf workers可用的反代脚本，在此分享一下，顺便水一篇博客。&lt;/p&gt;
+&lt;figure cl</summary>
+      
+    
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/categories/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过cf origin rules端口反代实现家宽建站</title>
+    <link href="https://blog.dmnb.cf/2023/12/01/tong-guo-cf-origin-rules-duan-kou-fan-dai-shi-xian-jia-kuan-jian-zhan/"/>
+    <id>https://blog.dmnb.cf/2023/12/01/tong-guo-cf-origin-rules-duan-kou-fan-dai-shi-xian-jia-kuan-jian-zhan/</id>
+    <published>2023-12-01T03:11:28.363Z</published>
+    <updated>2025-09-13T09:41:37.183Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>无意间发现cloudflare的origin rules规则，可以进行端口反向代理，将对应端口上的页面代理到正常的80、443上，直接访问。于是开始琢磨起它的使用方法。</p><h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>这个功能的应用场景非常广泛，据我简单思考大致有以下几点，欢迎补充：</p><ol><li>家宽，运营商拦截了80、443端口的，可以绕过限制建站。</li><li>没有公网ipv4但有ipv6的家宽，可以实现1的同时将ipv6单栈解析转为ipv4、ipv6双栈的。</li><li>让限制了端口数量的nat小鸡建站</li><li>让纯ipv6小鸡也可以建站（同2）</li></ol><h1 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h1><p>要实现上述功能原理非常简单，首先我有一个工具域名 <code>tool.example.com</code>ddns解析到了我的家宽。</p><p>然后将需要用到的域名如 <code>aaa.example.com</code>cname到工具域名 <code>tool.example.com</code>并打开cf的cdn按钮。</p><p>最后创建一条origin rules规则，将 <code>aaa.example.com</code>重写到指定端口。如此即可实现不带端口直接通过域名访问搭建在家宽的站点。</p><p>不过cf的免费服务只能创建10个origin rules规则。</p><h1 id="具体操作步骤"><a href="#具体操作步骤" class="headerlink" title="具体操作步骤"></a>具体操作步骤</h1><h2 id="方法一：使用nginx、OpenResty等webserver来搭建网页"><a href="#方法一：使用nginx、OpenResty等webserver来搭建网页" class="headerlink" title="方法一：使用nginx、OpenResty等webserver来搭建网页"></a>方法一：使用nginx、OpenResty等webserver来搭建网页</h2><p>优势：</p><ol><li>可以绕开10条规则的限制，仅仅用一条规则就可以将多个家宽搭建的站点反代出来直接访问。</li><li>便于管理</li></ol><p>不足：</p><ol><li>如果不使用如宝塔、1panel之类的面板工具的话搭建比较麻烦</li></ol><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>我这里直接用1panel面板建站了，各位有什么独特的需求或者可以手搓的，请自便。</p><h4 id="1、安装1panel"><a href="#1、安装1panel" class="headerlink" title="1、安装1panel"></a>1、安装1panel</h4><p>参考官方文档采取合适方式安装：<a href="https://1panel.cn/docs/installation/online_installation/">在线安装 - 1Panel 文档</a></p><p>安装成功后，控制台会打印面板访问信息，可通过浏览器访问 1Panel：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span>目标服务器 IP 地址:目标端口/安全入口<br></code></pre></td></tr></table></figure><ul><li><strong>如果使用的是云服务器，请至安全组开放目标端口。</strong></li><li><strong>ssh 登录 1Panel 服务器后，执行 1pctl user-info 命令可获取安全入口（entrance）</strong></li></ul><p>安装成功后，可使用 <a href="https://1panel.cn/docs/installation/cli/">1pctl</a> 命令行工具来维护 1Panel</p><h4 id="2、安装所需应用"><a href="#2、安装所需应用" class="headerlink" title="2、安装所需应用"></a>2、安装所需应用</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9af0bc79c4.webp" alt="https://img.m-l.cc/2024-08-12-66b9af0bc79c4.webp"></p><p>如果需要自己建站的话，可以安装OpenResty、PHP、Mysql等常用工具。</p><p>此外1panel还提供大量相关应用程序如Alist、Cloudreve、WordPress等可供直接下载使用。</p><h4 id="3、安装OpenResty时记得设置好http站点的默认端口如设成1234，https的端口可以不管。"><a href="#3、安装OpenResty时记得设置好http站点的默认端口如设成1234，https的端口可以不管。" class="headerlink" title="3、安装OpenResty时记得设置好http站点的默认端口如设成1234，https的端口可以不管。"></a>3、安装OpenResty时记得设置好http站点的默认端口如设成1234，https的端口可以不管。</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9aefa4c341.webp" alt="https://img.m-l.cc/2024-08-12-66b9aefa4c341.webp"></p><h4 id="4、在ddns脚本中将-tool-example-com工具域名解析到你的家宽ip上。"><a href="#4、在ddns脚本中将-tool-example-com工具域名解析到你的家宽ip上。" class="headerlink" title="4、在ddns脚本中将 tool.example.com工具域名解析到你的家宽ip上。"></a>4、在ddns脚本中将 <code>tool.example.com</code>工具域名解析到你的家宽ip上。</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9af6cdc334.webp" alt="https://img.m-l.cc/2024-08-12-66b9af6cdc334.webp"></p><h4 id="5、1p创建一个网站，将域名设为-aaa-example-com"><a href="#5、1p创建一个网站，将域名设为-aaa-example-com" class="headerlink" title="5、1p创建一个网站，将域名设为 aaa.example.com"></a>5、1p创建一个网站，将域名设为 <code>aaa.example.com</code></h4><p><img src="https://img.m-l.cc/2024-08-12-66b9adecb98e6.webp" alt="https://img.m-l.cc/2024-08-12-66b9adecb98e6.webp"></p><h4 id="6、在cloudflare创建一个cname记录，将-aaa-example-com解析到-tool-example-com上，并开启cf-cdn。"><a href="#6、在cloudflare创建一个cname记录，将-aaa-example-com解析到-tool-example-com上，并开启cf-cdn。" class="headerlink" title="6、在cloudflare创建一个cname记录，将 aaa.example.com解析到 tool.example.com上，并开启cf cdn。"></a>6、在cloudflare创建一个cname记录，将 <code>aaa.example.com</code>解析到 <code>tool.example.com</code>上，并开启cf cdn。</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9ad894848f.webp" alt="https://img.m-l.cc/2024-08-12-66b9ad894848f.webp"></p><h4 id="7、创建一个Origin-rules，将域名aaa-example-com重写到1234端口"><a href="#7、创建一个Origin-rules，将域名aaa-example-com重写到1234端口" class="headerlink" title="7、创建一个Origin rules，将域名aaa.example.com重写到1234端口"></a>7、创建一个Origin rules，将域名aaa.example.com重写到1234端口</h4><p><img src="https://img.m-l.cc/2024-08-12-66b9adb083330.webp" alt="https://img.m-l.cc/2024-08-12-66b9adb083330.webp"></p><p>完成，访问你的aaa.example.com就能打开你的网站了。</p><h3 id="方法二，直接一个端口搭一个网页，然后每个端口分辨创建一条Origin-rules来转发端口"><a href="#方法二，直接一个端口搭一个网页，然后每个端口分辨创建一条Origin-rules来转发端口" class="headerlink" title="方法二，直接一个端口搭一个网页，然后每个端口分辨创建一条Origin rules来转发端口"></a>方法二，直接一个端口搭一个网页，然后每个端口分辨创建一条Origin rules来转发端口</h3><p>优势：可能省了点事？不需要使用额外的webserver啥的</p><p>不足：站点不多还好，站点多了管理麻烦，而且10条规则可能不够用。</p><h1 id="以上，完毕"><a href="#以上，完毕" class="headerlink" title="以上，完毕"></a>以上，完毕</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h1&gt;&lt;p&gt;无意间发现cloudflare的origin rules规则，可以进行端口反向代理，将对应端口上的页面代理到正常的80、443上，直接访问。</summary>
+      
+    
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/categories/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>定时备份mysql/mariadb数据库并上传至tgbot</title>
+    <link href="https://blog.dmnb.cf/2023/11/09/ding-shi-bei-fen-mysql-mariadb-shu-ju-ku-bing-shang-chuan-zhi-tgbot/"/>
+    <id>https://blog.dmnb.cf/2023/11/09/ding-shi-bei-fen-mysql-mariadb-shu-ju-ku-bing-shang-chuan-zhi-tgbot/</id>
+    <published>2023-11-09T11:18:55.000Z</published>
+    <updated>2025-09-13T09:41:37.181Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前情提要："><a href="#前情提要：" class="headerlink" title="前情提要："></a>前情提要：</h1><p>前文<a href="https://blog.dmnb.cf/2023/03/21/li-yong-koyeb-mian-fei-zi-jian-bitwarden-fu-wu-duan/">利用koyeb免费自建bitwarden服务端</a>可知博主之前已经将bitwarden自建的vaultwarden服务端部署在koyeb,并利用db4free提供的免费数据库实现了数据的永久存储。虽说这样基本不会有什么问题了，但db4free毕竟是别人提供的在线数据库，为了以防万一其跑路或者删数据库，今天特地花时间构思了数据库备份的方法。<br>本文分为两节：</p><ul><li>基本构思</li><li>定时推送</li></ul><h2 id="基本构思"><a href="#基本构思" class="headerlink" title="基本构思"></a>基本构思</h2><h3 id="备份数据库"><a href="#备份数据库" class="headerlink" title="备份数据库"></a>备份数据库</h3><p>想要备份mysql/mariadb的数据库，最方便的莫过于mariadb或mysql自带的mysqldump命令了，只需简单一行就可以将数据库备份到指定的文件。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">mysqldump -h &lt;hostname&gt; -u &lt;username&gt; -p&lt;password&gt; &lt;database_name&gt; &gt; backup_`date <span class="hljs-string">&#x27;+%F&#x27;</span>`.sql<br><span class="hljs-comment">#&lt;hostname&gt;：数据库所在的域名，本地数据库为localhost,此处用的db4free的数据库所以填入db4free.net</span><br><span class="hljs-comment">#&lt;username&gt;：数据库的用户名</span><br><span class="hljs-comment">#&lt;password&gt;：显然是密码</span><br><span class="hljs-comment">#&lt;database_name&gt;：数据库的名称</span><br></code></pre></td></tr></table></figure><p>依次填入对应内容后即可备份你的数据库，为了方便记录和存档，这里在生成的备份文件的文件名处添加了<code>date +%F</code>来生成带日期的文件名。</p><h3 id="上传至tgbot"><a href="#上传至tgbot" class="headerlink" title="上传至tgbot"></a>上传至tgbot</h3><p>其实这里上传到什么地方都可以，你可以选择部署一个rclone将文件上传到你的onedrive、google drive、webdav等任何网盘去，也可以直接扔到github的releases去，但这里为了图方便（只需要一行就能解决它不香吗？），博主就直接选择了通过curl命令将文件上传给tgbot发送给自己。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -F document=@<span class="hljs-string">&quot;./backup_`date +%F`.sql&quot;</span> <span class="hljs-string">&#x27;https://api.telegram.org/bot&lt;bot_token&gt;/sendDocument?chat_id=&lt;chat_ID&gt;&#x27;</span><br><br><span class="hljs-comment">#&lt;bot_token&gt;：从BotFather处获取到的apibot的token</span><br><span class="hljs-comment">#&lt;chat_ID&gt;：你的telegramID可以从https://t.me/myidbot处使用/getid获取你的id</span><br></code></pre></td></tr></table></figure><p>使用上述命令就可以简单的将你的数据库备份文件上传到你的tgbot处，从而实现云端存储。</p><h2 id="定时推送"><a href="#定时推送" class="headerlink" title="定时推送"></a>定时推送</h2><h3 id="方案一：vps、机顶盒等"><a href="#方案一：vps、机顶盒等" class="headerlink" title="方案一：vps、机顶盒等"></a>方案一：vps、机顶盒等</h3><p>如果你有一台24小时在线的设备，那么你可以选择直接给上面两条命令写一个sh文件并通过crontab实现定时推送，如果你的设备在国内，可能还需要给<a href="https://api.telegram.org/">https://api.telegram.org</a>地址前面加一行反代如<code>https://r.zzy-ac.top/</code>从而实现在大陆网络环境下的上传。</p><h3 id="方案二：github-actions"><a href="#方案二：github-actions" class="headerlink" title="方案二：github actions"></a>方案二：github actions</h3><p>那么如果你就是纯粹的白嫖狗(比如我)，连bitwarden服务端都扔PaaS了，怎么可能还定时服务扔到自己VPS去？给我白嫖！</p><ol><li>创建一个github仓库，权限设为私人（Private）</li></ol><p><img src="https://img.m-l.cc/2024-08-12-66b9adfeb06ec.webp" alt="image-20231109195138845"></p><ol start="2"><li>点击actions创建workflows文件</li></ol><p><img src="https://img.m-l.cc/2024-08-12-66b9ad2904dce.webp" alt="image-20231109195419519"></p><ol start="3"><li>在yml文件中填入如下内容</li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment">#自动bitwarden mysql数据库备份</span><br><span class="hljs-attr">name:</span> <span class="hljs-string">Auto</span> <span class="hljs-string">Api</span> <span class="hljs-string">Task</span><br><br><span class="hljs-attr">on:</span> <br>  <span class="hljs-attr">schedule:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">cron:</span> <span class="hljs-string">&#x27;12 0 * * *&#x27;</span><br>  <span class="hljs-attr">watch:</span><br>    <span class="hljs-attr">types:</span> [<span class="hljs-string">started</span>]<br>   <br><span class="hljs-attr">jobs:</span><br>   <span class="hljs-attr">Task:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br><span class="hljs-comment">#    if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start</span><br>    <span class="hljs-attr">steps:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@master</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">MariaDB</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>        <span class="hljs-string">sudo</span> <span class="hljs-string">apt-get</span> <span class="hljs-string">update</span><br>        <span class="hljs-string">sudo</span> <span class="hljs-string">apt-get</span> <span class="hljs-string">install</span> <span class="hljs-string">-y</span> <span class="hljs-string">mariadb-server</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">backup</span> <span class="hljs-string">and</span> <span class="hljs-string">upload</span> <span class="hljs-string">to</span> <span class="hljs-string">tgbot</span>  <span class="hljs-comment">#上传到tgbot</span><br><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span> <br>        <span class="hljs-string">mysqldump</span> <span class="hljs-string">-h</span> <span class="hljs-string">&lt;hostname&gt;</span> <span class="hljs-string">-u</span> <span class="hljs-string">&lt;username&gt;</span> <span class="hljs-string">-p&lt;password&gt;</span> <span class="hljs-string">&lt;database_name&gt;</span> <span class="hljs-string">&gt;</span> <span class="hljs-string">backup_`date</span> <span class="hljs-string">&#x27;+%F&#x27;</span><span class="hljs-string">`.sql</span><br>        <span class="hljs-string">curl</span> <span class="hljs-string">-F</span> <span class="hljs-string">document=@&quot;./backup_`date</span> <span class="hljs-string">+%F`.sql&quot;</span> <span class="hljs-string">&#x27;https://api.telegram.org/bot&lt;bot_token&gt;/sendDocument?chat_id=&lt;chat_ID&gt;&#x27;</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Time</span> <span class="hljs-comment">#记录上传时间</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span> <br>        <span class="hljs-string">echo</span> <span class="hljs-string">`date</span> <span class="hljs-string">+&quot;%Y-%m-%d</span> <span class="hljs-string">%H:%M:%S&quot;`</span> <span class="hljs-string">begin</span> <span class="hljs-string">&gt;</span> <span class="hljs-string">time.log</span><br></code></pre></td></tr></table></figure><p>保存之后你就可以白嫖github actions的定时服务自动备份数据库文件了。为了减少服务器压力，建议<code>- cron: &#39;0 0 * * *&#39;</code>此处的时间自主设定一个时间，避免大量排队带来的不好体验。</p><p>actions运行成功后将会把备份到的数据库文件发送到你的tgbot如下图：</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ae25e3a26.webp" alt="image-20231109200104152"></p><p><img src="https://img.m-l.cc/2024-08-12-66b9acaade0d5.webp" alt="image-20231109200125616"></p><p>至此，自动定时备份数据库的功能就实现完毕了，在需要还原数据库时可以使用db4free自带的phpMyAdmin将数据库备份文件导入，或通过命令导入。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前情提要：&quot;&gt;&lt;a href=&quot;#前情提要：&quot; class=&quot;headerlink&quot; title=&quot;前情提要：&quot;&gt;&lt;/a&gt;前情提要：&lt;/h1&gt;&lt;p&gt;前文&lt;a href=&quot;https://blog.dmnb.cf/2023/03/21/li-yong-koyeb-m</summary>
+      
+    
+    
+    
+    <category term="bitwarden" scheme="https://blog.dmnb.cf/categories/bitwarden/"/>
+    
+    
+    <category term="网页部署" scheme="https://blog.dmnb.cf/tags/%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>再游湖</title>
+    <link href="https://blog.dmnb.cf/2023/10/01/zai-you-hu/"/>
+    <id>https://blog.dmnb.cf/2023/10/01/zai-you-hu/</id>
+    <published>2023-10-01T13:14:15.819Z</published>
+    <updated>2025-09-13T09:41:37.181Z</updated>
+    
+    <content type="html"><![CDATA[<center><p>抽云若纱且遮羞，<br>半掩银轮惜残柳。<br>西湖夜仲风兴雨，<br>断桥行急望归休。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9b04b77221.webp" alt="IMG_20231002_210331"></p></center>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;center&gt;
+
+&lt;p&gt;抽云若纱且遮羞，&lt;br&gt;半掩银轮惜残柳。&lt;br&gt;西湖夜仲风兴雨，&lt;br&gt;断桥行急望归休。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.m-l.cc/2024-08-12-66b9b04b77221.webp&quot; alt=&quot;IMG_202310</summary>
+      
+    
+    
+    
+    <category term="诗词创作" scheme="https://blog.dmnb.cf/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    
+    
+    <category term="诗集" scheme="https://blog.dmnb.cf/tags/%E8%AF%97%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>frp隧道开通实现内网穿透</title>
+    <link href="https://blog.dmnb.cf/2023/09/26/frp-sui-dao-kai-tong-shi-xian-nei-wang-chuan-tou/"/>
+    <id>https://blog.dmnb.cf/2023/09/26/frp-sui-dao-kai-tong-shi-xian-nei-wang-chuan-tou/</id>
+    <published>2023-09-26T06:18:54.220Z</published>
+    <updated>2025-09-13T09:41:37.180Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、起因"><a href="#一、起因" class="headerlink" title="一、起因"></a>一、起因</h1><p>在日常的使用中我们可能会需要向我们的朋友临时的分享自建的各种服务，因此申请公网ip的意义变得十分重要。然而在日常的使用中我们并不能时时刻刻守候在公网的环境下，无论是无法申请到亦或者申请到了但却不得不出差外地，都会导致我们一段时间内无法正常的向朋友们分享服务。因此frp作为面对这种情况而生的开源工具，很有介绍的价值</p><h1 id="二、介绍"><a href="#二、介绍" class="headerlink" title="二、介绍"></a>二、介绍</h1><p>frp 是一种快速反向代理，允许您将位于 NAT 或防火墙后面的本地服务器暴露给 Internet。目前支持TCP和UDP，以及HTTP和HTTPS协议，可以将请求通过域名转发到内部服务。</p><p>frp还提供P2P连接模式。</p><h1 id="为什么使用-frp-？"><a href="#为什么使用-frp-？" class="headerlink" title="为什么使用 frp ？"></a>为什么使用 frp ？</h1><p>通过在具有公网 IP 的节点上部署 frp 服务端，可以轻松地将内网服务穿透到公网，同时提供诸多专业的功能特性，这包括：</p><ul><li>客户端服务端通信支持 TCP、QUIC、KCP 以及 Websocket 等多种协议。</li><li>采用 TCP 连接流式复用，在单个连接间承载更多请求，节省连接建立时间，降低请求延迟。</li><li>代理组间的负载均衡。</li><li>端口复用，多个服务通过同一个服务端端口暴露。</li><li>支持 P2P 通信，流量不经过服务器中转，充分利用带宽资源。</li><li>多个原生支持的客户端插件（静态文件查看，HTTPS/HTTP 协议转换，HTTP、SOCK5 代理等），便于独立使用 frp 客户端完成某些工作。</li><li>高度扩展性的服务端插件系统，易于结合自身需求进行功能扩展。</li><li>服务端和客户端 UI 页面。</li></ul><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>当我们安装frp后会得到它的服务端（frps）以及客户端（frpc），部分发行版将其分开打包（如archlinux），当我们使用时需要分别在服务器和pc上配置并启动对应程序。</p><h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><p>安装好frps后我们将获得frps.ini以及frps_full.ini两份配置文件，前者为简易版，仅提供最基本的配置，后者则列出了我们可能需要的各种配置及其示例。</p><p>在我们的使用中需要首先确定自己的需求并部署对应的配置，如，在此我的需求仅仅是为了跟远方的好朋友连接minecraft，所以我选择仅仅打通TCP和UDP通道用于联机即可。故而采用最基本的默认配置。</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[common]</span><br><span class="hljs-attr">bind_port</span> = <span class="hljs-number">7000</span><br></code></pre></td></tr></table></figure><p>之后使用命令启动程序</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">frps -c /etc/frp/frps.ini<br></code></pre></td></tr></table></figure><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>同上编写配置文件frpc.ini并启动程序：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">[common]<br>server_addr = &lt;ip/address&gt;<br>server_port = 7000<br><br>[Minecraft]<br><span class="hljs-built_in">type</span> = tcp<br>local_ip = 127.0.0.1<br>local_port = 25565<br>remote_port = 25565<br><br>[Minecraft-Voice]<br><span class="hljs-built_in">type</span> = udp<br>local_ip = 127.0.0.1<br>local_port = 24454<br>remote_port = 24454<br></code></pre></td></tr></table></figure><p>启动程序为：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">frpc -c /etc/frp/frpc.ini<br></code></pre></td></tr></table></figure><p>之后允许minecraft的服务端或者正常客户端，并邀请好友测试即可知晓成果。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;一、起因&quot;&gt;&lt;a href=&quot;#一、起因&quot; class=&quot;headerlink&quot; title=&quot;一、起因&quot;&gt;&lt;/a&gt;一、起因&lt;/h1&gt;&lt;p&gt;在日常的使用中我们可能会需要向我们的朋友临时的分享自建的各种服务，因此申请公网ip的意义变得十分重要。然而在日常的使用中我们</summary>
+      
+    
+    
+    
+    <category term="linux" scheme="https://blog.dmnb.cf/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="https://blog.dmnb.cf/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CM311-1a机顶盒应用日志</title>
+    <link href="https://blog.dmnb.cf/2023/08/20/cm311-1a-ji-ding-he-ying-yong-ri-zhi/"/>
+    <id>https://blog.dmnb.cf/2023/08/20/cm311-1a-ji-ding-he-ying-yong-ri-zhi/</id>
+    <published>2023-08-20T04:23:07.212Z</published>
+    <updated>2025-09-13T09:41:37.179Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>接上文，在7月份我购买了一台CM311-1a的机顶盒之后，做了许多尝试，包括刷入armbian、尝试不同的版本、部署一些服务。今天在本文中介绍我如今的最终解决方案。</p></blockquote><h1 id="系统选择与部署方式"><a href="#系统选择与部署方式" class="headerlink" title="系统选择与部署方式"></a>系统选择与部署方式</h1><p>上文中，我选择了参照主流方式直接将armbian系统写入emmc并直接部署应用等等，起初一周体验还算不错。可是很可惜，在我因意外将系统再次弄崩溃之后重新安装时，却发现怎么也装不上去系统了，尝试了几天后，我选择彻底放弃挣扎，重新寻找合适的方案。</p><p>经过对<a href="https://github.com/ophub/amlogic-s9xxx-armbian#other-distributions">相关文章</a>的阅读，我发现还有一位名为<a href="https://github.com/Scirese">Scirese</a>的大佬发布了基于armbian底包修改的archarm系统，经过测试发现确实可用后，我果断选择了这一用得最顺手的发行版。</p><p>同时由于前文所言，无法将系统正常写入emmc了，迫不得已下，只能选择插上U盘，直接将archarm系统运行在U盘内。不得不说这样做还是有些优势的，不过也确实带来了些许不足。</p><p>优势：</p><ul><li>U盘性能可以比emmc好得多，运行更为流畅、也不容易掉盘</li><li>U盘可自由选择容量，不再局限于16G的emmc容量</li><li>可以作为双系统使用，保留机器原本的安卓系统，一遍随时拿回去看电视。</li></ul><p>不足：</p><ul><li>安卓系统会重写掉U盘内文件的权限，导致U盘内系统无法再次正常使用，必须千万小心避免在插着U盘的情况下将系统重启到安卓</li></ul><h1 id="部署的服务"><a href="#部署的服务" class="headerlink" title="部署的服务"></a>部署的服务</h1><h2 id="1、Alist"><a href="#1、Alist" class="headerlink" title="1、Alist"></a>1、Alist</h2><p>经典又好用的网盘挂载解析服务，支持webdav,方便得很。</p><p>部署方式：</p><p>其他系统——使用<a href="https://alist.nn.ci/zh/guide/install/script.html">Alist文档</a>给出的一键脚本部署，其余步骤参考文档。</p><p>Archarm——直接<code>yay -S alist-bin</code>安装，并使用。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9acb52e7e0.webp" alt="https://img.m-l.cc/2024-08-12-66b9acb52e7e0.webp"></p><h2 id="2、Gitea"><a href="#2、Gitea" class="headerlink" title="2、Gitea"></a>2、Gitea</h2><p>Gitea是一款轻量、功能全面的git服务平台，部署简便，使用舒心，安全可靠。</p><p>部署方式：</p><p>其他系统——使用github给出的<a href="https://github.com/go-gitea/gitea/releases/latest">二进制文件</a></p><p>archarm——直接<code>yay -S gitea-bin</code>安装，并使用。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9adb58ed65.webp" alt="https://img.m-l.cc/2024-08-12-66b9adb58ed65.webp"></p><h2 id="3、v2raya"><a href="#3、v2raya" class="headerlink" title="3、v2raya"></a>3、v2raya</h2><p>一款好用的科学上网前端程序，部署后直接通过访问和部署，适合服务器体质。</p><p>部署方式：</p><p>其他系统——使用v2ray官网给出的一键脚本</p><p>archarm——直接而从aur安装使用</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ac377d878.webp" alt="https://img.m-l.cc/2024-08-12-66b9ac377d878.webp"></p><h2 id="4、QQbot部署"><a href="#4、QQbot部署" class="headerlink" title="4、QQbot部署"></a>4、QQbot部署</h2><p>部署一个go-cqhttp后端，然后自研或选择一款合适的框架，实现bot的部署和各个功能的实现。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9b09eae094.webp" alt="https://img.m-l.cc/2024-08-12-66b9b09eae094.webp"></p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>机顶盒+家宽动态公网+ddns确实是一个非常棒的轻量化个人服务器解决方案，机顶盒的低功耗，在日常家庭用电中几乎可以忽略，而且还能在本地城域网内部署上公网服务，对于自己的访问也十分高效。还可以放心的免受云服务器供应商带来的种种监视风险。非常nice！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;接上文，在7月份我购买了一台CM311-1a的机顶盒之后，做了许多尝试，包括刷入armbian、尝试不同的版本、部署一些服务。今天在本文中介绍我如今的最终解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;系统选择与部署方式&quot;&gt;&lt;a h</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://blog.dmnb.cf/categories/Linux/"/>
+    
+    
+    <category term="linux" scheme="https://blog.dmnb.cf/tags/linux/"/>
+    
+    <category term="机顶盒" scheme="https://blog.dmnb.cf/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/"/>
+    
+    <category term="archarm" scheme="https://blog.dmnb.cf/tags/archarm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CM311-1a机顶盒刷armbian日记</title>
+    <link href="https://blog.dmnb.cf/2023/07/24/cm311-1a-ji-ding-he-shua-armbian-ri-ji/"/>
+    <id>https://blog.dmnb.cf/2023/07/24/cm311-1a-ji-ding-he-shua-armbian-ri-ji/</id>
+    <published>2023-07-24T17:13:21.981Z</published>
+    <updated>2025-09-13T09:41:37.179Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>前言：进来机顶盒刷机人群日多，其中cm311-1a以其物美价廉，一度广受玩家喜爱，故而本人也采购一台开始了曲折的刷机之路!</p></blockquote><h2 id="DAY1（失败的尝试。）"><a href="#DAY1（失败的尝试。）" class="headerlink" title="DAY1（失败的尝试。）"></a>DAY1（失败的尝试。）</h2><p>自信满满——有点不对啊？——寄了寄了！</p><p>由于第一日还未准备好写笔记，所以第一日的折腾内容忘记拍照/截图了，只有两张拆机后的图，不过不要紧，今天的步骤明天都得再来1～N遍的(TдT) ，写到明天的笔记去吧。</p><h3 id="自信满满"><a href="#自信满满" class="headerlink" title="自信满满"></a>自信满满</h3><p>刚拿到机子，回家开机，adb连接，芜湖都没问题十分丝滑！</p><p>做系统盘，挎挎完成，哎呦好像挺简单？</p><p>装启动U盘系统！挎挎，毫无压力的进入armbian。</p><p>哎呦到这里似乎都还蛮简单的？</p><h3 id="有点不对啊？"><a href="#有点不对啊？" class="headerlink" title="有点不对啊？"></a>有点不对啊？</h3><p>继续按照教程重启！</p><p>哎？怎么关机命令无效？怎么回事？要不我直接关电源算了？试试吧</p><p>啊寄！</p><p>灯亮了，但是路由器识别不到设备了，找不到设备ip了。貌似砖了？</p><h3 id="寄了寄了！"><a href="#寄了寄了！" class="headerlink" title="寄了寄了！"></a>寄了寄了！</h3><p>至此day1的折腾宣告结束，直接变砖了QAQ。只能去京东斥7元巨资买了usb公对公的数据线准备明天的救砖吧。</p><p>然后就是研究怎么拆机，一开始以为是只有卡扣的设计，所以尝试硬掰QaQ结果好几个卡扣断裂了的说。</p><p>后来查明是后盖还有俩螺丝要拧，星夜去附近小商店2元斥巨资购入一个小螺丝刀，嘤嘤嘤，至此，额外的消费已经达到9元了(╯TдT)╯</p><p>成功拆解机顶盒并找到了需要短接的焊点。第一天的瞎折腾到此结束，明天救砖回来再继续弄吧。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9aee5b1cfa.webp" alt="image-20230724211329657"></p><p><img src="https://img.m-l.cc/2024-08-12-66b9af49d0c9f.webp" alt="image-20230724211537108"></p><h2 id="DAY-2-1-5"><a href="#DAY-2-1-5" class="headerlink" title="DAY 2 1.5"></a>DAY <del>2</del> 1.5</h2><h2 id="不用等到day2了！"><a href="#不用等到day2了！" class="headerlink" title="不用等到day2了！"></a>不用等到day2了！</h2><p>突然发现电脑有type-C口，试了一下，果然可以用type-C转usb-a的这种普通手机充电线来刷机顶盒！！！哇咔咔卡卡！！！立省7元！</p><p>直接短接、刷入救砖包！</p><p><img src="https://img.m-l.cc/2024-08-12-66b9b076efe19.webp" alt="捕获"></p><p>等进度条走完后拔掉数据线，关闭电源不再短接，正常开机进入安卓！</p><h2 id="正常的刷机流程"><a href="#正常的刷机流程" class="headerlink" title="正常的刷机流程"></a>正常的刷机流程</h2><h3 id="制作启动盘"><a href="#制作启动盘" class="headerlink" title="制作启动盘"></a>制作启动盘</h3><p>打开balena-etcher，下好armbian镜像，解压镜像，用balena-etcher将镜像写入U盘。</p><h3 id="开心盒子（其实感觉琢磨琢磨，直接用adb指令也可以，不过懒得琢磨了）"><a href="#开心盒子（其实感觉琢磨琢磨，直接用adb指令也可以，不过懒得琢磨了）" class="headerlink" title="开心盒子（其实感觉琢磨琢磨，直接用adb指令也可以，不过懒得琢磨了）"></a>开心盒子（其实感觉琢磨琢磨，直接用adb指令也可以，不过懒得琢磨了）</h3><p>直接打开开心盒子输入机顶盒ip（进路由器查，或者连上hdmi在屏幕里看。<br>adb连接上机顶盒！</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad5181ce2.webp" alt="捕获-1"></p><p>点击调试，点击从U盘/SD卡开启，并在点击后迅速将U盘插入！</p><p><img src="https://img.m-l.cc/2024-08-12-66b9af370fa1b.webp" alt="捕获-3"></p><p>稍等片刻后，在路由器上确定armbian的ip,并ssh进入u盘系统。</p><p>首次进入需要修改root用户密码，创建普通用户，确立时区和语言等：</p><p><img src="https://img.m-l.cc/2024-08-12-66b9af83e0735.webp" alt="捕获-4"></p><p>然后使用armbian-install -m no开始将U盘系统写入机顶盒！</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad9f562ce.webp" alt="捕获-6"></p><p>这里我用的cm311-1a-yst版本所以直接选择305,并使用习惯的ext4文件系统，选择1。</p><p>稍等片刻后没有报错并按照提示poweroff关机即可。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad59c0b2c.webp" alt="捕获-7"></p><p>关机后，关闭电源，拔掉U盘，重新开机之后即可正常进入机顶盒内的armbian系统！！！</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ade256fb4.webp" alt="捕获-8"></p><h2 id="芜湖！！起飞啦！！！"><a href="#芜湖！！起飞啦！！！" class="headerlink" title="芜湖！！起飞啦！！！"></a>芜湖！！起飞啦！！！</h2><p>至此，一个艰苦朴素颇为曲折的armbian就终于装到我们的cm311-1a上去了！！！</p><p>（一定要选对内核版本，例如7月24日发布的6.1.40版本内核的包就存在问题，无法正常安装，各种怪事，鬼知道我在意识到是内核问题之前反复救砖了多少回(╯TдT)╯！</p><p>获得一台舒适的armbian主机之后应该干些什么呢？今夜过于晚了，博主先睡了，内容留到8月份再水一篇博客啦！哈哈哈哈哈哈！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;前言：进来机顶盒刷机人群日多，其中cm311-1a以其物美价廉，一度广受玩家喜爱，故而本人也采购一台开始了曲折的刷机之路!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;DAY1（失败的尝试。）&quot;&gt;&lt;a href=&quot;#DAY1（失败的尝试。）</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://blog.dmnb.cf/categories/Linux/"/>
+    
+    
+    <category term="linux" scheme="https://blog.dmnb.cf/tags/linux/"/>
+    
+    <category term="armbian" scheme="https://blog.dmnb.cf/tags/armbian/"/>
+    
+    <category term="机顶盒" scheme="https://blog.dmnb.cf/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pot——跨平台优秀翻译工具</title>
+    <link href="https://blog.dmnb.cf/2023/06/23/pot-kua-ping-tai-you-xiu-fan-yi-gong-ju/"/>
+    <id>https://blog.dmnb.cf/2023/06/23/pot-kua-ping-tai-you-xiu-fan-yi-gong-ju/</id>
+    <published>2023-06-23T01:32:28.912Z</published>
+    <updated>2025-09-13T09:41:37.180Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h1 id="Pot-Translator-of-Pylogmon"><a href="#Pot-Translator-of-Pylogmon" class="headerlink" title="Pot (Translator of Pylogmon)"></a>Pot (Translator of Pylogmon)</h1><blockquote><p>一个跨平台的划词翻译软件 ( <a href="https://pot.pylogmon.com/docs/tutorial/intro">快速上手</a>| <a href="https://pot.pylogmon.com/download">软件下载</a>| <a href="https://pot.pylogmon.com/docs/category/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE">进阶配置</a>|<a href="https://github.com/pot-app/pot-desktop">Github</a>)</p></blockquote><hr><h2 id="名字来源"><a href="#名字来源" class="headerlink" title="名字来源"></a>名字来源</h2><h3 id="pot-Translator-of-Pylogmon-派了个萌的翻译器"><a href="#pot-Translator-of-Pylogmon-派了个萌的翻译器" class="headerlink" title="pot(Translator of Pylogmon | 派了个萌的翻译器)"></a>pot(Translator of Pylogmon | 派了个萌的翻译器)</h3><blockquote><p>不用 top 是因为已经有知名 linux 软件占用了<code>top</code>这个名字 所以现在你也可以叫他翻译锅 😂</p></blockquote><table><thead><tr><th><img src="https://img.m-l.cc/2024-08-12-66b9adbb2510f.webp" alt="img"></th><th><img src="https://img.m-l.cc/2024-08-12-66b9af7167971.webp" alt="img"></th><th><img src="https://img.m-l.cc/2024-08-12-66b9b03d2b0b9.webp" alt="img"></th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><table><thead><tr><th></th><th>描述</th><th>预览</th></tr></thead><tbody><tr><td>划词翻译</td><td>选中需要翻译的文本之后，按下划词翻译快捷键即可</td><td><img src="https://img.m-l.cc/2024-08-12-66b9b7c203534.gif" alt="img"></td></tr><tr><td>输入翻译</td><td>按下输入翻译快捷键，输入需要翻译的文本，<code>Enter</code> 键翻译</td><td><img src="https://img.m-l.cc/2024-08-12-66b9b7d32f1d8.gif" alt="img"></td></tr><tr><td>插件调用</td><td>选中需要翻译的文本之后，点击插件图标即可，详情见<a href="https://pot.pylogmon.com/docs/tutorial/config/plugin_config">插件调用</a></td><td><img src="https://img.m-l.cc/2024-08-12-66b9b7fb2c77f.gif" alt="img"></td></tr><tr><td>剪切板监听模式</td><td>打开翻译窗口，启动剪切板监听模式，复制想要翻译的内容即可</td><td><img src="https://img.m-l.cc/2024-08-12-66b9b81803435.gif" alt="img"></td></tr><tr><td>截图OCR</td><td>按下快捷键，框选需要识别区域即可</td><td><img src="https://img.m-l.cc/2024-08-12-66b9b83093ce0.gif" alt="img"></td></tr><tr><td>截图翻译</td><td>按下快捷键，框选需要识别区域即可</td><td><img src="https://img.m-l.cc/2024-08-12-66b9b83f1ba0b.gif" alt="img"></td></tr></tbody></table><h2 id="支持接口"><a href="#支持接口" class="headerlink" title="支持接口"></a>支持接口</h2><h3 id="翻译-API"><a href="#翻译-API" class="headerlink" title="翻译 API"></a>翻译 API</h3><ul><li>Open AI(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 0.002$/1000token)</li><li>阿里翻译(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 100 万字符)</li><li>百度翻译(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 100 万字符)</li><li>彩云小译(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 100 万字符)</li><li>腾讯翻译(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 500 万字符)</li><li>火山翻译(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 200 万字符)</li><li>Lingva 翻译(无需申请，可以直接使用，也可以自建服务(见<a href="https://github.com/TheDavidDelta/lingva-translate">lingva-translate</a>))</li><li>谷歌翻译(无需申请，但需要自己解决网络问题，已提供镜像站地址设置选项)</li><li>必应翻译(无需申请，直接使用)</li><li>必应词典(无需申请，只能查词)</li><li>DeepL(无需申请，直接使用(也可以使用自己的 API Key))</li></ul><h3 id="OCR-API"><a href="#OCR-API" class="headerlink" title="OCR API"></a>OCR API</h3><ul><li>Tesseract(无需申请，直接使用)</li><li>百度 OCR(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 1000 次)</li><li>腾讯 OCR(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 每月免费额度 1000 次)</li><li>火山 OCR(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 一次性免费额度 5000 次)</li><li>讯飞 OCR(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a>)</li><li>OCR Space(需要申请 <a href="C">api 服务</a> 每月免费额度 25000 次)</li><li>Simple Latex(需要申请 <a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">api 服务</a> 一次性免费额度 1000 次)</li></ul><p>具体的 api 服务申请步骤，见<a href="https://pot.pylogmon.com/docs/category/api%E6%9C%8D%E5%8A%A1%E7%94%B3%E8%AF%B7">申请指南</a></p><blockquote><p>由于使用 api 产生的费用本程序作者概不负责</p></blockquote><h1 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h1><p>这款翻译、ORC程序具备优良的可用性和简洁性，一个总共不到30M的RSUT程序，却拥有着优秀的图形化界面和操作逻辑，可以在大多数情况下帮助人们方便的进行各种翻译需求。好用的呢！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h1&gt;&lt;h1 id=&quot;Pot-Translator-of-Pylogmon&quot;&gt;&lt;a href=&quot;#Pot-Translator-of-Pylogmon&quot;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>思岳</title>
+    <link href="https://blog.dmnb.cf/2023/05/07/si-yue/"/>
+    <id>https://blog.dmnb.cf/2023/05/07/si-yue/</id>
+    <published>2023-05-07T06:53:40.000Z</published>
+    <updated>2023-05-06T22:57:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<center><p>侵风伏细柳，入雨百花忧。<br>思来凭栏处，臣子恨将休。</p><p><img src="https://img.m-l.cc/2024-08-12-66b9ad7bc551c.webp" alt="https://img.m-l.cc/2024-08-12-66b9ad7bc551c.webp"></p></center>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;center&gt;
+
+&lt;p&gt;侵风伏细柳，入雨百花忧。&lt;br&gt;思来凭栏处，臣子恨将休。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.m-l.cc/2024-08-12-66b9ad7bc551c.webp&quot; alt=&quot;https://img.m-l.cc/2024-08</summary>
+      
+    
+    
+    
+    <category term="诗词创作" scheme="https://blog.dmnb.cf/categories/%E8%AF%97%E8%AF%8D%E5%88%9B%E4%BD%9C/"/>
+    
+    
+    <category term="诗集" scheme="https://blog.dmnb.cf/tags/%E8%AF%97%E9%9B%86/"/>
+    
+  </entry>
+  
+</feed>
