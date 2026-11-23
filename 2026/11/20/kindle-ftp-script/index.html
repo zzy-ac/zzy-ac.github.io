@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="就是博客啊，还要啥描述？">
+  <meta name="author" content="鸣庚">
+  <meta name="keywords" content="">
+  <meta name="description" content="项目地址：https:&#x2F;&#x2F;github.com&#x2F;zzy-ac&#x2F;kindle-ftp-server 前言对于很多  Kindle 老玩家来说，越狱后的第一件事就是寻找一个优雅的无线传书方案。虽然 KOReader 的 SFTP、或者是老牌的  FileBrowser  网页版已经非常成熟，但对于追求“极简主义”和“原生体验”的极客来说，用电脑自带的资源管理器直接拖拽传书，才是最无感的体验。 今天，我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原创插件分享：为 Kindle 打造一个极简、原生、轻量化的 FTP 传书服务">
+<meta property="og:url" content="https://blog.m-l.cc/2026/11/20/kindle-ftp-script/index.html">
+<meta property="og:site_name" content="鸣庚亭">
+<meta property="og:description" content="项目地址：https:&#x2F;&#x2F;github.com&#x2F;zzy-ac&#x2F;kindle-ftp-server 前言对于很多  Kindle 老玩家来说，越狱后的第一件事就是寻找一个优雅的无线传书方案。虽然 KOReader 的 SFTP、或者是老牌的  FileBrowser  网页版已经非常成熟，但对于追求“极简主义”和“原生体验”的极客来说，用电脑自带的资源管理器直接拖拽传书，才是最无感的体验。 今天，我">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.m-l.cc/file/1795184025022_screenshot_2026_11_20T21_23_09_0800.png">
+<meta property="og:image" content="https://image.m-l.cc/file/1795184060155_screenshot_2026_11_20T21_23_16_0800.png">
+<meta property="og:image" content="https://image.m-l.cc/file/1795184095025_FileManager_2026-11-20_215357.png">
+<meta property="og:image" content="https://image.m-l.cc/file/1795184121722_FileManager_2026-11-20_212146.png">
+<meta property="article:published_time" content="2026-11-20T14:10:08.279Z">
+<meta property="article:modified_time" content="2026-11-23T00:44:16.306Z">
+<meta property="article:author" content="鸣庚">
+<meta property="article:tag" content="kindle">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://image.m-l.cc/file/1795184025022_screenshot_2026_11_20T21_23_09_0800.png">
+  
+    <meta name="referrer" content="no-referrer"><script defer src="https://umami.m-l.cc/script.js" data-website-id="00b8a36a-8519-4f41-a35f-eac9b4918c29"></script>
+  
+  <title>原创插件分享：为 Kindle 打造一个极简、原生、轻量化的 FTP 传书服务 - 鸣庚亭</title>
+
+  <link  rel="stylesheet" href="https://cdn.m-l.cc/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.m-l.cc/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.m-l.cc/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.m-l.cc/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.m-l.cc","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="鸣庚亭" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>鸣庚亭</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                其他
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://m-l.cc/">
+                    
+                    鸣庚短链
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://lsky.m-l.cc">
+                    
+                    鸣庚图床
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://cloud.m-l.cc/">
+                    
+                    鸣庚cloudreve
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://pan.m-l.cc/">
+                    
+                    鸣庚网盘(om)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://alist.m-l.cc/">
+                    
+                    鸣庚云盘(Alist)
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://font.m-l.cc/">
+                    
+                    鸣庚字体编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://md.m-l.cc">
+                    
+                    鸣庚md编辑器
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://gh.m-l.cc/">
+                    
+                    鸣庚的GitHub文件加速
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cover.m-l.cc/') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="原创插件分享：为 Kindle 打造一个极简、原生、轻量化的 FTP 传书服务">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      鸣庚
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2026-11-20 14:10" pubdate>
+        2026年11月20日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">原创插件分享：为 Kindle 打造一个极简、原生、轻量化的 FTP 传书服务</h1>
+            
+            <div class="markdown-body">
+              <p>项目地址：<strong><a target="_blank" rel="noopener" href="https://github.com/zzy-ac/kindle-ftp-server">https://github.com/zzy-ac/kindle-ftp-server</a></strong></p>
+<p><strong>前言</strong><br>对于很多  Kindle 老玩家来说，越狱后的第一件事就是寻找一个优雅的无线传书方案。虽然 KOReader 的 SFTP、或者是老牌的  FileBrowser  网页版已经非常成熟，但对于追求“极简主义”和“原生体验”的极客来说，用电脑自带的资源管理器直接拖拽传书，才是最无感的体验。</p>
+<p>今天，我为大家分享一款由零开始编写的 <strong>Kindle FTP 插件</strong>。它直接调用 Kindle 底层 BusyBox 内置的 <code>ftpd</code> 服务端，轻量且无需后台，最棒的是——<strong>它能像filebrowser插件一样在 Kindle 屏幕最顶端常驻显示 ftp 链接，且完全不影响你正常的看书翻页。</strong></p>
+<h3 id="一、-为什么选择纯-FTP-方案？"><a href="#一、-为什么选择纯-FTP-方案？" class="headerlink" title="一、 为什么选择纯 FTP 方案？"></a>一、 为什么选择纯 FTP 方案？</h3><p>相比其他无线方案，这个插件的优势在于：</p>
+<ol>
+<li><strong>极度轻量</strong>：不依赖 Python，不依赖 Go 语言编译的庞大体，直接唤醒 Kindle 系统自带的 <code>busybox ftpd</code>，零内存占用压力。</li>
+<li><strong>单次点击启动</strong>：完美融入 KUAL 菜单，点一下“Start”，无需掏出手机或电脑查看 IP，链接直接浮现在屏幕顶端。</li>
+<li><strong>常驻且透明</strong>：通过底层的 <code>eips</code> 命令结合守护进程，将 <code>ftp://IP:21</code> 的文字“印”在最顶端，即使你正常翻页看书，它也会每隔2秒自动覆盖上来，永远不走丢。</li>
+<li><strong>完美清理</strong>：在 KUAL 中点击“Stop”后，会执行系统级的进程清洗，并在屏幕上短暂显示 <code>killall ftpd</code> 字样，3秒后自动擦除所有痕迹，不留残影。</li>
+</ol>
+<hr>
+<h3 id="二、-功能展示与运行原理"><a href="#二、-功能展示与运行原理" class="headerlink" title="二、 功能展示与运行原理"></a>二、 功能展示与运行原理</h3><ul>
+<li><strong>启动服务</strong>：点击 <code>Start FTP</code> 时，脚本会检查防火墙、放行 21 端口，并映射 root 权限到 <code>/mnt/us</code> 目录。随后后台拉起一个显示脚本，将 IP 居中固定在屏幕最上方。</li>
+<li><strong>客户端连接</strong>：电脑浏览器或 FileZilla 地址栏直接输入 <code>ftp://你的Kindle IP:21</code>，账户名为 <code>anonymous</code>，密码留空，即可直接读写 <code>/mnt/us</code> 下的所有文件。（客户端需要调整为<strong>主动模式</strong>）</li>
+<li><strong>停止服务</strong>：点击 <code>Stop FTP</code> 时，脚本会瞬间清理后台的驻留进程，关闭 21 端口，解除 Kindle 的防休眠状态，然后干净地抹去屏幕上的字迹。</li>
+</ul>
+<hr>
+<h3 id="三、-插件安装教程"><a href="#三、-插件安装教程" class="headerlink" title="三、 插件安装教程"></a>三、 插件安装教程</h3><p><strong>前置条件</strong>：<br>你的 Kindle Voyage 等机型已完成越狱，并安装了 KUAL（Kindle Unified Application Launcher）。</p>
+<p><strong>kual版本</strong></p>
+<p>之后将下载到的<a target="_blank" rel="noopener" href="https://github.com/zzy-ac/kindle-ftp-server/releases/download/1.0.0/kindle-ftp.zip">插件包</a>解压，并将其中的extensions文件夹拷贝到kindle根目录下。</p>
+<p><strong>Koreader版本</strong></p>
+<p>将koreader的插件包<a target="_blank" rel="noopener" href="https://github.com/zzy-ac/kindle-ftp-server/releases/download/1.0.0/ftpmanager.koplugin.zip" title="ftpmanager.koplugin">ftpmanager.koplugin</a>解压并放置到kindle根目录下的koreader/plugins目录下。 </p>
+<hr>
+<h3 id="四、-使用方法与注意事项"><a href="#四、-使用方法与注意事项" class="headerlink" title="四、 使用方法与注意事项"></a>四、 使用方法与注意事项</h3><ol>
+<li>在 Kindle 上打开 KUAL，找到 <code>FTP服务器</code>。</li>
+<li>点击 <code> 启动FTP服务 </code>。此时如果一切正常，你的 Kindle 屏幕最顶端正中央会出现 <code>ftp://192.168.x.x:21</code>。</li>
+<li>在电脑上打开文件管理器（Windows 资源管理器或 Mac 访达），输入该地址。<strong>用户名填 <code>anonymous</code>，密码留空</strong>，即可无线上传电子书。</li>
+<li>传书完成后，记得在 KUAL 中点击 <code>关闭FTP</code>。</li>
+<li>koreader中同理，在插件中找到 <code>ftp manager</code>。</li>
+<li>点击 <code>start ftp</code>。</li>
+<li>其它跟原生版本一样。</li>
+<li>点击 <code>stop ftp</code>关闭程序。</li>
+<li>koreader版中增加了一个 <code>status</code>显示按钮用于查看相关的端口等信息。</li>
+</ol>
+<p><strong>⚠️ 安全与耗电提示：</strong></p>
+<ul>
+<li>由于该插件使用了 <code>-a root</code> 映射匿名登录，并放行了本地端口，<strong>请仅在绝对可信的局域网环境下使用</strong>。</li>
+<li>为了防止屏幕被系统刷新覆盖，插件在运行期间会阻止 Kindle 休眠。因此，传完书后<strong>务必点击 Stop</strong>，以免设备持续耗电。</li>
+<li>如果在使用中遇到部分 FTP 客户端无法列出目录，请在客户端设置中切换为**主动模式 (Active)**。</li>
+<li>本程序直接调用kindle自带的接口，所以程序极度精简，仅仅2kb左右的空间占用</li>
+<li>kindle busybox自带的ftpd不支持中文字符，中文文件名可能会无法显示文件或显示为???</li>
+</ul>
+<p>附上使用效果截图：</p>
+<p><img src="https://image.m-l.cc/file/1795184025022_screenshot_2026_11_20T21_23_09_0800.png" srcset="/images/loading.gif" lazyload alt="kual页面"></p>
+<p><img src="https://image.m-l.cc/file/1795184060155_screenshot_2026_11_20T21_23_16_0800.png" srcset="/images/loading.gif" lazyload alt="原生显示效果"></p>
+<p><img src="https://image.m-l.cc/file/1795184095025_FileManager_2026-11-20_215357.png" srcset="/images/loading.gif" lazyload alt="koreader插件效果"></p>
+<p><img src="https://image.m-l.cc/file/1795184121722_FileManager_2026-11-20_212146.png" srcset="/images/loading.gif" lazyload alt="koreader插件的信息显示"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/kindle/">kindle</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/kindle/">kindle</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/08/22/kindle-an-zhuang-crackdroid-jiao-cheng/">
+                        <span class="hidden-mobile">kindle(7代之前)安卓系统(CrackDroid)刷机指南</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.m-l.cc/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline.m-l.cc/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick","mail"],"lang":"zh-CN","emoji":["https://cdn.m-l.cc/gh/walinejs/emojis@1.1.0/tieba"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    <p>Copyright © 2020 鸣庚</p> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.m-l.cc/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.m-l.cc/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.m-l.cc/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.m-l.cc/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.m-l.cc/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.m-l.cc/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.m-l.cc/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.m-l.cc/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.m-l.cc/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
